@@ -1,0 +1,70 @@
+import React from "react";
+import "./Navbar.css";
+import logo from "../Group 5.png";
+import Home_logo from "../Home (1).png";
+import MYCourses_logo from "../Laptop.png";
+import BrowseCourses_logo from "../Book.png";
+import EditProfile_logo from "../ProfileEdit.png";
+import profile_img from "../Group 4.png";
+function Navbar() {
+  return (
+    <div className="Container">
+      <div className="icon">
+        <img
+          src={logo}
+          alt="Logo"
+        />
+      </div>
+      <div className="profile-bar">
+        <img
+          src={profile_img}
+          alt="img"
+        />
+        <div className="username">
+          <h3>Username</h3>
+          <h7>Student</h7>
+        </div>
+      </div>
+      <div className="options">
+        <ul>
+          <li>
+            <img
+              src={Home_logo}
+              alt="home"
+            />
+            <p>Home</p>
+          </li>
+          <li>
+            <img
+              src={MYCourses_logo}
+              alt="home"
+            />
+            <p>Profile</p>
+          </li>
+          <li>
+            <img
+              src={BrowseCourses_logo}
+              alt="home"
+            />
+            <p>Option3</p>
+          </li>
+          <li>
+            <img
+              src={EditProfile_logo}
+              alt="home"
+            />
+            <p>Option4</p>
+          </li>
+        </ul>
+      </div>
+
+      <div className="bottom">
+        <h4>
+          Start Learning Now <br></br> With this Wonderful Platform
+        </h4>
+      </div>
+    </div>
+  );
+}
+
+export default Navbar;

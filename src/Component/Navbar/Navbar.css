@@ -1,0 +1,93 @@
+.Container {
+  display: flex;
+  position: absolute;
+  left: 0;
+  flex-direction: column;
+  width: 25%;
+  background: linear-gradient(to right, rgb(45, 130, 221), rgb(116, 167, 240));
+  height: 100vh;
+  /* justify-content: space-between; */
+}
+
+.icon img {
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.profile-bar {
+  background-color: white;
+  margin: 5px;
+  padding: 8px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.profile-bar .username {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-bar img {
+  height: 50px;
+  width: 50px;
+}
+
+.profile-bar h3 {
+  margin-block: auto;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.options ul {
+  /* position: relative; */
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  /* align-content: center; */
+  /* margin-inline: auto; */
+  /* width: 100%; */
+  position: relative;
+  left: -15px;
+  /* margin-inline: auto; */
+}
+
+.options {
+  width: 100%;
+}
+
+.options ul li {
+  background-color: white;
+  padding: 6px;
+  border-radius: 12px;
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  text-align: left;
+  margin-left: 15px;
+}
+.bottom h4 {
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.options ul li img {
+  /* padding: 5px; */
+  margin: 3px;
+  height: 30px;
+  width: 35px;
+}
+
+.options ul li p {
+  margin-left: 4px;
+  margin-block: auto;
+  text-align: left;
+}
