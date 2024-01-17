@@ -1,6 +1,6 @@
 import React from 'react';
 import {Container , Row , Col , Button} from 'reactstrap';
-import heroImg from '../../assets/images/Group 43.png'
+import heroImg from '../../assets/images/Group 44.png'
 import './heroscetion.css';
 
 const HeroSection = () => {
@@ -11,7 +11,7 @@ const HeroSection = () => {
         <Col lg='6' md='6' >
          <div className='hero__content'>
          <h2 className='mb-4'>
-          Let The Journey<br/>For a better<br/>Learning<br/>begin now
+          Let The Journey<br/>For a better<br/><span className='learning'>Learning</span><br/>begin now
           </h2>
           <p>Click the below button to start registration.</p>
          </div>
