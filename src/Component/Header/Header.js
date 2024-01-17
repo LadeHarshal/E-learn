@@ -25,7 +25,7 @@ const Header = () => {
     <header className='header'>
         <Container>
             <div className='navigation d-flex align-items-center justify-content-between'>
-            <h2 className='d-flex align-items-center'><img src={logo} alt=''></img>Primine</h2>
+            <h2 className='d-flex align-items-center'><img src={logo} alt=''></img>E-Learning Platform</h2>
            
 
             <div className='nav d-flex align-items-center gap-5'>
