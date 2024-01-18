@@ -10,24 +10,44 @@ const AboutUs = () => {
     <section>
       <Container>
         <Row>
-          <Col lg="6" md="6">
+          <Col
+            lg="6"
+            md="6"
+          >
             <div className="about__img">
-              <img src={aboutImg} alt="" className="w-100" />
+              <img
+                src={aboutImg}
+                alt=""
+                className="w-100"
+              />
             </div>
           </Col>
 
-          <Col lg="6" md="6">
+          <Col
+            lg="6"
+            md="6"
+          >
             <div className="about__content">
               <h2>About Us</h2>
               <p>
-              Welcome to our E-Learning Platform, where knowledge meets innovation. We are passionate about transforming education by providing a dynamic and interactive online learning experience. Our platform is designed to empower learners of all ages and backgrounds, offering a diverse range of courses curated by industry experts and experienced educators.
+                Welcome to our E-Learning Platform, where knowledge meets
+                innovation. We are passionate about transforming education by
+                providing a dynamic and interactive online learning experience.
+                Our platform is designed to empower learners of all ages and
+                backgrounds, offering a diverse range of courses curated by
+                industry experts and experienced educators.
               </p>
 
               <div className="about__counter">
                 <div className=" d-flex gap-5 align-items-center">
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={25} duration={2} suffix="K" />
+                      <CountUp
+                        start={0}
+                        end={25}
+                        duration={2}
+                        suffix="K"
+                      />
                     </span>
 
                     <p className="counter__title">Completed Projects</p>
@@ -35,7 +55,12 @@ const AboutUs = () => {
 
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={12} duration={2} suffix="M" />
+                      <CountUp
+                        start={0}
+                        end={12}
+                        duration={2}
+                        suffix="M"
+                      />
                     </span>
 
                     <p className="counter__title">Patient Around World</p>
@@ -45,7 +70,12 @@ const AboutUs = () => {
                 <div className=" d-flex gap-5 align-items-center">
                   <div className="single__counter">
                     <span className="counter">
-                      <CountUp start={0} end={95} duration={2} suffix="M" />
+                      <CountUp
+                        start={0}
+                        end={95}
+                        duration={2}
+                        suffix="M"
+                      />
                     </span>
 
                     <p className="counter__title">Ideas Raised Funds</p>
@@ -53,7 +83,12 @@ const AboutUs = () => {
 
                   <div className="single__counter m-lg-3">
                     <span className="counter">
-                        <CountUp start={0} end={5} duration={2} suffix="K" />
+                      <CountUp
+                        start={0}
+                        end={5}
+                        duration={2}
+                        suffix="K"
+                      />
                     </span>
 
                     <p className="counter__title">Categories Served</p>

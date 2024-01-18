@@ -1,30 +1,29 @@
 .counter {
-    font-size: 2rem;
-    font-weight: 600;
-    color: black;
-  }
-  
-  .counter__title {
-    font-size: 1rem;
-    color: black;
-    font-weight: 500;
-  }
-  
-  .about__content {
-    padding-left: 80px;
-  }
-  
-  .about__img img {
-    border-radius: 15px;
-  }
-  
-  .about__content h2 {
-    font-weight: 600;
-  }
-  .single__counter{
-    padding-left: 50px;
-  }
-section{
-    margin-top: 5rem;
+  font-size: 2rem;
+  font-weight: 600;
+  color: black;
 }
-  
+
+.counter__title {
+  font-size: 1rem;
+  color: black;
+  font-weight: 500;
+}
+
+.about__content {
+  padding-left: 80px;
+}
+
+.about__img img {
+  border-radius: 15px;
+}
+
+.about__content h2 {
+  font-weight: 600;
+}
+.single__counter {
+  padding-left: 50px;
+}
+section {
+  margin-top: 5rem;
+}
