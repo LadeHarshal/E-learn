@@ -1,7 +1,8 @@
 .hero__content {
   font-weight: 600;
   /* line-height: 55px; */
-  margin-top: 6.5rem;
+  /* margin-top: 1.5rem; */
+  margin-inline: auto;
 }
 .learning {
   font-size: 3rem;
@@ -13,10 +14,15 @@
 }
 
 .whitebg {
+  display: flex;
+  flex-direction: column;
   position: relative;
-  padding: 8px;
+  /* padding: 8px; */
   border-radius: 25px;
   background: white;
+  /* margin-inline: auto; */
+  justify-content: center;
+  align-items: center;
 }
 .bluebg {
   border-radius: 20px;

@@ -4,9 +4,15 @@
   left: 0;
   flex-direction: column;
   width: 25%;
-  background: linear-gradient(to right, #17bf9e, #2ad8b5);
+  background: linear-gradient(to right, #17bf9e, #a8ffee);
   height: 100vh;
   /* justify-content: space-between; */
+  /* align-items: center; */
+}
+
+.icon {
+  margin-inline: auto;
+  margin-bottom: 3rem;
 }
 
 .icon img {
@@ -18,20 +24,26 @@
 .profile-bar {
   background-color: white;
   margin: 5px;
-  padding: 8px;
+  padding: 1rem;
   border-radius: 8px;
   display: flex;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   align-items: center;
+  margin-bottom: 4rem;
 }
 .profile-bar .username {
   display: flex;
   flex-direction: column;
+  /* margin: auto; */
+  margin-left: 2rem;
+  text-align: left;
 }
 
 .profile-bar img {
   height: 50px;
   width: 50px;
+  margin-left: 2rem;
+  /* margin: auto;   */
 }
 
 .profile-bar h3 {
