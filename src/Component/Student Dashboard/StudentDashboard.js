@@ -1,9 +1,10 @@
 import React from "react";
-import profile_img from "../Group 4.png";
+import profile_img from "../../assets/images/Group 4.png";
 import "./StudentDashboard.css";
-import stud1 from "../Student1.png";
-import bell from "../image 25.png";
+import stud1 from "../../assets/images/Student1.png";
+import bell from "../../assets/images/image 25.png";
 import Navbar from "../Navbar/Navbar";
+import CourseList from "../CourseList/CourseList";
 function StudentDashboard() {
   return (
     <div className="master_container">
@@ -31,6 +32,7 @@ function StudentDashboard() {
         </div>
 
         {/* Welcome Pane */}
+
         <div className="welcome">
           <div className="container1">
             <div className="text">
@@ -45,7 +47,12 @@ function StudentDashboard() {
             />
           </div>
         </div>
+
         {/* Courses Enrolled */}
+        <div className="list1">
+          <CourseList />
+        </div>
+
         {/* Tutorials */}
       </div>
     </div>

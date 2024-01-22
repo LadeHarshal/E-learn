@@ -1,18 +1,19 @@
 .Container {
   display: flex;
-  /* position: absolute; */
   left: 0;
   flex-direction: column;
   width: 25%;
   background: linear-gradient(to right, #17bf9e, #a8ffee);
   height: 100vh;
-  /* justify-content: space-between; */
-  /* align-items: center; */
+  position: relative;
 }
 
 .icon {
   margin-inline: auto;
-  margin-bottom: 3rem;
+  margin-bottom: 2.4rem;
+  /* position: absolute;
+  top: 2rem;
+  left: 30%; */
 }
 
 .icon img {
@@ -22,14 +23,17 @@
 }
 
 .profile-bar {
+  /* position: absolute; */
+  /* left: 30%; */
+  /* top: 20%; */
   background-color: white;
-  margin: 5px;
-  padding: 1rem;
+  margin: 3px;
+  padding: 0.7rem;
   border-radius: 8px;
   display: flex;
   /* justify-content: space-around; */
   align-items: center;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
 }
 .profile-bar .username {
   display: flex;
@@ -48,21 +52,21 @@
 
 .profile-bar h3 {
   margin-block: auto;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
+}
+.profile-bar h4 {
+  margin-block: auto;
+  font-size: 12px;
+  font-weight: 400;
 }
 
 .options ul {
-  /* position: relative; */
   list-style: none;
   display: flex;
   flex-direction: column;
-  /* align-content: center; */
-  /* margin-inline: auto; */
-  /* width: 100%; */
   position: relative;
   left: -15px;
-  /* margin-inline: auto; */
 }
 
 .options {
@@ -71,9 +75,10 @@
 
 .options ul li {
   background-color: white;
-  padding: 6px;
+  padding: 4px;
   border-radius: 12px;
-  margin: 4px;
+  margin: 2px;
+  /* margin-bottom: 2rem; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -94,11 +99,13 @@
 .options ul li img {
   /* padding: 5px; */
   margin: 3px;
-  height: 30px;
-  width: 35px;
+  height: 24px;
+  width: 26px;
 }
 
 .options ul li p {
+  font-size: 12px;
+  font-weight: 400;
   margin-left: 4px;
   margin-block: auto;
   text-align: left;
