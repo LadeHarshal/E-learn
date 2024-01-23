@@ -10,7 +10,7 @@ function StudentDashboard() {
     <div className="master_container">
       {/* Navbar */}
 
-      <Navbar />
+      <Navbar role="Student" />
 
       {/* Top Pane */}
 
@@ -21,7 +21,7 @@ function StudentDashboard() {
             alt="notif"
             className="notif_icon"
           />
-          <h4>STUDENT DASHBOARD</h4>
+          <h4> DASHBOARD</h4>
           <div className="logout_option">
             <p>LOGOUT</p>
             <img
