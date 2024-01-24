@@ -14,16 +14,16 @@ const Home = () => {
   return (
     <div>
         <Fragment>
-        <Header/> 
+        
         <HeroSection/>
         <AboutUs/>
-        <Courses/>
+        <Courses />
         <ChooseUs/>
         <Features/>
         <FreeCourse/>
         <Testimonials/>
         <Newsletter/>
-        <Footer/>
+      
 
         </Fragment>
    </div>
