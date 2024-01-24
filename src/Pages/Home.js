@@ -13,21 +13,21 @@ import Footer from "../Component/Footer/Footer";
 const Home = () => {
   return (
     <div>
-      <Fragment>
-        <Header />
-        <hr />
-        <HeroSection />
-        <AboutUs />
-        <Courses />
-        <ChooseUs />
-        <Features />
-        <FreeCourse />
-        <Testimonials />
-        <Newsletter />
-        <Footer />
-      </Fragment>
-    </div>
-  );
-};
+        <Fragment>
+        <Header/> 
+        <HeroSection/>
+        <AboutUs/>
+        <Courses/>
+        <ChooseUs/>
+        <Features/>
+        <FreeCourse/>
+        <Testimonials/>
+        <Newsletter/>
+        <Footer/>
+
+        </Fragment>
+   </div>
+  )
+}
 
 export default Home;

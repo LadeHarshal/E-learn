@@ -1,30 +1,37 @@
-import { Routes, Route } from "react-router-dom";
-import "./App.css";
-import Home from "./Pages/Home";
-import StudentDashboard from "./Component/Student Dashboard/StudentDashboard";
-import TeacherDashboard from "./Component/Teacher/TeacherDashboard";
-import StudentHome from "./Component/StudentHome/StudentHome";
+// import './App.css';
+// import Home from './Pages/Home';
+
+// function App() {
+//   return (
+//     <div className="App">
+     
+//       <Home/>
+//     </div>
+//   );
+// }
+
+// export default App;
+
+
+
+import React from 'react';
+import {  Route, Routes } from 'react-router-dom';
+import Home from './Pages/Home';
+import Register from './Pages/Register.js'; // Import your Register component
+import Login from './Pages/Login.js';
 
 function App() {
   return (
-    <Routes>
-      <Route
-        path="/"
-        Component={Home}
-      />
-      <Route
-        path="/StudentDashboard"
-        Component={StudentDashboard}
-      />
-      <Route
-        path="/StudentHome"
-        Component={StudentHome}
-      />
-      <Route
-        path="/TeacherDashboard"
-        Component={TeacherDashboard}
-      />
-    </Routes>
+    <div className="App">
+    
+      <Routes>
+  <Route path="/" element={<Home />} />
+  <Route path="/register" element={<Register />} />
+  <Route path="/login" element={<Login />} />
+</Routes>
+
+     
+    </div>
   );
 }
 

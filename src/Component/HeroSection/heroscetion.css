@@ -75,3 +75,7 @@
   background-color: #17bf9e; /* Adjust the background color as needed */
   clip-path: circle(50% at 100% 50%);
 }
+.hero__button Button:hover{
+    color: black;
+    background-color: white;
+ }
