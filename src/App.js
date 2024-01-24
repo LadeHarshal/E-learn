@@ -4,7 +4,7 @@
 // function App() {
 //   return (
 //     <div className="App">
-     
+
 //       <Home/>
 //     </div>
 //   );
@@ -12,17 +12,13 @@
 
 // export default App;
 
-
-
-import React from 'react';
-import Layout from './Component/Layout/Layout';
-
+import React from "react";
+import Layout from "./Component/Layout/Layout";
 
 function App() {
   return (
     <div className="App">
-  <Layout></Layout>
-     
+      <Layout></Layout>
     </div>
   );
 }
