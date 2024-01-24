@@ -1,7 +1,7 @@
 import React from "react";
-import profile_img from "../../assets/images/Group 4.png";
 import "./StudentDashboard.css";
 import stud1 from "../../assets/images/Student1.png";
+import profile_img from "../../assets/images/Group 4.png";
 import bell from "../../assets/images/image 25.png";
 import Navbar from "../Navbar/Navbar";
 import CourseList from "../CourseList/CourseList";
