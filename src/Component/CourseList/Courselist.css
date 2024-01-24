@@ -1,0 +1,14 @@
+.Element_list {
+  display: flex;
+}
+.heading {
+  margin-left: 2rem;
+}
+
+.masterdiv {
+  width: 95%;
+}
+.heading h2 {
+  font-weight: 450;
+  font-size: 1.6rem;
+}

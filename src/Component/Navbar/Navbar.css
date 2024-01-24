@@ -1,0 +1,112 @@
+.Container {
+  display: flex;
+  left: 0;
+  flex-direction: column;
+  width: 25%;
+  background: linear-gradient(to right, #17bf9e, #a8ffee);
+  height: 100vh;
+  position: relative;
+}
+
+.icon {
+  margin-inline: auto;
+  margin-bottom: 2.4rem;
+  /* position: absolute;
+  top: 2rem;
+  left: 30%; */
+}
+
+.icon img {
+  height: 100px;
+  width: 100px;
+  position: relative;
+}
+
+.profile-bar {
+  /* position: absolute; */
+  /* left: 30%; */
+  /* top: 20%; */
+  background-color: white;
+  margin: 3px;
+  padding: 0.7rem;
+  border-radius: 8px;
+  display: flex;
+  /* justify-content: space-around; */
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.profile-bar .username {
+  display: flex;
+  flex-direction: column;
+  /* margin: auto; */
+  margin-left: 2rem;
+  text-align: left;
+}
+
+.profile-bar img {
+  height: 50px;
+  width: 50px;
+  margin-left: 2rem;
+  /* margin: auto;   */
+}
+
+.profile-bar h3 {
+  margin-block: auto;
+  font-size: 15px;
+  font-weight: 500;
+}
+.profile-bar h4 {
+  margin-block: auto;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.options ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: -15px;
+}
+
+.options {
+  width: 100%;
+}
+
+.options ul li {
+  background-color: white;
+  padding: 4px;
+  border-radius: 12px;
+  margin: 2px;
+  /* margin-bottom: 2rem; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  text-align: left;
+  margin-left: 15px;
+}
+.bottom h4 {
+  color: white;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.options ul li img {
+  /* padding: 5px; */
+  margin: 3px;
+  height: 24px;
+  width: 26px;
+}
+
+.options ul li p {
+  font-size: 12px;
+  font-weight: 400;
+  margin-left: 4px;
+  margin-block: auto;
+  text-align: left;
+}

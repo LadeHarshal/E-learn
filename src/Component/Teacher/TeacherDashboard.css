@@ -1,0 +1,91 @@
+.TD {
+  display: flex;
+}
+.top {
+  padding: 8px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 2px solid gray;
+}
+
+.top h4 {
+  text-align: center;
+  margin: auto;
+  color: gray;
+}
+.notnav {
+  width: 95%;
+}
+.middle {
+  display: flex;
+  justify-content: space-around;
+  margin: 8px;
+}
+.middle img {
+  height: 1.5rem;
+  width: 1.5rem;
+  margin-block: auto;
+}
+.middle hr {
+  margin-top: -5px;
+  border: none;
+  background: black;
+  height: 5px;
+}
+.head {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 3px;
+}
+.head p {
+  margin-block: auto;
+  margin: 5px;
+  margin-left: 15px;
+  font-size: 1.5rem;
+}
+.CountBox {
+  height: 13rem;
+  width: 17rem;
+  border-radius: 20px;
+  padding: 5px;
+  margin: 5px;
+}
+
+.display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+.CourseCount {
+  background-color: crimson;
+}
+.StudentCount {
+  background-color: olivedrab;
+}
+.SoldCount {
+  background-color: darkslateblue;
+}
+
+.TableHead {
+  text-align: center;
+  background-color: #17bf9e;
+  padding: 5px;
+  font-size: 1.5rem;
+}
+
+.table {
+  margin: 5px;
+  padding: 10px;
+  max-width: 98%;
+  justify-content: center;
+  align-items: center;
+}
+
+.table th {
+  text-align: center;
+}

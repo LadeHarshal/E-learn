@@ -1,0 +1,81 @@
+.hero__content {
+  font-weight: 600;
+  /* line-height: 55px; */
+  /* margin-top: 1.5rem; */
+  margin-inline: auto;
+}
+.learning {
+  font-size: 3rem;
+  color: #3aaadb;
+}
+.hero__content h2 {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.whitebg {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* padding: 8px; */
+  border-radius: 25px;
+  background: white;
+  /* margin-inline: auto; */
+  justify-content: center;
+  align-items: center;
+}
+.bluebg {
+  border-radius: 20px;
+}
+
+.hero_section {
+  background: #17bf9e;
+  margin-top: -0.8rem;
+}
+.clipped-circle-bottom {
+  position: absolute;
+  border-radius: 20;
+  bottom: 0;
+  right: 40%;
+  width: 9rem; /* Adjust the size of the clipped circle as needed */
+  height: 9rem; /* Adjust the size of the clipped circle as needed */
+  background-color: #17bf9e; /* Adjust the background color as needed */
+  clip-path: circle(50% at 50% 100%);
+}
+
+.clipped-circle-left {
+  position: absolute;
+  border-radius: 20;
+  top: 35%;
+  left: 0;
+  width: 9rem; /* Adjust the size of the clipped circle as needed */
+  height: 9rem; /* Adjust the size of the clipped circle as needed */
+  background-color: #17bf9e; /* Adjust the background color as needed */
+  clip-path: circle(50% at 0% 50%);
+}
+
+.clipped-circle-top {
+  position: absolute;
+  border-radius: 20;
+  top: 0;
+  left: 40%;
+  width: 9rem; /* Adjust the size of the clipped circle as needed */
+  height: 9rem; /* Adjust the size of the clipped circle as needed */
+  background-color: #17bf9e; /* Adjust the background color as needed */
+  clip-path: circle(50% at 50% 0%);
+}
+
+.clipped-circle-right {
+  position: absolute;
+  border-radius: 20;
+  top: 35%;
+  right: 0;
+  width: 9rem; /* Adjust the size of the clipped circle as needed */
+  height: 9rem; /* Adjust the size of the clipped circle as needed */
+  background-color: #17bf9e; /* Adjust the background color as needed */
+  clip-path: circle(50% at 100% 50%);
+}
+.hero__button Button:hover{
+    color: black;
+    background-color: white;
+ }
