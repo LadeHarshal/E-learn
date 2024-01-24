@@ -33,7 +33,7 @@ const HeroSection = () => {
               <p>Click the below button to start registration.</p>
             </div>
             <div className="hero__button align-items-center gap-5">
-              <Link to="/StudentDashboard">
+              <Link to="/register">
                 <Button>Get Started</Button>
               </Link>
             </div>
