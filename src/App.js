@@ -15,21 +15,13 @@
 
 
 import React from 'react';
-import {  Route, Routes } from 'react-router-dom';
-import Home from './Pages/Home';
-import Register from './Pages/Register.js'; // Import your Register component
-import Login from './Pages/Login.js';
+import Layout from './Component/Layout/Layout';
+
 
 function App() {
   return (
     <div className="App">
-    
-      <Routes>
-  <Route path="/" element={<Home />} />
-  <Route path="/register" element={<Register />} />
-  <Route path="/login" element={<Login />} />
-</Routes>
-
+  <Layout></Layout>
      
     </div>
   );
