@@ -6,7 +6,9 @@ import TD_Courses from "../../assets/images/TD_Courses.png";
 import TD_Students from "../../assets/images/TD_Students.png";
 import TD_Sold from "../../assets/images/TD_Sold.png";
 // import CoursePage from "../Management/CoursePage";
+
 import "./TeacherDashboard.css";
+
 function TeacherDashboard() {
   return (
     <div className="TD">
