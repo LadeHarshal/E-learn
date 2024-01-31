@@ -7,6 +7,9 @@ import CoursesPage from "../MainCoursePage/CoursesPage";
 import AboutUs from "../Aboutus/Aboutus";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
+import StudentDashboard from "../Student Dashboard/StudentDashboard";
+import StudentHome from "../StudentHome/StudentHome";
+import TeacherDashboard from "../Teacher/TeacherDashboard";
 
 const Router = () => {
   return (
@@ -58,6 +61,18 @@ const Router = () => {
             <Header /> <CoursesPage /> <Footer />
           </>
         }
+      />
+      <Route
+        path="/StudentDashboard"
+        element={<StudentDashboard />}
+      />
+      <Route
+        path="/StudentHome"
+        element={<StudentHome />}
+      />
+      <Route
+        path="/TeacherDashboard"
+        element={<TeacherDashboard />}
       />
     </Routes>
   );
