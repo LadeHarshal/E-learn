@@ -6,7 +6,11 @@ import TD_Courses from "../../assets/images/TD_Courses.png";
 import TD_Students from "../../assets/images/TD_Students.png";
 import TD_Sold from "../../assets/images/TD_Sold.png";
 // import CoursePage from "../Management/CoursePage";
+
 import "./TeacherDashboard.css";
+// import LineGraph from "../Graphs/LineGraph";
+// import PieChart from "../Graphs/PieChart";
+
 function TeacherDashboard() {
   return (
     <div className="TD">
@@ -34,6 +38,8 @@ function TeacherDashboard() {
         {/* Top Bar Ends */}
 
         {/* Middle bar starts */}
+
+        {/* <PieChart /> */}
         <div className="middle">
           {/* first element */}
           <div className="CountBox CourseCount">
