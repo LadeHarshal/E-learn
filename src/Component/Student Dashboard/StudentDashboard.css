@@ -2,12 +2,13 @@
 
 .master_container {
   display: flex;
-  min-width: 100vw;
+  /* min-width: 100vw; */
+  max-width: 100vw;
   min-height: 100vh;
 }
 
 .not_Navbar {
-  width: 75%;
+  width: 72%;
 }
 .top {
   padding: 8px;
@@ -50,36 +51,110 @@
 .welcome {
   display: flex;
   position: relative;
-  width: 95%;
+  width: 98%;
+  justify-content: space-around;
+  margin: 1rem;
 }
 
 .container1 {
-  color: white;
-  margin: 2rem;
-  width: 100%;
-  height: 10rem;
-  background-color: #17bf9e;
-  border-radius: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: black;
+  margin: 3rem;
+  width: 50%;
+  height: 8rem;
+  background-color: #a3e4f2;
+  border-radius: 62px;
+  z-index: -1;
 }
 .text {
-  /* text-align: left; */
-  padding: 2.2rem;
+  text-align: left;
+  padding: 2rem;
+  padding-left: 2.2rem;
 }
 
 .text h2 {
-  font-size: 1.8rem;
+  font-size: 1.4rem;
 }
 .text h3 {
-  font-size: 1.4rem;
+  font-size: 1.1rem;
   font-weight: 400;
 }
 .student_pic {
-  margin: 1.4rem;
-  position: absolute;
-  right: -3rem;
+  /* text-align: right  ; */
+  justify-content: right;
+  z-index: 1;
+  border-radius: 50%;
 }
 
 .student_pic img {
-  height: 11rem;
-  width: 11rem;
+  height: 10rem;
+  width: 10rem;
+  margin-right: -2rem;
+  box-shadow: #a8e6f4d9 0 0 2px 20px;
+  border-radius: 50%;
+}
+
+.stats {
+  width: 50%;
+  display: flex;
+  margin: 5px;
+}
+.courses-completed {
+  background-color: #a3e4f2;
+  box-shadow: #a8e6f4ae 0 0 8px 6px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 46%;
+  max-width: 48%;
+  height: 88%;
+  margin: 1.4rem;
+  padding: 4px;
+  text-align: center;
+}
+.courses-completed .title {
+  font-size: 17px;
+  padding-block: 0.6rem;
+  font-weight: 500;
+  border-bottom: solid 1px gray;
+}
+.courses-completed .number {
+  margin-block: auto;
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(61, 61, 61);
+}
+
+.courses-enrolled {
+  background-color: #a3e4f2;
+  box-shadow: rgb(224, 224, 224) 0 0 8px 6px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  width: 46%;
+  max-width: 48%;
+  height: 88%;
+  margin: 1.4rem;
+  padding: 4px;
+  text-align: center;
+}
+.courses-enrolled .title {
+  font-size: 17px;
+  padding-block: 0.6rem;
+  font-weight: 500;
+  border-bottom: solid 1px gray;
+}
+.courses-enrolled .number {
+  margin-block: auto;
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(61, 61, 61);
+}
+
+/* GRaphs Section */
+.graphs {
+  margin-block: 2rem;
+  max-width: 100%;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import logo from "../../assets/images/Group 5.png";
+import logo from "../../assets/images/Logo_DiamondBkg.png";
 import Home_logo from "../../assets/images/Home (1).png";
 import MYCourses_logo from "../../assets/images/Laptop.png";
 import BrowseCourses_logo from "../../assets/images/Book.png";

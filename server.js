@@ -21,11 +21,13 @@ mongoose.connection.on("connected", () => {
 });
 
 // Schema
+
 const Schema = mongoose.Schema;
 const Course_List_Schema = new Schema(
   {
     name: String, // Name of the course
     description: String, // Description of the course
+    image: String, //Display image for CourseCard
     tags: [String], // Array of tags related to the course
     videos: [String], // Array of video URLs or references
     createdAt: Date, // Date when the course was created
@@ -35,20 +37,21 @@ const Course_List_Schema = new Schema(
 );
 
 //Model
+
 const Cousre_List = mongoose.model("Course_List", Course_List_Schema);
 
 //Saving Data to MongoDB
-const data = {
-  name: "Python Masterclass",
-  description:
-    "Learn basics of python in 2 weeks Get your hand on experience with our innovative projects after the 2 weeks session and grt a certificate of completion upon the course completion after 2 months of interactive training and learning.",
-  tags: ["python", "coding", "bootcamp"], // Array of tags related to the course
-  videos: ["1", "2"], // Array of video URLs or references
-  createdAt: "", // Date when the course was created
-  updatedAt: "", // Date when the course was last updated
-};
+// const data = {
+//   name: "Python Masterclass",
+//   description:
+//     "Learn basics of python in 2 weeks Get your hand on experience with our innovative projects after the 2 weeks session and grt a certificate of completion upon the course completion after 2 months of interactive training and learning.",
+//   tags: ["python", "coding", "bootcamp"], // Array of tags related to the course
+//   videos: ["1", "2"], // Array of video URLs or references
+//   createdAt: "", // Date when the course was created
+//   updatedAt: "", // Date when the course was last updated
+// };
 
-const newCourse = new Cousre_List(data);
+// const newCourse = new Cousre_List(data);
 
 // Save the newCourse instance to the database
 
@@ -63,17 +66,22 @@ const newCourse = new Cousre_List(data);
 
 // Saving Data using save()
 
-app.use(morgan("tiny"));
+// app.use(morgan("tiny"));
 
 //Routes inside our Server
 /* eslint-disable */
 /* prettier-ignore */
-app.get("/api/", (req, res) => {
+app.get("/api/course_lists", (req, res) => {
   Cousre_List.find({})
-  .then((data) => {
-    console.log("Data", data)
-  });
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    });
 });
+
 /* eslint-enable */
 app.get("/api/name", (req, res) => {
   res.json(data);
