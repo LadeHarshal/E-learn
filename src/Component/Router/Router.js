@@ -3,52 +3,31 @@ import { Routes, Route } from "react-router-dom";
 import Home from "../../Pages/Home";
 import Register from "../../Pages/Register";
 import Login from "../../Pages/Login";
-import DemoDash from "../../Pages/DemoDash";
-import Header from "../Header/Header";
-import Footer from "../Footer/Footer";
-import StudentDashboard from "../Student Dashboard/StudentDashboard";
-import TeacherDashboard from "../Teacher/TeacherDashboard";
+import CoursesPage from "../MainCoursePage/CoursesPage";
+import AboutUs from "../Aboutus/Aboutus";
 
 const Router = () => {
   return (
     <Routes>
       <Route
-        path="/"
-        element={
-          <>
-            <Header />
-            <Home />
-            <Footer />
-          </>
-        }
+        path="/home"
+        element={<Home />}
       />
       <Route
         path="/register"
-        element={
-          <>
-            <Header />
-            <Register />
-            <Footer />
-          </>
-        }
+        element={<Register />}
       />
       <Route
         path="/login"
-        element={
-          <>
-            <Header />
-            <Login />
-            <Footer />
-          </>
-        }
+        element={<Login />}
       />
       <Route
-        path="/StudentDashboard"
-        element={<StudentDashboard role="Student" />}
+        path="/aboutus"
+        element={<AboutUs />}
       />
       <Route
-        path="/TeacherDashboard"
-        element={<TeacherDashboard role="Teacher" />}
+        path="/courses"
+        element={<CoursesPage />}
       />
     </Routes>
   );

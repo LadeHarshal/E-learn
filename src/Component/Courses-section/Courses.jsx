@@ -5,6 +5,8 @@ import courseImg2 from "../../assets/images/graphics-design.png";
 import courseImg3 from "../../assets/images/web-development.png";
 import "./courses.css";
 import CourseCard from "./CourseCard";
+import { Link } from "react-router-dom";
+
 
 const coursesData = [
   {
@@ -49,7 +51,9 @@ const Courses = () => {
               </div>
 
               <div className="w-50 text-end">
+                <Link to= '/courses'>
                 <button className="btn">See All</button>
+                </Link>
               </div>
             </div>
           </Col>

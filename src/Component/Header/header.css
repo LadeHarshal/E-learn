@@ -6,6 +6,7 @@
   height: 120px;
   line-height: 50px;
 }
+
 .nav__list {
   margin: 0;
   padding: 0;
@@ -41,4 +42,11 @@
 .mobile__menu span i {
   font-size: 1.4rem;
   color: black;
+}
+
+.header h2 {
+  color: black;
+}
+.main__heading {
+  text-decoration: none;
 }
