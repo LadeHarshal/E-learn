@@ -5,29 +5,59 @@ import Register from "../../Pages/Register";
 import Login from "../../Pages/Login";
 import CoursesPage from "../MainCoursePage/CoursesPage";
 import AboutUs from "../Aboutus/Aboutus";
+import Header from "../Header/Header";
+import Footer from "../Footer/Footer";
 
 const Router = () => {
   return (
     <Routes>
       <Route
+        path="/"
+        element={
+          <>
+            <Header /> <Home /> <Footer />
+          </>
+        }
+      />
+      <Route
         path="/home"
-        element={<Home />}
+        element={
+          <>
+            <Header /> <Home /> <Footer />
+          </>
+        }
       />
       <Route
         path="/register"
-        element={<Register />}
+        element={
+          <>
+            <Header /> <Register /> <Footer />
+          </>
+        }
       />
       <Route
         path="/login"
-        element={<Login />}
+        element={
+          <>
+            <Header /> <Login /> <Footer />
+          </>
+        }
       />
       <Route
         path="/aboutus"
-        element={<AboutUs />}
+        element={
+          <>
+            <Header /> <AboutUs /> <Footer />
+          </>
+        }
       />
       <Route
         path="/courses"
-        element={<CoursesPage />}
+        element={
+          <>
+            <Header /> <CoursesPage /> <Footer />
+          </>
+        }
       />
     </Routes>
   );
