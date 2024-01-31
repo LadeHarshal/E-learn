@@ -1,20 +1,21 @@
 import React from "react";
 import { Container, Button } from "reactstrap";
+import { Link } from 'react-router-dom'; 
 import logo from "../../assets/images/primine_software_pvt_ltd_logo.jpeg";
 import "./header.css";
 
 const navLinks = [
   {
     display: "Home",
-    url: "/",
+    url: "/home",
   },
   {
     display: "Courses",
-    url: "#",
+    url: "/courses",
   },
   {
     display: "About Us",
-    url: "#",
+    url: "/aboutus",
   },
 ];
 
@@ -23,13 +24,13 @@ const Header = () => {
     <header className="header">
       <Container>
         <div className="navigation d-flex align-items-center justify-content-between">
-          <h2 className="d-flex align-items-center">
+        <Link to="/home" className="d-flex align-items-center main__heading">
             <img
               src={logo}
               alt=""
             ></img>
-            E-Learning Platform
-          </h2>
+            <h2>E-Learning Platform</h2>
+          </Link>
 
           <div className="nav d-flex align-items-center gap-5">
             <div className="nav__menu">
