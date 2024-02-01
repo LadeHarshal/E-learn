@@ -1,0 +1,26 @@
+.bar-graph {
+  width: 40%;
+  display: inline-block;
+  margin: 3rem;
+}
+
+.pie-chart {
+  width: 40%;
+  display: inline-block;
+  margin: 3rem;
+  height: 15rem;
+}
+
+.graphs-div {
+  display: flex;
+  max-width: 95%;
+}
+
+.ChartsPage {
+  justify-content: center;
+  align-items: center;
+}
+.ChartsPage h2 {
+  margin-left: 2rem;
+  font-size: 2rem;
+}
