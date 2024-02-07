@@ -10,10 +10,12 @@ import Footer from "../Footer/Footer";
 import StudentDashboard from "../Student Dashboard/StudentDashboard";
 import StudentHome from "../StudentHome/StudentHome";
 import TeacherDashboard from "../Teacher/TeacherDashboard";
+import ClientDashboard from "../Client/ClientDashboard";
 
 const Router = () => {
   return (
     <Routes>
+      {/* Main Path */}
       <Route
         path="/"
         element={
@@ -22,6 +24,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for home page */}
       <Route
         path="/home"
         element={
@@ -30,6 +34,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Registration page */}
       <Route
         path="/register"
         element={
@@ -38,6 +44,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Login page */}
       <Route
         path="/login"
         element={
@@ -46,6 +54,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for about us page */}
       <Route
         path="/aboutus"
         element={
@@ -54,6 +64,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Courses Page */}
       <Route
         path="/courses"
         element={
@@ -62,17 +74,31 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for student Dashboard */}
       <Route
         path="/StudentDashboard"
         element={<StudentDashboard />}
       />
+
+      {/* Path for student Home */}
+
       <Route
         path="/StudentHome"
         element={<StudentHome />}
       />
+
+      {/* Path for Teacher Dashboard */}
+
       <Route
         path="/TeacherDashboard"
         element={<TeacherDashboard />}
+      />
+
+      {/* Path for Client Dashboard */}
+      <Route
+        path="/ClientDashboard"
+        element={<ClientDashboard />}
       />
     </Routes>
   );
