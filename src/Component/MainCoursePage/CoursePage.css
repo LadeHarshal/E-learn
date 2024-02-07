@@ -6,23 +6,51 @@
 .background-image {
   position: relative;
   width: 100%;
-  height: 450px; /* Adjust height as needed */
+  height: 600px; /* Adjust height as needed */
   background-image: url('../../assets/images/HeadingBackground.png');
   background-size: cover;
   background-position: center;
+  overflow: hidden; /* Ensure the overlay doesn't extend beyond the container */
 }
+
+.background-image::before {
+  content: ""; /* Create a pseudo-element */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1); /* Black with 50% opacity */
+}
+
 
 .courses-heading {
   position: absolute;
-  top: 50%;
-  left: 70%;
-  transform: translate(-50%, -50%);
-  color: white; /* Change color as needed */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add text shadow for better readability */
+  top: 40%;
+  left: 50%; /* Center the heading horizontally */
+  color: rgb(40, 39, 39); /* Change color to white for better contrast */
+  text-shadow: 5px 2px 4px rgba(253, 251, 251, 0.5); /* Add subtle text shadow */
   z-index: 1;
   text-align: center;
-  
+  font-size: 43px; /* Increase font size */
+  font-weight: bold; /* Make the font bold */
+  letter-spacing: 2px; /* Add letter spacing for better readability */
+  text-transform: uppercase; /* Convert text to uppercase */
+  animation: fadeInDown 1s ease; /* Add animation for fade-in effect */
+
 }
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px); /* Start animation from 50px above */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0); /* End animation at its original position */
+  }
+}
+
 
 /* CourseCard css*/
 

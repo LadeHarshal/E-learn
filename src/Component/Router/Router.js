@@ -10,6 +10,9 @@ import Footer from "../Footer/Footer";
 import StudentDashboard from "../Student Dashboard/StudentDashboard";
 import StudentHome from "../StudentHome/StudentHome";
 import TeacherDashboard from "../Teacher/TeacherDashboard";
+import ContactUs from "../ContactUs/ContactUs";
+import BlogPage from "../Blog/BlogPage";
+import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 
 const Router = () => {
   return (
@@ -63,6 +66,30 @@ const Router = () => {
         }
       />
       <Route
+        path="/contactus"
+        element={
+          <>
+            <Header /> <ContactUs/> <Footer />
+          </>
+        }
+      />
+       <Route
+        path="/blog"
+        element={
+          <>
+            <Header /> <BlogPage/> <Footer />
+          </>
+        } />
+
+<Route
+        path="/privacypolicy"
+        element={
+          <>
+            <Header /> <PrivacyPolicy/> <Footer />
+          </>
+        } />
+
+      <Route  
         path="/StudentDashboard"
         element={<StudentDashboard />}
       />

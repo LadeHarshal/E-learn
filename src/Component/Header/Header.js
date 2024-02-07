@@ -47,7 +47,7 @@ const Header = () => {
             </div>
 
             <div className="button d-flex align-items-center gap-5">
-              <Button> Contact Us</Button>
+             <Link to="/contactus"> <Button> Contact Us</Button></Link>
             </div>
           </div>
         </div>
