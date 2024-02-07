@@ -13,6 +13,7 @@ import TeacherDashboard from "../Teacher/TeacherDashboard";
 import ContactUs from "../ContactUs/ContactUs";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
+import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs"
 
 const Router = () => {
   return (
@@ -53,7 +54,7 @@ const Router = () => {
         path="/aboutus"
         element={
           <>
-            <Header /> <AboutUs /> <Footer />
+            <Header /> <ExtendedAboutUs /> <Footer />
           </>
         }
       />
