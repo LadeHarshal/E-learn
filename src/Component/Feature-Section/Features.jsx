@@ -34,7 +34,7 @@ const Features = () => {
                   <i class={item.icon}></i>
                 </h2>
                 <h6>{item.title}</h6>
-                <p>{item.desc}</p>
+                <p className="parag">{item.desc}</p>
               </div>
             </Col>
           ))}

@@ -34,7 +34,7 @@ const Testimonials = () => {
                       <h6 className="mb-3 fw-bold">
                         Excellent course of materials
                       </h6>
-                      <p>
+                      <p className="para">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Facilis saepe id voluptas molestiae. Aperiam corrupti
                         voluptas earum at molestiae neque!
@@ -52,7 +52,7 @@ const Testimonials = () => {
                       <h6 className="mb-3 fw-bold">
                         Excellent course of materials
                       </h6>
-                      <p>
+                      <p className="para">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Facilis saepe id voluptas molestiae. Aperiam corrupti
                         voluptas earum at molestiae neque!
@@ -70,7 +70,7 @@ const Testimonials = () => {
                       <h6 className="mb-3 fw-bold">
                         Excellent course of materials
                       </h6>
-                      <p>
+                      <p className="para">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit.
                         Facilis saepe id voluptas molestiae. Aperiam corrupti
                         voluptas earum at molestiae neque!
