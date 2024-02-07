@@ -20,14 +20,14 @@ const footerQuickLinks = [
 
   {
     display: "Blog",
-    url: "#",
+    url: "/blog",
   },
 ];
 
 const footerInfoLinks = [
   {
     display: "Privacy Policy",
-    url: "#",
+    url: "/privacypolicy",
   },
   {
     display: "Membership",
