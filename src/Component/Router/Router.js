@@ -4,7 +4,6 @@ import Home from "../../Pages/Home";
 import Register from "../../Pages/Register";
 import Login from "../../Pages/Login";
 import CoursesPage from "../MainCoursePage/CoursesPage";
-import AboutUs from "../Aboutus/Aboutus";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import StudentDashboard from "../Student Dashboard/StudentDashboard";
@@ -14,7 +13,6 @@ import ContactUs from "../ContactUs/ContactUs";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs"
-
 import Termsofservice from "../Termsofservice/Termsofservice";
 const Router = () => {
   return (

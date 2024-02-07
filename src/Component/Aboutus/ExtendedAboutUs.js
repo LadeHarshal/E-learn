@@ -5,6 +5,8 @@ import aboutImg from "../../assets/images/about-us.png";
 import missionImg from "../../assets/images/misssion.jpg";
 import valuesImg from "../../assets/images/value.png";
 import CountUp from "react-countup";
+import Newsletter from "../Newsletter/Newsletter.jsx";
+
 
 const AboutUs = () => {
   return (
@@ -108,7 +110,11 @@ const AboutUs = () => {
           </Col>
         </Row>
       </Container>
+      <Newsletter/>
+
     </section>
+
+    
   );
 };
 
