@@ -45,6 +45,7 @@
     color: #666;
     line-height: 1.8;
     font-weight: 400;
+    text-align: justify;
   }
   
   .about__counter {
@@ -93,6 +94,8 @@
     line-height: 1.8;
     font-weight: 400;
     margin-left: 85px;
+    text-align: justify;
+
 
   }
   
@@ -107,10 +110,12 @@
   .values__content h3 {
     font-size: 32px;
     font-weight: 700;
-    color: #333;
+    color: black;
     margin-bottom: 20px;
     margin-top: 80px;
     margin-left: 100px;
+    text-align: justify;
+
 
   }
   
@@ -126,7 +131,13 @@
     margin-left: 85px;
     font-weight: 400;
     font-size: 18px;
+    text-align: justify;
+
   }  
+  span{
+    color: black;
+    font-weight: 500;
+  }
   
   /* Responsive */
   @media (max-width: 991.98px) {
@@ -189,4 +200,5 @@
     transform: scale(1.05); /* Zoom effect on hover */
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Darker shadow on hover */
   }
+ 
   
