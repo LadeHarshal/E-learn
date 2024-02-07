@@ -13,7 +13,7 @@ import TeacherDashboard from "../Teacher/TeacherDashboard";
 import ContactUs from "../ContactUs/ContactUs";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-
+import Termsofservice from "../Termsofservice/Termsofservice";
 const Router = () => {
   return (
     <Routes>
@@ -88,6 +88,14 @@ const Router = () => {
             <Header /> <PrivacyPolicy/> <Footer />
           </>
         } />
+<Route
+        path="/Termsofservice"
+        element={
+          <>
+            <Header /> <Termsofservice/> <Footer />
+          </>
+        } />
+
 
       <Route  
         path="/StudentDashboard"
