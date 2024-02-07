@@ -1,7 +1,11 @@
 .single__feature h2 i {
-  font-size: 2.5rem;
+  font-size: 4rem;
 }
 
 .single__feature h6 {
   font-weight: 600;
+  font-size: 24px;
+}
+.parag{
+  font-size: 20px;
 }

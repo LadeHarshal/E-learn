@@ -100,11 +100,11 @@ const AboutUs = () => {
             <div className="values__content">
               <h3>Our Values</h3>
               <ul>
-              <li>Excellence: We strive for excellence in everything we do.</li>
-                <li>Innovation: We embrace innovation to continuously improve and adapt.</li>
-                <li>Inclusivity: We foster an inclusive learning environment where diversity is celebrated.</li>
-                <li>Collaboration: We believe in the power of collaboration and teamwork.</li>
-                <li>Integrity: We uphold the highest standards of integrity and ethics.</li>
+              <li><span>Excellence:</span> We strive for excellence in everything we do.</li>
+                <li><span>Innovation:</span> We embrace innovation to continuously improve and adapt.</li>
+                <li><span>Inclusivity:</span> We foster an inclusive learning environment where diversity is celebrated.</li>
+                <li><span>Collaboration: </span>We believe in the power of collaboration and teamwork.</li>
+                <li><span>Integrity:</span> We uphold the highest standards of integrity and ethics.</li>
               </ul>
             </div>
           </Col>

@@ -4,6 +4,7 @@
 
 .choose__content {
   padding-right: 50px;
+  text-align: justify;
 }
 
 .choose__content h2 {
@@ -18,7 +19,10 @@
   height: 100%;
   z-index: 777;
 }
+.para{
+  font-size: 19px;
 
+}
 .play__icon {
   position: absolute;
   top: 50%;
