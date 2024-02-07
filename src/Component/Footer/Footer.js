@@ -41,7 +41,7 @@ const footerInfoLinks = [
 
   {
     display: "Terms of Service",
-    url: "#",
+    url: "/Termsofservice",
   },
 ];
 
@@ -88,7 +88,7 @@ const Footer = () => {
           </Col>
 
           <Col lg="3" md="6" className="mb-4">
-            <h6 className="fw-bold">Explore</h6>
+          <h6 className="fw-bold fs-5">Explore</h6>
             <ListGroup className="link__list">
               {footerQuickLinks.map((item, index) => (
                 <ListGroupItem key={index} className="border-0 ps-0 link__item">
@@ -100,7 +100,7 @@ const Footer = () => {
           </Col>
 
           <Col lg="3" md="6" className="mb-4">
-            <h6 className="fw-bold">Information</h6>
+            <h6 className="fw-bold fs-5">Information</h6>
             <ListGroup className="link__list">
               {footerInfoLinks.map((item, index) => (
                 <ListGroupItem key={index} className="border-0 ps-0 link__item">
@@ -112,7 +112,7 @@ const Footer = () => {
           </Col>
 
           <Col lg="3" md="6">
-            <h6 className="fw-bold">Get in Touch</h6>
+            <h6 className="fw-bold fs-5">Get in Touch</h6>
 
             <p>Address:PSPL, Nagpur</p>
             <p> Phone: +91-1234567890 </p>

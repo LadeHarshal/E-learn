@@ -4,7 +4,6 @@ import Home from "../../Pages/Home";
 import Register from "../../Pages/Register";
 import Login from "../../Pages/Login";
 import CoursesPage from "../MainCoursePage/CoursesPage";
-import AboutUs from "../Aboutus/Aboutus";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import StudentDashboard from "../Student Dashboard/StudentDashboard";
@@ -13,7 +12,8 @@ import TeacherDashboard from "../Teacher/TeacherDashboard";
 import ContactUs from "../ContactUs/ContactUs";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-
+import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs"
+import Termsofservice from "../Termsofservice/Termsofservice";
 const Router = () => {
   return (
     <Routes>
@@ -53,7 +53,7 @@ const Router = () => {
         path="/aboutus"
         element={
           <>
-            <Header /> <AboutUs /> <Footer />
+            <Header /> <ExtendedAboutUs /> <Footer />
           </>
         }
       />
@@ -88,6 +88,14 @@ const Router = () => {
             <Header /> <PrivacyPolicy/> <Footer />
           </>
         } />
+<Route
+        path="/Termsofservice"
+        element={
+          <>
+            <Header /> <Termsofservice/> <Footer />
+          </>
+        } />
+
 
       <Route  
         path="/StudentDashboard"
