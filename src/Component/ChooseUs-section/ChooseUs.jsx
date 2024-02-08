@@ -15,7 +15,7 @@ const ChooseUs = () => {
           <Col lg="6" md="6">
             <div className="choose__content">
               <h2>Why Choose Us</h2>
-              <p>
+              <p className="para">
               Choosing us means selecting a pathway to excellence. Our commitment to your success is reflected in our meticulously curated courses, designed to meet the evolving demands of today's world. Engage with top-notch instructors, embrace innovative learning methodologies, and access a wealth of resources tailored to your educational journey. We prioritize your growth, providing a supportive community and real-world skills that empower you to excel. Join us and embark on a transformative educational experience – because your success is our mission.
               </p>
             </div>
