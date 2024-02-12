@@ -79,3 +79,10 @@
     color: black;
     background-color: white;
  }
+ .hero__button Button{
+  font-weight: 600;
+ }
+ .hero_img{
+  margin-left:150px;
+  margin-bottom: 50px;
+ }

@@ -10,7 +10,11 @@ import Footer from "../Footer/Footer";
 import StudentDashboard from "../Student Dashboard/StudentDashboard";
 import StudentHome from "../StudentHome/StudentHome";
 import TeacherDashboard from "../Teacher/TeacherDashboard";
+import ContactUs from "../ContactUs/ContactUs";
 import ClientDashboard from "../Client/ClientDashboard";
+import BlogPage from "../Blog/BlogPage";
+import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
+import PdfViewer from "../PDF_Viewer/PdfViewer";
 
 const Router = () => {
   return (
@@ -74,8 +78,32 @@ const Router = () => {
           </>
         }
       />
+      <Route
+        path="/contactus"
+        element={
+          <>
+            <Header /> <ContactUs /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/blog"
+        element={
+          <>
+            <Header /> <BlogPage /> <Footer />
+          </>
+        }
+      />
 
-      {/* Path for student Dashboard */}
+      <Route
+        path="/privacypolicy"
+        element={
+          <>
+            <Header /> <PrivacyPolicy /> <Footer />
+          </>
+        }
+      />
+
       <Route
         path="/StudentDashboard"
         element={<StudentDashboard />}
@@ -99,6 +127,11 @@ const Router = () => {
       <Route
         path="/ClientDashboard"
         element={<ClientDashboard />}
+      />
+
+      <Route
+        path="/PdfViewer"
+        element={<PdfViewer />}
       />
     </Routes>
   );

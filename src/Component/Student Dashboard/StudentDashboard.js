@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./StudentDashboard.css";
 import stud1 from "../../assets/images/Student1.png";
 import profile_img from "../../assets/images/Group 4.png";
@@ -9,6 +10,22 @@ import CourseList from "../CourseList/CourseList";
 import ChartsPage from "../Graphs/ChartsPage";
 // import Sidebar from "../Navbar/Sidebar";
 function StudentDashboard() {
+  const [trial, setTrial] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/trial");
+        setTrial(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(trial);
+  
   return (
     <div className="master_container">
       {/* Navbar */}
@@ -67,11 +84,13 @@ function StudentDashboard() {
         </div>
 
         {/* Courses Enrolled */}
-        <div className="list1">
-          <CourseList />
-        </div>
+        <div className="list1">{/* <CourseList /> */}</div>
 
         {/* Tutorials */}
+        <img
+          src=""
+          alt="img1"
+        />
       </div>
     </div>
   );
