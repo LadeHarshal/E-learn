@@ -4,7 +4,6 @@ import Home from "../../Pages/Home";
 import Register from "../../Pages/Register";
 import Login from "../../Pages/Login";
 import CoursesPage from "../MainCoursePage/CoursesPage";
-import AboutUs from "../Aboutus/Aboutus";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import StudentDashboard from "../Student Dashboard/StudentDashboard";
@@ -16,6 +15,8 @@ import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
 import PdfViewer from "../PDF_Viewer/PdfViewer";
 
+import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs";
+import Termsofservice from "../Termsofservice/Termsofservice";
 const Router = () => {
   return (
     <Routes>
@@ -64,7 +65,7 @@ const Router = () => {
         path="/aboutus"
         element={
           <>
-            <Header /> <AboutUs /> <Footer />
+            <Header /> <ExtendedAboutUs /> <Footer />
           </>
         }
       />
@@ -105,6 +106,15 @@ const Router = () => {
       />
 
       <Route
+        path="/Termsofservice"
+        element={
+          <>
+            <Header /> <Termsofservice /> <Footer />
+          </>
+        }
+      />
+
+      <Route
         path="/StudentDashboard"
         element={<StudentDashboard />}
       />
@@ -127,11 +137,6 @@ const Router = () => {
       <Route
         path="/ClientDashboard"
         element={<ClientDashboard />}
-      />
-
-      <Route
-        path="/PdfViewer"
-        element={<PdfViewer />}
       />
     </Routes>
   );

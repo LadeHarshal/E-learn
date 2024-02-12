@@ -29,7 +29,7 @@ const AboutUs = () => {
           >
             <div className="about__content">
               <h2>About Us</h2>
-              <p>
+              <p className="para">
                 Welcome to our E-Learning Platform, where knowledge meets
                 innovation. We are passionate about transforming education by
                 providing a dynamic and interactive online learning experience.

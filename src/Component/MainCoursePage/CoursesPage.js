@@ -1,11 +1,13 @@
 // CoursesPage.js
 import React from "react";
-import { Container, Row, Col } from "reactstrap";
+import { Container } from "reactstrap";
 import CourseCard from "./CourseCard"; // Import the CourseCard component
 import "./CoursePage.css"; // Import CSS for styling
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Newsletter from "../Newsletter/Newsletter.jsx";
+
 
 import Img1 from './../../assets/images/Course 1.1 .jpg'
 import Img2 from './../../assets/images/Course 1.2 .jpg'
@@ -177,7 +179,10 @@ const CoursesPage = () => {
           ))}
         </Slider>
       </Container>
+      <Newsletter/>
+
     </div>
+    
   );
 };
 

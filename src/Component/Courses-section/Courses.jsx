@@ -46,7 +46,7 @@ const Courses = () => {
             <div className="course__top d-flex justify-content-between align-items-center">
               <div className="course__top__left w-50">
                 <h2>Our Popular Courses</h2>
-                <p>Immerse yourself in a world of knowledge with our diverse range of courses. From cutting-edge technology to creative arts, our featured courses cater to every interest and skill level. Learn from industry experts, engage in hands-on projects, and embark on a journey of continuous learning. Join our community and unlock new opportunities for personal and professional growth. Your learning adventure begins here!
+                <p className="para">Immerse yourself in a world of knowledge with our diverse range of courses. From cutting-edge technology to creative arts, our featured courses cater to every interest and skill level. Learn from industry experts, engage in hands-on projects, and embark on a journey of continuous learning. Join our community and unlock new opportunities for personal and professional growth. Your learning adventure begins here!
                 </p>
               </div>
 
