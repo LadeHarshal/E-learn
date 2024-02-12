@@ -10,13 +10,17 @@ import StudentDashboard from "../Student Dashboard/StudentDashboard";
 import StudentHome from "../StudentHome/StudentHome";
 import TeacherDashboard from "../Teacher/TeacherDashboard";
 import ContactUs from "../ContactUs/ContactUs";
+import ClientDashboard from "../Client/ClientDashboard";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs"
+import PdfViewer from "../PDF_Viewer/PdfViewer";
+
+import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs";
 import Termsofservice from "../Termsofservice/Termsofservice";
 const Router = () => {
   return (
     <Routes>
+      {/* Main Path */}
       <Route
         path="/"
         element={
@@ -25,6 +29,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for home page */}
       <Route
         path="/home"
         element={
@@ -33,6 +39,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Registration page */}
       <Route
         path="/register"
         element={
@@ -41,6 +49,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Login page */}
       <Route
         path="/login"
         element={
@@ -49,6 +59,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for about us page */}
       <Route
         path="/aboutus"
         element={
@@ -57,6 +69,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Courses Page */}
       <Route
         path="/courses"
         element={
@@ -69,45 +83,60 @@ const Router = () => {
         path="/contactus"
         element={
           <>
-            <Header /> <ContactUs/> <Footer />
+            <Header /> <ContactUs /> <Footer />
           </>
         }
       />
-       <Route
+      <Route
         path="/blog"
         element={
           <>
-            <Header /> <BlogPage/> <Footer />
+            <Header /> <BlogPage /> <Footer />
           </>
-        } />
+        }
+      />
 
-<Route
+      <Route
         path="/privacypolicy"
         element={
           <>
-            <Header /> <PrivacyPolicy/> <Footer />
+            <Header /> <PrivacyPolicy /> <Footer />
           </>
-        } />
-<Route
+        }
+      />
+
+      <Route
         path="/Termsofservice"
         element={
           <>
-            <Header /> <Termsofservice/> <Footer />
+            <Header /> <Termsofservice /> <Footer />
           </>
-        } />
+        }
+      />
 
-
-      <Route  
+      <Route
         path="/StudentDashboard"
         element={<StudentDashboard />}
       />
+
+      {/* Path for student Home */}
+
       <Route
         path="/StudentHome"
         element={<StudentHome />}
       />
+
+      {/* Path for Teacher Dashboard */}
+
       <Route
         path="/TeacherDashboard"
         element={<TeacherDashboard />}
+      />
+
+      {/* Path for Client Dashboard */}
+      <Route
+        path="/ClientDashboard"
+        element={<ClientDashboard />}
       />
     </Routes>
   );

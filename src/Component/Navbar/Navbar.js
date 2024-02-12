@@ -6,6 +6,7 @@ import MYCourses_logo from "../../assets/images/Laptop.png";
 import BrowseCourses_logo from "../../assets/images/Book.png";
 import EditProfile_logo from "../../assets/images/ProfileEdit.png";
 import profile_img from "../../assets/images/Group 4.png";
+import { Link } from "react-router-dom";
 
 function Navbar(props) {
   return (
