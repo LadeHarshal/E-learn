@@ -1,0 +1,72 @@
+/* TermsOfService.css */
+
+.terms-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 1.5rem;
+    color: #555;
+    margin-top: 30px;
+    margin-bottom: 15px;
+  }
+  
+  p, ul {
+    font-size: 1rem;
+    color: #666;
+    line-height: 1.6;
+  }
+  
+  ul {
+    margin-left: 20px;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Add some spacing between sections */
+  .section-title + p,
+  .section-title + ul {
+    margin-top: 10px;
+  }
+  
+  /* Highlight payment terms */
+  .payment-terms {
+    font-weight: bold;
+    color: #17bf9e; /* Green */
+  }
+  
+  /* User conduct list */
+  .user-conduct {
+    margin-top: 20px;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .terms-container {
+      padding: 10px;
+    }
+  
+    .title {
+      font-size: 1.5rem;
+    }
+  
+    .section-title {
+      font-size: 1.25rem;
+    }
+  
+    p, ul {
+      font-size: 0.9rem;
+    }
+  }
+  

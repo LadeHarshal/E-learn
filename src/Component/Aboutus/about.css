@@ -12,6 +12,10 @@
 
 .about__content {
   padding-left: 80px;
+  text-align: justify;
+}
+.para{
+font-size: 19px;
 }
 
 .about__img img {
