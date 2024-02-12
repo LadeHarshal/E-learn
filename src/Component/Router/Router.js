@@ -13,7 +13,6 @@ import ContactUs from "../ContactUs/ContactUs";
 import ClientDashboard from "../Client/ClientDashboard";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-import PdfViewer from "../PDF_Viewer/PdfViewer";
 
 import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs";
 import Termsofservice from "../Termsofservice/Termsofservice";
