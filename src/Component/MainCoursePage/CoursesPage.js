@@ -1,4 +1,3 @@
-// CoursesPage.js
 import React from "react";
 import { Container } from "reactstrap";
 import CourseCard from "./CourseCard"; // Import the CourseCard component
@@ -8,7 +7,6 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import Newsletter from "../Newsletter/Newsletter.jsx";
 
-
 import Img1 from './../../assets/images/Course 1.1 .jpg'
 import Img2 from './../../assets/images/Course 1.2 .jpg'
 import Img3 from './../../assets/images/Course 1.3 .jpg'
@@ -16,14 +14,11 @@ import Img4 from './../../assets/images/Course 1.4 .jpg'
 import Img5 from './../../assets/images/course 1.5 .jpg'
 import Img6 from './../../assets/images/Course 1.6 .jpg'
 import Img7 from './../../assets/images/Course 1.7 .jpg'
-import Img8 from './../../assets/images/Course 1.8 .jpg'
+import Img8 from './../../assets/images/course 1.8.webp'
 import Img9 from './../../assets/images/Course 1.9 .jpg'
 import Img10 from './../../assets/images/Course 1.10 .jpg'
 import Img11 from './../../assets/images/Course 1.11.jpg'
 import Img12 from './../../assets/images/Course 1.12 .jpg'
-
-
-
 
 const courses = [
   {
@@ -42,7 +37,6 @@ const courses = [
     price: '$69.99',
     reviews: 4.8,
   },
-  
   {
     id: 3,
     title: 'Certificate Course on Adobe Photoshop',
@@ -168,6 +162,7 @@ const CoursesPage = () => {
             <div key={course.id} className="mb-4">
               <div className="d-flex justify-content-center mt-3">
                 <CourseCard
+                  id={course.id}
                   title={course.title}
                   image={course.image}
                   description={course.description}
@@ -180,9 +175,7 @@ const CoursesPage = () => {
         </Slider>
       </Container>
       <Newsletter/>
-
     </div>
-    
   );
 };
 

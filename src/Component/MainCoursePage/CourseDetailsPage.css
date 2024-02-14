@@ -1,0 +1,58 @@
+
+/* Course card */
+.course-card {
+    height: 480px; /* Increase the height of the course card */
+    width: 800px !important;
+    margin-left: -110px !important;
+    margin-top: 25px !important;
+    transition: all 0.3s ease-in-out; /* Add transition for hover effect */
+  }
+  
+  .course-card:hover {
+    transform: scale(1.05); /* Scale up the card on hover */
+  }
+  .course-image{
+    height: 450px !important;
+    width: 800px !important;
+  }
+  /* Form title */
+  .form-title {
+    text-align: center; /* Center-align the form title */
+    font-size: 35px; /* Increase font size */
+    margin-left: 110px;
+  }
+  
+  /* Form inputs and labels */
+  .booking-form label,
+  .booking-form input,
+  .booking-form select {
+    font-weight: bold; /* Make labels and inputs bold */
+    margin-left: 70px;
+  }
+  
+  /* Input and select hover effect */
+  .booking-form input[type="text"]:hover,
+  .booking-form input[type="email"]:hover,
+  .booking-form select:hover {
+    border-color: #007bff; /* Change border color on hover */
+  }
+  
+  /* Button */
+  .btn-book {
+    font-size: 18px; /* Increase font size of the button */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition for button hover effect */
+  }
+  
+  .btn-book:hover {
+    background-color: #007bff; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+  }
+
+.book{
+    margin-left: 70px;
+    width: 100%;
+
+}
+.specific-para{
+font-weight: bold;
+}
