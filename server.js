@@ -36,37 +36,17 @@ const Course_List_Schema = new Schema(
   { collection: "course_lists" }
 );
 
+const Trial_Schema = new Schema({
+  _id: String,
+  image: Buffer,
+  pdf: Buffer,
+  image_url: String,
+  pdf_url: String,
+});
+const Trial = mongoose.model("trial", Trial_Schema);
 //Model
 
 const Cousre_List = mongoose.model("Course_List", Course_List_Schema);
-
-//Saving Data to MongoDB
-// const data = {
-//   name: "Python Masterclass",
-//   description:
-//     "Learn basics of python in 2 weeks Get your hand on experience with our innovative projects after the 2 weeks session and grt a certificate of completion upon the course completion after 2 months of interactive training and learning.",
-//   tags: ["python", "coding", "bootcamp"], // Array of tags related to the course
-//   videos: ["1", "2"], // Array of video URLs or references
-//   createdAt: "", // Date when the course was created
-//   updatedAt: "", // Date when the course was last updated
-// };
-
-// const newCourse = new Cousre_List(data);
-
-// Save the newCourse instance to the database
-
-// newCourse
-//   .save()
-//   .then((savedCourse) => {
-//     console.log("Data saved successfully:", savedCourse);
-//   })
-//   .catch((error) => {
-//     console.log("Error saving data:", error);
-//   });
-
-// Saving Data using save()
-
-// app.use(morgan("tiny"));
 
 //Routes inside our Server
 /* eslint-disable */
@@ -82,8 +62,18 @@ app.get("/api/course_lists", (req, res) => {
     });
 });
 
+app.get("/api/trial", (req, res) => {
+  Trial.find({})
+    .then((data) => {
+      res.json(data);
+    })
+    .catch((error) => {
+      console.error("Error fetching data:", error);
+      res.status(500).json({ error: "Internal Server Error" });
+    });
+});
 /* eslint-enable */
-app.get("/api/name", (req, res) => {
+app.get("/api/course_lists", (req, res) => {
   res.json(data);
   console.log(data);
 });
