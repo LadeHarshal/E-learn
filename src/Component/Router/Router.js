@@ -10,13 +10,21 @@ import StudentDashboard from "../Student Dashboard/StudentDashboard";
 import StudentHome from "../StudentHome/StudentHome";
 import TeacherDashboard from "../Teacher/TeacherDashboard";
 import ContactUs from "../ContactUs/ContactUs";
+import ClientDashboard from "../Client/ClientDashboard";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs"
+
+import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs";
 import Termsofservice from "../Termsofservice/Termsofservice";
+import CourseDetailsPage from "../MainCoursePage/CourseDetailsPage.js"; // Import CourseDetailsPage component
+import ThankYou from "../MainCoursePage/Thankyou.js";
+import PurchaseGuidePage from "../PurchaseGuide/PurchaseGuide.js";
+import Support from "../Support/Support.js";
+
 const Router = () => {
   return (
     <Routes>
+      {/* Main Path */}
       <Route
         path="/"
         element={
@@ -25,6 +33,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for home page */}
       <Route
         path="/home"
         element={
@@ -33,6 +43,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Registration page */}
       <Route
         path="/register"
         element={
@@ -41,6 +53,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Login page */}
       <Route
         path="/login"
         element={
@@ -49,6 +63,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for about us page */}
       <Route
         path="/aboutus"
         element={
@@ -57,6 +73,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Courses Page */}
       <Route
         path="/courses"
         element={
@@ -66,50 +84,102 @@ const Router = () => {
         }
       />
       <Route
-        path="/contactus"
+         path="/courses/:id" // Define path for course details with course ID parameter
+         element={
+           <>
+             <Header />
+             <CourseDetailsPage />
+             <Footer />
+           </>
+        }
+      />
+        <Route
+        path="/thankyou"
         element={
           <>
-            <Header /> <ContactUs/> <Footer />
+            <Header /> <ThankYou/> <Footer />
           </>
         }
       />
-       <Route
+          <Route
+        path="/support"
+        element={
+          <>
+            <Header /> <Support/> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/contactus"
+        element={
+          <>
+            <Header /> <ContactUs /> <Footer />
+          </>
+        }
+      />
+      <Route
         path="/blog"
         element={
           <>
-            <Header /> <BlogPage/> <Footer />
+            <Header /> <BlogPage /> <Footer />
           </>
-        } />
+        }
+      />
 
-<Route
+      <Route
         path="/privacypolicy"
         element={
           <>
-            <Header /> <PrivacyPolicy/> <Footer />
+            <Header /> <PrivacyPolicy /> <Footer />
           </>
-        } />
-<Route
+        }
+      />
+
+      <Route
         path="/Termsofservice"
         element={
           <>
-            <Header /> <Termsofservice/> <Footer />
+            <Header /> <Termsofservice /> <Footer />
           </>
+
         } />
+ <Route
+        path="/purchaseguide"
+        element={
+          <>
+            <Header /> <PurchaseGuidePage/> <Footer />
+          </>
 
+        }
+      />
 
-      <Route  
+      <Route
         path="/StudentDashboard"
         element={<StudentDashboard />}
       />
+
+      {/* Path for student Home */}
+
       <Route
         path="/StudentHome"
         element={<StudentHome />}
       />
+
+      {/* Path for Teacher Dashboard */}
+
       <Route
         path="/TeacherDashboard"
         element={<TeacherDashboard />}
       />
+
+      {/* Path for Client Dashboard */}
+      <Route
+        path="/ClientDashboard"
+        element={<ClientDashboard />}
+      />
     </Routes>
+
+    
   );
 };
 export default Router;

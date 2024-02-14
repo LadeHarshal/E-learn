@@ -30,13 +30,13 @@ const footerInfoLinks = [
     url: "/privacypolicy",
   },
   {
-    display: "Membership",
-    url: "#",
+    display: "Support",
+    url: "/support",
   },
 
   {
     display: "Purchases Guide",
-    url: "#",
+    url: "/purchaseguide",
   },
 
   {

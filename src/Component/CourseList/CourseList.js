@@ -4,13 +4,13 @@ import axios from "axios";
 import Course_Element from "./Course_Element/Course_Element";
 function CourseList() {
   const [courses, setCourses] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get(
           "http://localhost:8080/api/course_lists "
         );
+        // const response = await axios.get("http://localhost:8080/api/trial");
         setCourses(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -19,7 +19,8 @@ function CourseList() {
 
     fetchData();
   }, []);
-  console.log(courses);
+  // console.log(courses);
+
   return (
     <div className="masterdiv">
       <div className="heading">
