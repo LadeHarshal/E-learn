@@ -1,9 +1,9 @@
-// CourseCard.js
 import React from "react";
+import { Link } from "react-router-dom";
 import { Card, CardImg, CardBody, CardTitle, CardText, Button } from "reactstrap";
 import "./CoursePage.css"; // Import custom CSS for styling
 
-const CourseCard = ({ title, image, description, price, reviews }) => {
+const CourseCard = ({ id, title, image, description, price, reviews }) => {
   return (
     <Card className="custom-course-card">
       <CardImg top width="100%" src={image} alt={title} className="custom-course-image" />
@@ -13,7 +13,9 @@ const CourseCard = ({ title, image, description, price, reviews }) => {
         <div className="custom-course-footer">
           <CardText className="custom-course-price">Price: {price}</CardText>
           <CardText className="custom-course-reviews">Rating: {reviews}</CardText>
-          <Button>Enroll Now</Button>
+          <Link to={`/courses/${id}`}>
+            <Button>Enroll Now</Button>
+          </Link>
         </div>
       </CardBody>
     </Card>
@@ -21,3 +23,4 @@ const CourseCard = ({ title, image, description, price, reviews }) => {
 };
 
 export default CourseCard;
+

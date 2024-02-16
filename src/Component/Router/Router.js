@@ -13,10 +13,14 @@ import ContactUs from "../ContactUs/ContactUs";
 import ClientDashboard from "../Client/ClientDashboard";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-import PdfViewer from "../PDF_Viewer/PdfViewer";
 
 import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs";
 import Termsofservice from "../Termsofservice/Termsofservice";
+import CourseDetailsPage from "../MainCoursePage/CourseDetailsPage.js"; // Import CourseDetailsPage component
+import ThankYou from "../MainCoursePage/Thankyou.js";
+import PurchaseGuidePage from "../PurchaseGuide/PurchaseGuide.js";
+import Support from "../Support/Support.js";
+
 const Router = () => {
   return (
     <Routes>
@@ -80,6 +84,32 @@ const Router = () => {
         }
       />
       <Route
+         path="/courses/:id" // Define path for course details with course ID parameter
+         element={
+           <>
+             <Header />
+             <CourseDetailsPage />
+             <Footer />
+           </>
+        }
+      />
+        <Route
+        path="/thankyou"
+        element={
+          <>
+            <Header /> <ThankYou/> <Footer />
+          </>
+        }
+      />
+          <Route
+        path="/support"
+        element={
+          <>
+            <Header /> <Support/> <Footer />
+          </>
+        }
+      />
+      <Route
         path="/contactus"
         element={
           <>
@@ -111,6 +141,15 @@ const Router = () => {
           <>
             <Header /> <Termsofservice /> <Footer />
           </>
+
+        } />
+ <Route
+        path="/purchaseguide"
+        element={
+          <>
+            <Header /> <PurchaseGuidePage/> <Footer />
+          </>
+
         }
       />
 
@@ -139,6 +178,8 @@ const Router = () => {
         element={<ClientDashboard />}
       />
     </Routes>
+
+    
   );
 };
 export default Router;
