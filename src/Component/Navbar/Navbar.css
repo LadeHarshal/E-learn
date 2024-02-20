@@ -5,15 +5,21 @@
   position: fixed;
   top: 0;
   left: 0;
-  width: 28%; /* Adjust width as needed */
+  width: 23vw; /* Adjust width as needed */
   background: linear-gradient(to right, #17bf9e, #a8ffee);
   overflow-y: auto;
 }
 
 .icon {
   margin: 2rem auto;
+  border-radius: 4px;
+  /* background: linear-gradient(to right, #17bf9e, #a8ffee); */
+  transition: transform 0.8s;
 }
-
+.icon:hover {
+  transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
 .icon img {
   height: 100px;
   width: 100px;
@@ -21,13 +27,17 @@
 
 .profile-bar {
   background-color: white;
-  margin: 10px;
   padding: 10px;
-  border-radius: 8px;
+  /* margin: 10px; */
+  /* border-radius: 8px; */
   display: flex;
   align-items: center;
+  transition: all 0.8s;
 }
-
+.profile-bar:hover {
+  margin: 10px;
+  border-radius: 8px;
+}
 .profile-bar img {
   height: 50px;
   width: 50px;
@@ -94,6 +104,10 @@
   font-weight: 400;
 }
 
-.options ul li.selected a {
-  background-color: white; /* Set background for selected element */
+.selected {
+  border-radius: 25px;
+  width: 105%;
+  background-color: white;
+  padding-right: -2px;
+  margin-left: 20px;
 }
