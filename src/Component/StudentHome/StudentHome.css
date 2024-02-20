@@ -5,10 +5,8 @@
 }
 
 .notnav {
-  max-width: 71%;
-  /* width: 72%; */
-  height: 100vh;
-  margin-left: 28.5%;
+  max-width: 76%;
+  margin-left: 24vw;
 }
 .top {
   display: flex;
@@ -82,7 +80,7 @@
 
 .mid {
   display: flex;
-  height: 40%;
+  height: 38vh;
   justify-content: space-between;
   margin-top: 20px;
 }
@@ -96,6 +94,8 @@
   margin: 10px;
   padding: 20px;
   border-radius: 50%;
+  justify-content: center;
+  justify-items: center;
   align-items: center;
   text-align: center;
 }
@@ -161,17 +161,45 @@
   flex-direction: column;
   width: 98%;
 }
-.course-list .title {
-  margin-left: 10px;
-}
-.course-list .list {
+.courses {
   display: flex;
-  width: 100%;
 }
-.tutorials {
+
+/* .tutorials {
   height: 50%;
   width: 50%;
 }
-.content {
-  margin-top: 20px;
+
+*/
+.single__course__item {
+  /* height: 40vh; */
+  align-items: center;
+}
+
+.student-home-tag {
+  border-radius: 25px;
+  align-items: center;
+  text-align: center;
+  background-color: #17bf9e;
+  color: antiquewhite;
+  margin: 6px;
+  justify-content: center;
+  padding-block: 7px;
+  padding-inline: 11px;
+  height: 40px;
+}
+
+.tags {
+  display: flex;
+  align-items: center;
+  margin-block: auto;
+}
+.tags h4 {
+  margin: 6px;
+}
+
+/* Tutorials */
+.tutorials-list {
+  padding: 4px;
+  margin: 5px;
 }

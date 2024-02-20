@@ -20,6 +20,7 @@ import CourseDetailsPage from "../MainCoursePage/CourseDetailsPage.js"; // Impor
 import ThankYou from "../MainCoursePage/Thankyou.js";
 import PurchaseGuidePage from "../PurchaseGuide/PurchaseGuide.js";
 import Support from "../Support/Support.js";
+import PdfViewer from "../PDFViewer/PdfViewer.js";
 
 const Router = () => {
   return (
@@ -84,28 +85,28 @@ const Router = () => {
         }
       />
       <Route
-         path="/courses/:id" // Define path for course details with course ID parameter
-         element={
-           <>
-             <Header />
-             <CourseDetailsPage />
-             <Footer />
-           </>
-        }
-      />
-        <Route
-        path="/thankyou"
+        path="/courses/:id" // Define path for course details with course ID parameter
         element={
           <>
-            <Header /> <ThankYou/> <Footer />
+            <Header />
+            <CourseDetailsPage />
+            <Footer />
           </>
         }
       />
-          <Route
+      <Route
+        path="/thankyou"
+        element={
+          <>
+            <Header /> <ThankYou /> <Footer />
+          </>
+        }
+      />
+      <Route
         path="/support"
         element={
           <>
-            <Header /> <Support/> <Footer />
+            <Header /> <Support /> <Footer />
           </>
         }
       />
@@ -141,15 +142,14 @@ const Router = () => {
           <>
             <Header /> <Termsofservice /> <Footer />
           </>
-
-        } />
- <Route
+        }
+      />
+      <Route
         path="/purchaseguide"
         element={
           <>
-            <Header /> <PurchaseGuidePage/> <Footer />
+            <Header /> <PurchaseGuidePage /> <Footer />
           </>
-
         }
       />
 
@@ -177,9 +177,13 @@ const Router = () => {
         path="/ClientDashboard"
         element={<ClientDashboard />}
       />
-    </Routes>
 
-    
+      {/* Path for PDFViewer (to be changed after completion) */}
+      <Route
+        path="/tutorials"
+        element={<PdfViewer />}
+      />
+    </Routes>
   );
 };
 export default Router;

@@ -6,9 +6,23 @@
 }
 
 .masterdiv {
-  width: 95%;
+  max-width: 95%;
 }
 .heading h2 {
   font-weight: 450;
   font-size: 1.6rem;
+}
+.course-slider-SH {
+  display: flex;
+  width: 100%;
+  height: 400px;
+  padding: 10px;
+  margin: 10px;
+  /* max-width: ; */
+  /* flex-wrap: wrap; */
+}
+.course-card {
+  display: flex;
+  flex-direction: column;
+  max-width: 25%;
 }
