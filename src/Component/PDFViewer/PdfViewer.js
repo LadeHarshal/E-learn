@@ -1,147 +1,98 @@
-import { useEffect, useState } from "react";
-import React from "react";
-import axios from "axios";
-import "./PdfViewer.css";
-import cors from "cors";
+import React, { useState, useEffect } from "react";
 import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
+import axios from "axios";
 
-// First Code
+// Function to convert Base64 to Blob
+function base64toBlob(base64Data, contentType = "", sliceSize = 512) {
+  const byteCharacters = atob(base64Data);
+  const byteArrays = [];
 
-// function PdfViewer() {
-//   // To pre-load the PDF
-//   const express = require("express");
-//   const fetch = require("node-fetch");
-//   const app = express();
+  for (let offset = 0; offset < byteCharacters.length; offset += sliceSize) {
+    const slice = byteCharacters.slice(offset, offset + sliceSize);
 
-//   app.get("/api/pdf", async (req, res) => {
-//     try {
-//       const response = await fetch(
-//         "https://www.tutorialspoint.com/html/html_tutorial.pdf"
-//       );
-//       const pdf = await response.buffer();
-//       res.setHeader("Content-Type", "application/pdf");
-//       res.send(pdf);
-//     } catch (error) {
-//       console.error("Error fetching PDF:", error);
-//       res.status(500).send("Internal Server Error");
-//     }
-//   });
+    const byteNumbers = new Array(slice.length);
+    for (let i = 0; i < slice.length; i++) {
+      byteNumbers[i] = slice.charCodeAt(i);
+    }
 
-//   const docs = [
-//     { uri: require("../../assets/pdf/Sample.pdf") },
-//     // Remote file
-//     {
-//       uri: "https://www.clickdimensions.com/links/TestPDFfile.pdf",
-//     },
-//   ];
-//   return (
-//     <div>
-//       <DocViewer
-//         documents={docs}
-//         pluginRenderers={DocViewerRenderers}
-//         theme={{
-//           primary: "#5296d8",
-//           secondary: "#ffffff",
-//           tertiary: "#5296d899",
-//           textPrimary: "#ffffff",
-//           textSecondary: "#5296d8",
-//           textTertiary: "#00000099",
-//           disableThemeScrollbar: false,
-//         }}
-//       />
-//       ;
-//     </div>
-//   );
-// }
+    const byteArray = new Uint8Array(byteNumbers);
+    byteArrays.push(byteArray);
+  }
 
-// Code 2
+  const blob = new Blob(byteArrays, { type: contentType });
+  return blob;
+}
 
-import { Document, Page } from "react-pdf";
-// function PdfViewer() {
-//   // To pre-load the PDF
-//   const [pdf, setPdf] = useState();
-//   useEffect(() => {
-//     const fetchData = async (req, res) => {
-//       try {
-//         const response = await axios.get("http://localhost:8080/api/trial");
-//         setPdf(response.data);
-//       } catch (error) {
-//         console.error("Error fetching data:", error);
-//       }
-//       try {
-//         const response = await fetch(
-//           "https://www.tutorialspoint.com/html/html_tutorial.pdf"
-//         );
-//         const pdf = await response.buffer();
-//         res.setHeader("Content-Type", "application/pdf");
-//         res.send(pdf);
-//       } catch (error) {
-//         console.error("Error fetching PDF:", error);
-//         res.status(500).send("Internal Server Error");
-//       }
-//     };
+// Function to convert Base64 to PDF and set the temp URL
+function base64toPDF(base64Data, fileName = "document.pdf") {
+  const blob = base64toBlob(base64Data, "application/pdf");
+  const url = URL.createObjectURL(blob);
+  return url;
+}
 
-//     fetchData();
-//   }, []);
-//   console.log(pdf);
-//   // app.get("/api/pdf", async (req, res) => {
-//   // try {
-//   //   const response = await fetch(
-//   //     "https://www.tutorialspoint.com/html/html_tutorial.pdf"
-//   //   );
-//   //   const pdf = await response.buffer();
-//   //   res.setHeader("Content-Type", "application/pdf");
-//   //   res.send(pdf);
-//   // } catch (error) {
-//   //   console.error("Error fetching PDF:", error);
-//   //   res.status(500).send("Internal Server Error");
-//   // }
-//   // });
-//   return (
-//     <div>
-//       <Document file="https://www.clickdimensions.com/links/TestPDFfile.pdf">
-//         <Page></Page>
-//       </Document>
-//     </div>
-//   );
-// }
-
-// Code 3
-const PdfViewer = ({ url = "https://www.pdf995.com/samples/pdf.pdf" }) => {
-  const [numPages, setNumPages] = useState(null);
-  const [pageNumber, setPageNumber] = useState(1);
-  const [pdf, setPdf] = useState(null);
+function PdfViewer() {
+  const [pdfData, setPdfData] = useState(null);
+  const [pdfUrl, setPdfUrl] = useState(""); // State to store the PDF URL
 
   useEffect(() => {
-    axios
-      .get(url, { responseType: "blob" })
-      .then((response) => {
-        setPdf(URL.createObjectURL(response.data));
-      })
-      .catch((error) => {
-        console.error("Error fetching PDF:", error);
-      });
-  }, [url]);
+    const fetchPdfData = async () => {
+      try {
+        // Fetch the document from your backend server
+        const response = await axios.get("http://localhost:8080/api/files");
+        setPdfData(response.data);
+        // Decode the Base64 data
+        const decodedData = atob(response.data[0].data);
 
-  function onDocumentLoadSuccess({ numPages }) {
-    setNumPages(numPages);
-  }
+        // Set the decoded PDF data in state
+        // setPdfData(decodedData);
+        console.log(pdfData);
+
+        // Convert Base64 data to PDF and set the temp URL
+        const url = base64toPDF(decodedData);
+        setPdfUrl(url);
+      } catch (error) {
+        console.error("Error fetching PDF data:", error);
+      }
+    };
+
+    fetchPdfData();
+  }, []);
+
+  const docs = [
+    {
+      uri: "https://calibre-ebook.com/downloads/demos/demo.docx",
+      fileType: "docx",
+      fileName: "SamplePDF",
+    }, // Remote file
+
+    { uri: require("../../assets/pdf/Sample.pdf") }, // Local file
+    { uri: pdfUrl }, // Use the temp URL
+    {
+      uri: require("../../assets/pdf/html.pdf"),
+      fileType: "pdf",
+      fileName: "HTML",
+    },
+    {
+      uri: require("../../assets/pdf/css.pdf"),
+      fileType: "pdf",
+      fileName: "CSS",
+    },
+    {
+      uri: require("../../assets/pdf/bootstrap.pdf"),
+      fileType: "pdf",
+      fileName: "Bootstrap",
+    },
+  ];
 
   return (
     <div>
-      {pdf && (
-        <Document
-          file={pdf}
-          onLoadSuccess={onDocumentLoadSuccess}
-        >
-          <Page pageNumber={pageNumber} />
-        </Document>
-      )}
-      <p>
-        Page {pageNumber} of {numPages}
-      </p>
+      <DocViewer
+        documents={docs}
+        pluginRenderers={DocViewerRenderers}
+        style={{ height: 1000 }}
+      />
     </div>
   );
-};
+}
 
 export default PdfViewer;

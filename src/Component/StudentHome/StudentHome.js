@@ -75,7 +75,7 @@ function StudentHome() {
           "http://localhost:8080/api/Student_data"
         );
         setStudent(response.data);
-        console.log(student);
+        // console.log(student);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
