@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./StudentDashboard.css";
 import stud1 from "../../assets/images/Student1.png";
 import profile_img from "../../assets/images/Group 4.png";
@@ -8,11 +9,41 @@ import CourseList from "../CourseList/CourseList";
 // import PieChart from "../Graphs/ChartsPage";
 import ChartsPage from "../Graphs/ChartsPage";
 // import Sidebar from "../Navbar/Sidebar";
+import Home_logo from "../../assets/images/Home (1).png";
+import MYCourses_logo from "../../assets/images/Laptop.png";
+import BrowseCourses_logo from "../../assets/images/Book.png";
+import EditProfile_logo from "../../assets/images/ProfileEdit.png";
+
 function StudentDashboard() {
+  const navItems = [
+    { path: "/StudentHome", label: "Home", icon: Home_logo },
+    { path: "/StudentDashboard", label: "Dashboard", icon: EditProfile_logo },
+    { path: "/contactus", label: "Help Me", icon: BrowseCourses_logo },
+    { path: "/tutorials", label: "Tutorials", icon: MYCourses_logo },
+  ];
+  const [trial, setTrial] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/trial");
+        setTrial(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  console.log(trial);
+
   return (
     <div className="master_container">
       {/* Navbar */}
-      <Navbar role="Student" />
+      <Navbar
+        navItems={navItems}
+        role="Student"
+      />
 
       {/* Top Pane */}
 
@@ -67,11 +98,13 @@ function StudentDashboard() {
         </div>
 
         {/* Courses Enrolled */}
-        <div className="list1">
-          <CourseList />
-        </div>
+        <div className="list1">{/* <CourseList /> */}</div>
 
         {/* Tutorials */}
+        <img
+          src=""
+          alt="img1"
+        />
       </div>
     </div>
   );

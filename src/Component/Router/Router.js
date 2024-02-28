@@ -10,14 +10,17 @@ import StudentDashboard from "../Student Dashboard/StudentDashboard";
 import StudentHome from "../StudentHome/StudentHome";
 import TeacherDashboard from "../Teacher/TeacherDashboard";
 import ContactUs from "../ContactUs/ContactUs";
+import ClientDashboard from "../Client/ClientDashboard";
 import BlogPage from "../Blog/BlogPage";
 import PrivacyPolicy from "../PrivacyPolicy/PrivacyPolicy";
-import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs"
+
+import ExtendedAboutUs from "../Aboutus/ExtendedAboutUs";
 import Termsofservice from "../Termsofservice/Termsofservice";
 import CourseDetailsPage from "../MainCoursePage/CourseDetailsPage.js"; // Import CourseDetailsPage component
 import ThankYou from "../MainCoursePage/Thankyou.js";
 import PurchaseGuidePage from "../PurchaseGuide/PurchaseGuide.js";
 import Support from "../Support/Support.js";
+<<<<<<< HEAD
 import CourseMain from "../MainCoursePage/Coursemainpage.js";
 import VideoPage from "../MainCoursePage/contentpage/Video.js";
 import Progress from "../MainCoursePage/contentpage/Progress.js";
@@ -25,9 +28,14 @@ import Quiz from "../MainCoursePage/contentpage/Quiz.js"
 import Notes from "../MainCoursePage/contentpage/Notes.js";
 import PracticeSession from "../MainCoursePage/contentpage/PracticeSession.js";
 import Aptitude from "../MainCoursePage/contentpage/Aptitude.js";
+=======
+import PdfViewer from "../PDFViewer/PdfViewer.js";
+
+>>>>>>> 73fdc8b550904f80d7e8b90714bcdd8fe48ea04a
 const Router = () => {
   return (
     <Routes>
+      {/* Main Path */}
       <Route
         path="/"
         element={
@@ -36,6 +44,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for home page */}
       <Route
         path="/home"
         element={
@@ -44,6 +54,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Registration page */}
       <Route
         path="/register"
         element={
@@ -52,6 +64,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Login page */}
       <Route
         path="/login"
         element={
@@ -60,6 +74,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for about us page */}
       <Route
         path="/aboutus"
         element={
@@ -68,6 +84,8 @@ const Router = () => {
           </>
         }
       />
+
+      {/* Path for Courses Page */}
       <Route
         path="/courses"
         element={
@@ -77,28 +95,28 @@ const Router = () => {
         }
       />
       <Route
-         path="/courses/:id" // Define path for course details with course ID parameter
-         element={
-           <>
-             <Header />
-             <CourseDetailsPage />
-             <Footer />
-           </>
-        }
-      />
-        <Route
-        path="/thankyou"
+        path="/courses/:id" // Define path for course details with course ID parameter
         element={
           <>
-            <Header /> <ThankYou/> <Footer />
+            <Header />
+            <CourseDetailsPage />
+            <Footer />
           </>
         }
       />
-          <Route
+      <Route
+        path="/thankyou"
+        element={
+          <>
+            <Header /> <ThankYou /> <Footer />
+          </>
+        }
+      />
+      <Route
         path="/support"
         element={
           <>
-            <Header /> <Support/> <Footer />
+            <Header /> <Support /> <Footer />
           </>
         }
       />
@@ -162,56 +180,76 @@ const Router = () => {
         path="/contactus"
         element={
           <>
-            <Header /> <ContactUs/> <Footer />
+            <Header /> <ContactUs /> <Footer />
           </>
         }
       />
-       <Route
+      <Route
         path="/blog"
         element={
           <>
-            <Header /> <BlogPage/> <Footer />
-          </>
-        } />
-
-<Route
-        path="/privacypolicy"
-        element={
-          <>
-            <Header /> <PrivacyPolicy/> <Footer />
-          </>
-        } />
-<Route
-        path="/Termsofservice"
-        element={
-          <>
-            <Header /> <Termsofservice/> <Footer />
-          </>
-        } />
- <Route
-        path="/purchaseguide"
-        element={
-          <>
-            <Header /> <PurchaseGuidePage/> <Footer />
+            <Header /> <BlogPage /> <Footer />
           </>
         }
       />
 
-      <Route  
+      <Route
+        path="/privacypolicy"
+        element={
+          <>
+            <Header /> <PrivacyPolicy /> <Footer />
+          </>
+        }
+      />
+
+      <Route
+        path="/Termsofservice"
+        element={
+          <>
+            <Header /> <Termsofservice /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/purchaseguide"
+        element={
+          <>
+            <Header /> <PurchaseGuidePage /> <Footer />
+          </>
+        }
+      />
+
+      <Route
         path="/StudentDashboard"
         element={<StudentDashboard />}
       />
+
+      {/* Path for student Home */}
+
       <Route
         path="/StudentHome"
         element={<StudentHome />}
       />
+
+      {/* Path for Teacher Dashboard */}
+
       <Route
         path="/TeacherDashboard"
         element={<TeacherDashboard />}
       />
-    </Routes>
 
-    
+      {/* Path for Client Dashboard */}
+      <Route
+        path="/ClientDashboard"
+        element={<ClientDashboard />}
+      />
+
+      {/* Path for PDFViewer (to be changed after completion) */}
+      <Route
+        path="/tutorials"
+        element={<PdfViewer />}
+      />
+    </Routes>
   );
 };
 export default Router;

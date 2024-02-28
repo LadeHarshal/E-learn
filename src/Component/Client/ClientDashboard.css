@@ -1,0 +1,48 @@
+.dashboard {
+  display: flex;
+  width: 99%;
+}
+.side {
+  width: 25vw;
+  height: 100vh;
+  border-right: 2px solid gray;
+}
+.img-container {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.img-container img {
+  height: 200px;
+  width: 200px;
+  filter: drop-shadow(gray 0rem 0rem 8px);
+}
+.input-box {
+  width: 100%;
+}
+.input-box form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  /* width: 100%; */
+}
+.un,
+.ps,
+.submit {
+  padding: 4px;
+  margin: 2px;
+}
+.input-box label {
+  width: 100%;
+  /* margin-left: 5px; */
+}
+.right {
+  width: 100vw;
+}
+
+StyledTableCell {
+  border-bottom: solid 2px gray;
+}

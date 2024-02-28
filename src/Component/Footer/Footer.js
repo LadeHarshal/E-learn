@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col, ListGroup, ListGroupItem } from "reactstrap";
-import logo from '../../assets/images/primine_software_pvt_ltd_logo.jpeg';
+import logo from "../../assets/images/primine_software_pvt_ltd_logo.jpeg";
 import "./footer.css";
 
 const footerQuickLinks = [
@@ -41,7 +41,7 @@ const footerInfoLinks = [
 
   {
     display: "Terms of Service",
-    url: "/Termsofservice",
+    url: "/TermsofService",
   },
 ];
 
@@ -50,9 +50,18 @@ const Footer = () => {
     <footer className="footer">
       <Container>
         <Row>
-          <Col lg="3" md="6" className="mb-4">
+          <Col
+            lg="3"
+            md="6"
+            className="mb-4"
+          >
             <h2 className=" d-flex align-items-center gap-1">
-            <img src={logo} alt='' className="logo"></img>E-Learning Platform
+              <img
+                src={logo}
+                alt=""
+                className="logo"
+              ></img>
+              E-Learning Platform
             </h2>
 
             <div className="follows">
@@ -87,11 +96,18 @@ const Footer = () => {
             </div>
           </Col>
 
-          <Col lg="3" md="6" className="mb-4">
-          <h6 className="fw-bold fs-5">Explore</h6>
+          <Col
+            lg="3"
+            md="6"
+            className="mb-4"
+          >
+            <h6 className="fw-bold">Explore</h6>
             <ListGroup className="link__list">
               {footerQuickLinks.map((item, index) => (
-                <ListGroupItem key={index} className="border-0 ps-0 link__item">
+                <ListGroupItem
+                  key={index}
+                  className="border-0 ps-0 link__item"
+                >
                   {" "}
                   <a href={item.url}>{item.display}</a>
                 </ListGroupItem>
@@ -99,11 +115,18 @@ const Footer = () => {
             </ListGroup>
           </Col>
 
-          <Col lg="3" md="6" className="mb-4">
-            <h6 className="fw-bold fs-5">Information</h6>
+          <Col
+            lg="3"
+            md="6"
+            className="mb-4"
+          >
+            <h6 className="fw-bold">Information</h6>
             <ListGroup className="link__list">
               {footerInfoLinks.map((item, index) => (
-                <ListGroupItem key={index} className="border-0 ps-0 link__item">
+                <ListGroupItem
+                  key={index}
+                  className="border-0 ps-0 link__item"
+                >
                   {" "}
                   <a href={item.url}>{item.display}</a>
                 </ListGroupItem>
@@ -111,15 +134,21 @@ const Footer = () => {
             </ListGroup>
           </Col>
 
-          <Col lg="3" md="6">
-            <h6 className="fw-bold fs-5">Get in Touch</h6>
+          <Col
+            lg="3"
+            md="6"
+          >
+            <h6 className="fw-bold">Get in Touch</h6>
 
             <p>Address:PSPL, Nagpur</p>
             <p> Phone: +91-1234567890 </p>
             <p>Email: example@gmail.com</p>
           </Col>
 
-          <Col lg="12" className="text-center">
+          <Col
+            lg="12"
+            className="text-center"
+          >
             <p className="mb-0 mt-4">
               &copy; 2024 Primine Software Solutions. All Rights Reserved.
             </p>

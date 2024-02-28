@@ -1,112 +1,113 @@
 .Container {
   display: flex;
-  left: 0;
   flex-direction: column;
-  width: 25%;
-  background: linear-gradient(to right, #17bf9e, #a8ffee);
   height: 100vh;
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 23vw; /* Adjust width as needed */
+  background: linear-gradient(to right, #17bf9e, #a8ffee);
+  overflow-y: auto;
 }
 
 .icon {
-  margin-inline: auto;
-  margin-bottom: 2.4rem;
-  /* position: absolute;
-  top: 2rem;
-  left: 30%; */
+  margin: 2rem auto;
+  border-radius: 4px;
+  /* background: linear-gradient(to right, #17bf9e, #a8ffee); */
+  transition: transform 0.8s;
 }
-
+.icon:hover {
+  transform: rotateY(180deg);
+  transform: rotateY(180deg);
+}
 .icon img {
   height: 100px;
   width: 100px;
-  position: relative;
 }
 
 .profile-bar {
-  /* position: absolute; */
-  /* left: 30%; */
-  /* top: 20%; */
   background-color: white;
-  margin: 3px;
-  padding: 0.7rem;
-  border-radius: 8px;
+  padding: 10px;
+  /* margin: 10px; */
+  /* border-radius: 8px; */
   display: flex;
-  /* justify-content: space-around; */
   align-items: center;
-  margin-bottom: 2rem;
+  transition: all 0.8s;
 }
-.profile-bar .username {
-  display: flex;
-  flex-direction: column;
-  /* margin: auto; */
-  margin-left: 2rem;
-  text-align: left;
+.profile-bar:hover {
+  margin: 10px;
+  border-radius: 8px;
 }
-
 .profile-bar img {
   height: 50px;
   width: 50px;
-  margin-left: 2rem;
-  /* margin: auto;   */
+  margin-right: 10px;
+  border-radius: 50%;
 }
 
-.profile-bar h3 {
-  margin-block: auto;
+.profile-bar h3,
+.profile-bar h4 {
+  margin: 0;
   font-size: 15px;
   font-weight: 500;
 }
-.profile-bar h4 {
-  margin-block: auto;
-  font-size: 12px;
-  font-weight: 400;
+
+.options {
+  flex: 1;
 }
 
 .options ul {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  left: -15px;
-}
-
-.options {
-  width: 100%;
+  padding: 0;
+  margin: 0;
 }
 
 .options ul li {
-  background-color: white;
-  padding: 4px;
-  border-radius: 12px;
-  margin: 2px;
-  /* margin-bottom: 2rem; */
+  margin: 5px;
+}
+
+.options ul li a {
+  position: relative;
   display: flex;
-  justify-content: center;
   align-items: center;
+  padding: 10px;
+  border-radius: 12px;
+  background-color: transparent; /* Set default background */
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
 }
 
-.bottom {
-  position: absolute;
-  bottom: 0;
-  text-align: left;
-  margin-left: 15px;
-}
-.bottom h4 {
-  color: white;
-  font-size: 18px;
-  font-weight: 300;
-}
-
-.options ul li img {
-  /* padding: 5px; */
-  margin: 3px;
+.options ul li a img {
   height: 24px;
-  width: 26px;
+  width: 24px;
+  margin-left: 80px; /* Adjust margin-right to shift icons to the right */
 }
 
-.options ul li p {
-  font-size: 12px;
+.options ul li a p {
+  margin: 0;
+  font-size: 14px;
   font-weight: 400;
-  margin-left: 4px;
-  margin-block: auto;
-  text-align: left;
+  flex: 1;
+  text-align: center;
+}
+
+/* here  */
+
+.options ul li a:hover {
+  background-color: #f0f0f0; /* Change background on hover */
+}
+
+.options ul li a p {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.selected {
+  border-radius: 25px;
+  width: 105%;
+  background-color: white;
+  padding-right: -2px;
+  margin-left: 20px;
 }

@@ -3,17 +3,17 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const path = require("path");
-const cors = require("cors");
 const app = express();
+const cors = require("cors");
+
 app.use(cors());
 const PORT = process.env.port || 8080;
 
 const MONGODB_URI =
-  "mongodb+srv://Harshal:qbC3gIxRH46nMRXW@PrimaryCluster.cyybqip.mongodb.net/Database2";
+  "mongodb+srv://Harshal:qbC3gIxRH46nMRXW@PrimaryCluster.cyybqip.mongodb.net/Database2"; //MongoDB database link
 
 mongoose.connect(MONGODB_URI || "mongodb://localhost/CourseList", {
   useNewUrlParser: true,
-  // useUnifiedTopology: true,
 }); //two parameters first is the PORT or The server adress
 
 mongoose.connection.on("connected", () => {
@@ -22,70 +22,59 @@ mongoose.connection.on("connected", () => {
 
 // Schema
 
-const Schema = mongoose.Schema;
-const Course_List_Schema = new Schema(
-  {
-    name: String, // Name of the course
-    description: String, // Description of the course
-    image: String, //Display image for CourseCard
-    tags: [String], // Array of tags related to the course
-    videos: [String], // Array of video URLs or references
-    createdAt: Date, // Date when the course was created
-    updatedAt: Date, // Date when the course was last updated
-  },
-  { collection: "course_lists" }
-);
+// const Schema = mongoose.Schema;
 
-//Model
-
-const Cousre_List = mongoose.model("Course_List", Course_List_Schema);
-
-//Saving Data to MongoDB
-// const data = {
-//   name: "Python Masterclass",
-//   description:
-//     "Learn basics of python in 2 weeks Get your hand on experience with our innovative projects after the 2 weeks session and grt a certificate of completion upon the course completion after 2 months of interactive training and learning.",
-//   tags: ["python", "coding", "bootcamp"], // Array of tags related to the course
-//   videos: ["1", "2"], // Array of video URLs or references
-//   createdAt: "", // Date when the course was created
-//   updatedAt: "", // Date when the course was last updated
-// };
-
-// const newCourse = new Cousre_List(data);
-
-// Save the newCourse instance to the database
-
-// newCourse
-//   .save()
-//   .then((savedCourse) => {
-//     console.log("Data saved successfully:", savedCourse);
-//   })
-//   .catch((error) => {
-//     console.log("Error saving data:", error);
-//   });
-
-// Saving Data using save()
-
-// app.use(morgan("tiny"));
+const Course_List = mongoose.connection.collection("course_lists");
+const student_data = mongoose.connection.collection("Student_data");
+const Trial = mongoose.connection.collection("trials");
+const Teacher = mongoose.connection.collection("teacher");
 
 //Routes inside our Server
 /* eslint-disable */
 /* prettier-ignore */
-app.get("/api/course_lists", (req, res) => {
-  Cousre_List.find({})
-    .then((data) => {
-      res.json(data);
-    })
-    .catch((error) => {
-      console.error("Error fetching data:", error);
-      res.status(500).json({ error: "Internal Server Error" });
-    });
+app.get("/api/course_lists", async (req, res) => {
+  try {
+    const courses = await Course_List.find().toArray(); // Retrieve all documents from the collection
+    res.json(courses);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: 'Server error' });
+  }
+});
+console.log(Trial);
+app.get("/api/Student_data", async (req, res) => {
+  try {
+    const students = await student_data.find().toArray(); // Retrieve all documents from the collection
+    res.json(students);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
+app.get("/api/trial", async (req, res) => {
+  try {
+    const pdfs = await Trial.find().toArray(); // Retrieve all documents from the collection
+    res.json(pdfs);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 /* eslint-enable */
-app.get("/api/name", (req, res) => {
+app.get("/api/course_lists", (req, res) => {
   res.json(data);
   console.log(data);
+});
+
+app.get("/api/teacher", async (req, res) => {
+  try {
+    const teacher = await Teacher.find().toArray(); // Retrieve all documents from the collection
+    res.json(teacher);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
 });
 
 app.listen(PORT, console.log(`Server is starting at ${PORT}`));
