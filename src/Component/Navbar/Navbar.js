@@ -1,10 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/Logo_DiamondBkg.png";
 import profile_img from "../../assets/images/Group 4.png";
 import "./Navbar.css";
+// import classNames from "./classNames";
 
-function Navbar({ navItems = [], role = "Guest" }) {
+function classNames(...args) {
+  return args.filter(Boolean).join(" ");
+}
+
+function Navbar({ navItems = [], role = "Guest", isSelected }) {
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  var setFlag = false;
+
+  function handleflag(flag) {
+    flag = true;
+  }
   return (
     <div className="Container">
       <div className="icon">
@@ -26,7 +37,12 @@ function Navbar({ navItems = [], role = "Guest" }) {
       <div className="options">
         <ul>
           {navItems.map((item, index) => (
-            <li key={index}>
+            <li
+              key={index}
+              onClick={() => setSelectedIndex(index)}
+              isSelected={index === selectedIndex}
+              className={`${isSelected ? "selected" : ""}`}
+            >
               <Link to={item.path}>
                 <img
                   src={item.icon}

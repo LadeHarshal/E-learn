@@ -17,9 +17,9 @@ import EditProfile_logo from "../../assets/images/ProfileEdit.png";
 function StudentDashboard() {
   const navItems = [
     { path: "/StudentHome", label: "Home", icon: Home_logo },
-    { path: "/StudentDashboard", label: "Dashboard", icon: MYCourses_logo },
+    { path: "/StudentDashboard", label: "Dashboard", icon: EditProfile_logo },
     { path: "/contactus", label: "Help Me", icon: BrowseCourses_logo },
-    { path: "/home", label: "Home", icon: EditProfile_logo },
+    { path: "/tutorials", label: "Tutorials", icon: MYCourses_logo },
   ];
   const [trial, setTrial] = useState([]);
   useEffect(() => {
