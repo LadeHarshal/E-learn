@@ -1,0 +1,58 @@
+/* NotePage.css */
+.note-page {
+    padding: 20px;
+  }
+  
+  .note-page-header {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333; /* Dark text color */
+    text-align: center;
+    text-transform: uppercase;
+  }
+  
+  .syllabus-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .syllabus-item {
+    margin-bottom: 20px;
+    border-radius: 8px;
+    background-color: #f9f9f9; /* Light background color */
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Box shadow for card effect */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .syllabus-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .syllabus-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .syllabus-note {
+    font-size: 20px;
+    color: #444; /* Medium dark text color */
+  }
+  
+  .view-pdf-button {
+    background-color: #007bff !important;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .view-pdf-button:hover {
+    background-color: #0056b3 !important;
+  }

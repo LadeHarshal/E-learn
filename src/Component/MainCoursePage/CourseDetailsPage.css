@@ -34,7 +34,7 @@
   .booking-form input[type="text"]:hover,
   .booking-form input[type="email"]:hover,
   .booking-form select:hover {
-    border-color: #007bff; /* Change border color on hover */
+    border-color:#17bf9e; /* Change border color on hover */
   }
   
   /* Button */
@@ -44,7 +44,7 @@
   }
   
   .btn-book:hover {
-    background-color: #007bff; /* Change background color on hover */
+    background-color: #17bf9e; /* Change background color on hover */
     color: #fff; /* Change text color on hover */
   }
 
