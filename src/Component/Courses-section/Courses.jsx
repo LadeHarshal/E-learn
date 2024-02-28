@@ -1,8 +1,8 @@
 import React from "react";
 import { Container, Row, Col } from "reactstrap";
-import courseImg1 from "../../assets/images/web-design.png";
-import courseImg2 from "../../assets/images/graphics-design.png";
-import courseImg3 from "../../assets/images/web-development.png";
+import courseImg1 from "../../assets/images/Course 1.1 .jpg";
+import courseImg2 from "../../assets/images/Course 1.2 .jpg";
+import courseImg3 from "../../assets/images/Course 1.3 .jpg";
 import "./courses.css";
 import CourseCard from "./CourseCard";
 import { Link } from "react-router-dom";
@@ -10,8 +10,8 @@ import { Link } from "react-router-dom";
 
 const coursesData = [
   {
-    id: "01",
-    title: " Professional Web Design BootCamp-2022 for Beginners",
+    id: 1,
+    title: " Beginner Full Stack Web Development",
     lesson: 12,
     students: 12.5,
     rating: 5.9,
@@ -19,8 +19,8 @@ const coursesData = [
   },
 
   {
-    id: "02",
-    title: "Professional Graphics Design, PhotoShop, Adobe XD, Figma",
+    id: 2,
+    title: "Figma Mastery: User Experiences",
     lesson: 12,
     students: 12.5,
     rating: 5.9,
@@ -28,8 +28,8 @@ const coursesData = [
   },
 
   {
-    id: "03",
-    title: "Comprehensive 2024 UI/UX Bootcamp for Beginners",
+    id: 3,
+    title: "Certificate Course on Adobe Photoshop",
     lesson: 12,
     students: 12.5,
     rating: 5.9,

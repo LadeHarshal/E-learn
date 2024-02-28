@@ -1,51 +1,70 @@
 .single__course__item {
-  padding: 15px;
+  border: 1px solid #17bf9e;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.single__course__item:hover {
+  transform: translateY(-5px); /* Lift the card slightly on hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.60); /* Add a subtle shadow */
 }
 
 .course__img img {
-  border-radius: 10px;
-  margin-bottom: 20px;
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.3s ease; /* Add a smooth image scale transition */
 }
 
-.enroll a {
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 0.9rem;
-  color: #17bf9e;
+.course__details {
+  padding: 20px;
+}
+
+.course__title {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: black; /* Title color */
+  transition: color 0.3s ease; /* Smooth title color transition */
+}
+
+.single__course__item:hover .course__title {
+  color: #03b592; /* Change title color on hover */
+}
+
+.course__info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
 .lesson,
 .students,
 .rating {
   font-size: 0.9rem;
-  color: #0a2b1e;
-  font-weight: 500;
+  color: #666; /* Info text color */
+  display: flex;
+  align-items: center;
 }
 
 .lesson i,
 .students i,
 .rating i {
-  font-weight: 400;
+  margin-right: 5px;
 }
 
-.course__title {
-  line-height: 2rem;
-}
-
-.course__top__left h2 {
-  font-weight: 600;
-}
-button.btn {
-  background: #17bf9e;
+.enroll__link {
+  background-color: #17bf9e;
   color: #fff;
-  padding: 7px 25px;
-  border-radius: 50px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth background color and scale transitions */
 }
-i {
-  color: #17bf9e;
-}
-.para{
-  text-align: justify;
-  font-size: 19px;
 
+.enroll__link:hover {
+  background-color: #0a6e5b; /* Change button background on hover */
+  transform: scale(1.05); /* Scale up button on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4); /* Add a subtle shadow on hover */
 }
