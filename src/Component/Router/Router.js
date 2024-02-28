@@ -114,6 +114,7 @@ const Router = () => {
         element={
           <>
             <Header /> <Support /> <Footer />
+
           </>
         }
       />
@@ -170,6 +171,7 @@ const Router = () => {
         element={
           <>
             <Header /> <Quiz /> <Footer />
+
           </>
         }
       />
@@ -216,26 +218,19 @@ const Router = () => {
         }
       />
 
-      <Route
-        path="/StudentDashboard"
-        element={<StudentDashboard />}
-      />
+      <Route path="/StudentDashboard" element={<StudentDashboard />} />
 
       {/* Path for student Home */}
 
-      <Route
-        path="/StudentHome"
-        element={<StudentHome />}
-      />
+      <Route path="/StudentHome" element={<StudentHome />} />
 
       {/* Path for Teacher Dashboard */}
 
-      <Route
-        path="/TeacherDashboard"
-        element={<TeacherDashboard />}
-      />
+      <Route path="/TeacherDashboard" element={<TeacherDashboard />} />
 
       {/* Path for Client Dashboard */}
+
+      <Route path="/ClientDashboard" element={<ClientDashboard />} />
       <Route
         path="/ClientDashboard"
         element={<ClientDashboard />}
