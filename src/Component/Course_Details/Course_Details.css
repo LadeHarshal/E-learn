@@ -1,0 +1,50 @@
+.Course-Details {
+  height: 100vh;
+  display: flex;
+}
+
+.mid {
+  display: flex;
+  height: 40%;
+  justify-content: space-between;
+}
+
+.selection {
+  display: flex;
+  flex-direction: column;
+  height: 80%;
+  width: 20%;
+
+  margin: 10px;
+  padding: 20px;
+}
+
+.selection img {
+  height: 20rem;
+  width: 20rem;
+  padding: 5px;
+  margin: 2rem;
+  border-radius: 25px;
+  margin-top: 1.2rem;
+}
+.demo {
+  display: flex;
+  flex-direction: column;
+  height: 3 rem;
+  width: 3 rem;
+
+  margin: 10px;
+  padding: 20px;
+  margin-top: 1 rem;
+}
+
+.demo img {
+  /* height: 3 rem;
+  width: 3 rem;
+  margin: 10 rem; */
+  margin-top: 5 rem;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: auto;
+}
