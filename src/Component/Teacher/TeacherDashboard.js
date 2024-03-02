@@ -8,6 +8,7 @@ import TD_Sold from "../../assets/images/TD_Sold.png";
 // import CoursePage from "../Management/CoursePage";
 
 import "./TeacherDashboard.css";
+import PdfViewer from "../PDFViewer/PdfViewer";
 // import LineGraph from "../Graphs/LineGraph";
 // import PieChart from "../Graphs/PieChart";
 
@@ -89,6 +90,10 @@ function TeacherDashboard() {
             </div>
           </div>
         </div>
+
+        {/* Experiemnt PDF Viewer */}
+        <PdfViewer />
+        {/*  */}
 
         {/* Table */}
         <div className="table">

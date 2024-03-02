@@ -9,7 +9,18 @@ import CourseList from "../CourseList/CourseList";
 // import PieChart from "../Graphs/ChartsPage";
 import ChartsPage from "../Graphs/ChartsPage";
 // import Sidebar from "../Navbar/Sidebar";
+import Home_logo from "../../assets/images/Home (1).png";
+import MYCourses_logo from "../../assets/images/Laptop.png";
+import BrowseCourses_logo from "../../assets/images/Book.png";
+import EditProfile_logo from "../../assets/images/ProfileEdit.png";
+
 function StudentDashboard() {
+  const navItems = [
+    { path: "/StudentHome", label: "Home", icon: Home_logo },
+    { path: "/StudentDashboard", label: "Dashboard", icon: EditProfile_logo },
+    { path: "/contactus", label: "Help Me", icon: BrowseCourses_logo },
+    { path: "/tutorials", label: "Tutorials", icon: MYCourses_logo },
+  ];
   const [trial, setTrial] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -25,11 +36,14 @@ function StudentDashboard() {
   }, []);
 
   console.log(trial);
-  
+
   return (
     <div className="master_container">
       {/* Navbar */}
-      <Navbar role="Student" />
+      <Navbar
+        navItems={navItems}
+        role="Student"
+      />
 
       {/* Top Pane */}
 

@@ -20,6 +20,14 @@ import CourseDetailsPage from "../MainCoursePage/CourseDetailsPage.js"; // Impor
 import ThankYou from "../MainCoursePage/Thankyou.js";
 import PurchaseGuidePage from "../PurchaseGuide/PurchaseGuide.js";
 import Support from "../Support/Support.js";
+import CourseMain from "../MainCoursePage/Coursemainpage.js";
+import VideoPage from "../MainCoursePage/contentpage/Video.js";
+import Progress from "../MainCoursePage/contentpage/Progress.js";
+import Quiz from "../MainCoursePage/contentpage/Quiz.js";
+import Notes from "../MainCoursePage/contentpage/Notes.js";
+import PracticeSession from "../MainCoursePage/contentpage/PracticeSession.js";
+import Aptitude from "../MainCoursePage/contentpage/Aptitude.js";
+import PdfViewer from "../PDFViewer/PdfViewer.js";
 
 const Router = () => {
   return (
@@ -84,28 +92,86 @@ const Router = () => {
         }
       />
       <Route
-         path="/courses/:id" // Define path for course details with course ID parameter
-         element={
-           <>
-             <Header />
-             <CourseDetailsPage />
-             <Footer />
-           </>
-        }
-      />
-        <Route
-        path="/thankyou"
+        path="/courses/:id" // Define path for course details with course ID parameter
         element={
           <>
-            <Header /> <ThankYou/> <Footer />
+            <Header />
+            <CourseDetailsPage />
+            <Footer />
           </>
         }
       />
-          <Route
+      <Route
+        path="/thankyou"
+        element={
+          <>
+            <Header /> <ThankYou /> <Footer />
+          </>
+        }
+      />
+      <Route
         path="/support"
         element={
           <>
-            <Header /> <Support/> <Footer />
+            <Header /> <Support /> <Footer />
+
+          </>
+        }
+      />
+      <Route
+        path="/coursemain"
+        element={
+          <>
+            <Header /> <CourseMain /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/videos"
+        element={
+          <>
+            <Header /> <VideoPage /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/Progress"
+        element={
+          <>
+            <Header /> <Progress /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/notes"
+        element={
+          <>
+            <Header /> <Notes /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/practice"
+        element={
+          <>
+            <Header /> <PracticeSession /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/aptitude"
+        element={
+          <>
+            <Header /> <Aptitude /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/quizzes"
+        element={
+          <>
+            <Header /> <Quiz /> <Footer />
+
           </>
         }
       />
@@ -141,45 +207,41 @@ const Router = () => {
           <>
             <Header /> <Termsofservice /> <Footer />
           </>
-
-        } />
- <Route
+        }
+      />
+      <Route
         path="/purchaseguide"
         element={
           <>
-            <Header /> <PurchaseGuidePage/> <Footer />
+            <Header /> <PurchaseGuidePage /> <Footer />
           </>
-
         }
       />
 
-      <Route
-        path="/StudentDashboard"
-        element={<StudentDashboard />}
-      />
+      <Route path="/StudentDashboard" element={<StudentDashboard />} />
 
       {/* Path for student Home */}
 
-      <Route
-        path="/StudentHome"
-        element={<StudentHome />}
-      />
+      <Route path="/StudentHome" element={<StudentHome />} />
 
       {/* Path for Teacher Dashboard */}
 
-      <Route
-        path="/TeacherDashboard"
-        element={<TeacherDashboard />}
-      />
+      <Route path="/TeacherDashboard" element={<TeacherDashboard />} />
 
       {/* Path for Client Dashboard */}
+
+      <Route path="/ClientDashboard" element={<ClientDashboard />} />
       <Route
         path="/ClientDashboard"
         element={<ClientDashboard />}
       />
-    </Routes>
 
-    
+      {/* Path for PDFViewer (to be changed after completion) */}
+      <Route
+        path="/tutorials"
+        element={<PdfViewer />}
+      />
+    </Routes>
   );
 };
 export default Router;
