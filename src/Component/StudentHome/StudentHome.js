@@ -17,15 +17,9 @@ import profile_img from "../../assets/images/Group 4.png";
 import CourseList from "../CourseList/CourseList";
 import CourseCard from "../Courses-section/CourseCard";
 import Tutorial from "../Navbar/Tutorials/Tutorial";
+import VillaRoundedIcon from "@mui/icons-material/VillaRounded";
 
 function StudentHome() {
-  const navItems = [
-    { path: "/StudentHome", label: "Home", icon: Home_logo },
-    { path: "/StudentDashboard", label: "Dashboard", icon: EditProfile_logo },
-    { path: "/contactus", label: "Help Me", icon: BrowseCourses_logo },
-    { path: "/tutorials", label: "Tutorials", icon: MYCourses_logo },
-  ];
-
   // Fetching Data from the Database about courses for the course list
   const [courses, setCourses] = useState([]);
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -75,7 +69,7 @@ function StudentHome() {
           "http://localhost:8080/api/Student_data"
         );
         setStudent(response.data);
-        console.log(student);
+        // console.log(student);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -86,10 +80,7 @@ function StudentHome() {
 
   return (
     <div className="Student-home">
-      <Navbar
-        navItems={navItems}
-        role={"Student"}
-      />
+      <Navbar role={"Student"} />
 
       <div className="notnav">
         {/* Top Bar */}

@@ -24,20 +24,15 @@ function Tutorial() {
     <div>
       <h3>Tutorials</h3>
       <div className="display-pane">
-        {tutorials.map(
-          (item) => (
-            // img
-            // name
-            // tag-array
-            console.log(item._id),
-            (
-              <TutorialCard
-                key={item._id}
-                item={item}
-              />
-            )
-          )
-        )}
+        {tutorials.map((item) => (
+          // img
+          // name
+          // tag-array
+          <TutorialCard
+            key={item._id}
+            item={item}
+          />
+        ))}
       </div>
     </div>
   );

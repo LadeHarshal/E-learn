@@ -3,18 +3,57 @@ import { Link } from "react-router-dom";
 import logo from "../../assets/images/Logo_DiamondBkg.png";
 import profile_img from "../../assets/images/Group 4.png";
 import "./Navbar.css";
+import MYCourses_logo from "../../assets/images/Laptop.png";
+import BrowseCourses_logo from "../../assets/images/Book.png";
+import VillaRoundedIcon from "@mui/icons-material/VillaRounded";
+import ModeEditRoundedIcon from "@mui/icons-material/ModeEditRounded";
+import AutoStoriesRoundedIcon from "@mui/icons-material/AutoStoriesRounded";
+import HistoryEduRoundedIcon from "@mui/icons-material/HistoryEduRounded";
 // import classNames from "./classNames";
-
+// Define a mapping between icon names and components or elements
 function classNames(...args) {
   return args.filter(Boolean).join(" ");
 }
 
-function Navbar({ navItems = [], role = "Guest", isSelected }) {
+function Navbar({ role = "Guest", isSelected = false }) {
   const [selectedIndex, setSelectedIndex] = useState(null);
   var setFlag = false;
 
   function handleflag(flag) {
     flag = true;
+  }
+
+  let navItems;
+  if (role === "Student") {
+    navItems = [
+      { path: "/StudentHome", label: "Home", icon: <VillaRoundedIcon /> },
+      {
+        path: "/StudentDashboard",
+        label: "Dashboard",
+        icon: <ModeEditRoundedIcon />,
+      },
+      {
+        path: "/contactus",
+        label: "Help Me",
+        icon: <AutoStoriesRoundedIcon />,
+      },
+      {
+        path: "/tutorials",
+        label: "Tutorials",
+        icon: <HistoryEduRoundedIcon />,
+      },
+    ];
+  } else {
+    navItems = [
+      { path: "/TeacherHome", label: "Home", icon: <VillaRoundedIcon /> },
+      {
+        path: "/TeacherDashboard",
+        label: "Dashboard",
+        icon: "EditProfile_logo",
+      },
+      { path: "/contactus", label: "Help Me", icon: BrowseCourses_logo },
+      { path: "/tutorials", label: "Tutorials", icon: MYCourses_logo },
+    ];
   }
   return (
     <div className="Container">
@@ -36,22 +75,21 @@ function Navbar({ navItems = [], role = "Guest", isSelected }) {
       </div>
       <div className="options">
         <ul>
-          {navItems.map((item, index) => (
-            <li
-              key={index}
-              onClick={() => setSelectedIndex(index)}
-              isSelected={index === selectedIndex}
-              className={`${isSelected ? "selected" : ""}`}
-            >
-              <Link to={item.path}>
-                <img
-                  src={item.icon}
-                  alt={item.label}
-                />
-                <p>{item.label}</p>
-              </Link>
-            </li>
-          ))}
+          {navItems.map((item, index) => {
+            // Dynamically select the icon component based on item.icon
+            return (
+              <li
+                key={index}
+                onClick={() => setSelectedIndex(index)}
+                className={index === selectedIndex ? "selected" : ""}
+              >
+                <Link to={item.path}>
+                  {item.icon}
+                  <p>{item.label}</p>
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
 

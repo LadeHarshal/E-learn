@@ -28,7 +28,8 @@ const Course_List = mongoose.connection.collection("course_lists");
 const student_data = mongoose.connection.collection("Student_data");
 const Trial = mongoose.connection.collection("trials");
 const Teacher = mongoose.connection.collection("teacher");
-
+const Files = mongoose.connection.collection("files");
+const Courses = mongoose.connection.collection("Courses");
 //Routes inside our Server
 /* eslint-disable */
 /* prettier-ignore */
@@ -41,7 +42,6 @@ app.get("/api/course_lists", async (req, res) => {
     res.status(500).json({ message: 'Server error' });
   }
 });
-console.log(Trial);
 app.get("/api/Student_data", async (req, res) => {
   try {
     const students = await student_data.find().toArray(); // Retrieve all documents from the collection
@@ -51,26 +51,42 @@ app.get("/api/Student_data", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+app.get("/api/files", async (req, res) => {
+  try {
+    const binary_files = await Files.find().toArray(); // Retrieve all documents from the collection
+    res.json(binary_files);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
 
 app.get("/api/trial", async (req, res) => {
   try {
-    const pdfs = await Trial.find().toArray(); // Retrieve all documents from the collection
-    res.json(pdfs);
+    const pdf_list = await Trial.find().toArray(); // Retrieve all documents from the collection
+    res.json(pdf_list);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
   }
 });
 /* eslint-enable */
-app.get("/api/course_lists", (req, res) => {
-  res.json(data);
-  console.log(data);
-});
 
 app.get("/api/teacher", async (req, res) => {
   try {
     const teacher = await Teacher.find().toArray(); // Retrieve all documents from the collection
     res.json(teacher);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Server error" });
+  }
+});
+
+// adding courses
+app.get("/api/Courses", async (req, res) => {
+  try {
+    const courses_data = await Courses.find().toArray(); // Retrieve all documents from the collection
+    res.json(courses_data);
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });

@@ -8,22 +8,23 @@ const ThankYou = () => {
         <section>
             <Container>
                 <Row>
-                    <Col lg='12' className=' pt-5 text-center'>
+                    <Col lg='12' className='pt-5 text-center'>
                         <div className='thank__you'>
                             <span>
-                                <i class="ri-checkbox-circle-line"></i>
+                                <i className="ri-checkbox-circle-line"></i>
                             </span>
                             
-                            <h1 className=' mb-3 fw-semibold'>Thank You</h1>
-                            <h3 className=' mb-4'>your tour is booked.</h3>
+                            <h1 className='mb-3 fw-semibold'>Thank You</h1>
+                            <h3 className='mb-4'>Your course is booked.</h3>
                             
-                            <Button className='btn primary__btn w-25'><Link to='/home'>Back to Home</Link></Button>
+                            <Link to='/coursemain'><Button className='btn primary__btn mr-2 '>Go to Course</Button></Link>
+                            <Link to='/home'><Button className='btn primary__btn'>Back to Home</Button></Link>
                         </div>
                     </Col>
                 </Row>
             </Container>
         </section>
-    )
+    );
 }
 
 export default ThankYou;

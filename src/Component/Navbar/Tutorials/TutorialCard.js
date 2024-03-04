@@ -1,7 +1,9 @@
 import React from "react";
 import defaultCourse from "../../../assets/images/default_course.jpg";
-import StarsSharpIcon from "@mui/icons-material/StarsSharp";
+import SendIcon from "@mui/icons-material/Send";
 import Chip from "@mui/material/Chip";
+import ArticleIcon from "@mui/icons-material/Article";
+import Button from "@mui/material/Button";
 
 function TutorialCard(props) {
   return (
@@ -28,7 +30,7 @@ function TutorialCard(props) {
       </div>
       <div className="tags-pdf">
         <p>Tags : </p>
-        {console.log(props.item.tags)}
+        {/* {console.log(props.item.tags)} */}
         {props.item.tags.map((item) => (
           <Chip
             variant="outlined"
@@ -42,6 +44,19 @@ function TutorialCard(props) {
         {/* Tags for the pdf */}
 
         {/* Alternate Card */}
+      </div>
+      <div className="button-tutorialCard">
+        <a
+          href={props.item.link}
+          target="blank"
+        >
+          <Button
+            variant="contained"
+            endIcon={<ArticleIcon />}
+          >
+            View
+          </Button>
+        </a>
       </div>
     </div>
   );

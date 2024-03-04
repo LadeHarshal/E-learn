@@ -6,15 +6,29 @@
   padding: 5px;
 }
 .tutorial-element {
-  width: 20%;
-}
-.tutorial-img-div {
   display: flex;
   flex-direction: column;
+  width: 20%;
+  height: 32vh;
+  justify-content: center;
+  /* align-items: center; */
+  margin-inline: auto;
+  padding: 2px;
+  margin: 14px;
+}
+
+.tutorial-img-div {
+  width: 98%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .tutorial-img-div img {
-  max-height: 100px;
-  max-width: 170px;
+  max-height: 150px;
+  min-height: 150px;
+  max-width: 200px;
+  min-width: 180px;
 }
 .tags-pdf {
   display: flex;
@@ -30,4 +44,13 @@
 .chip {
   margin: 1px;
   margin-inline: 6 px;
+}
+
+.button-tutorialCard {
+  /* align-items: center; */
+  margin-block: 12px;
+  justify-content: center;
+  /* margin-inline: auto; */
+  display: flex;
+  /* background-color: black; */
 }
