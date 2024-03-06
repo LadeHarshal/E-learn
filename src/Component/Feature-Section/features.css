@@ -1,11 +1,43 @@
+.features {
+  padding: 50px 0;
+}
+
+.features-heading {
+  text-align: center;
+  margin-bottom: 30px; /* Add margin bottom to create gap between h1 and cards */
+}
+
+.single__feature {
+  transition: transform 0.3s ease;
+  border-radius: 10px; /* Add border radius for rounded corners */
+  overflow: hidden; /* Hide any content overflow */
+  background-color: #f7f9f9; /* Set background color */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add box shadow for depth */
+  margin: 0 10px 20px; /* Adjusted margin */
+  height: 290px; /* Set a fixed height for all cards */
+  display: flex; /* Use flexbox for layout */
+  flex-direction: column; /* Stack content vertically */
+  border: 2px solid transparent; /* Add transparent border */
+  padding-top: 10px;
+}
+
+.single__feature:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  border-color: skyblue; /* Change border color on hover */
+}
+
 .single__feature h2 i {
   font-size: 4rem;
+  transition: color 0.3s ease;
+  color: #17bf9e;
 }
 
 .single__feature h6 {
   font-weight: 600;
   font-size: 24px;
 }
-.parag{
+
+.parag {
   font-size: 20px;
 }
