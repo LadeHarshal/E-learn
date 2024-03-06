@@ -170,7 +170,7 @@ const CourseDetailsPage = () => {
     <Container className="mt-5">
       <Row>
         <Col md={6}>
-          <Card className="course-card">
+          <Card className="course-card1">
             <CardImg top src={course.image} alt={course.title} className="course-image" />
             <CardBody>
               <h2 className="course-title">{course.title}</h2>
