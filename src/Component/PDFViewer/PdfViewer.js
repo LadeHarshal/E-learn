@@ -62,6 +62,7 @@ function PdfViewer(props) {
     {
       uri: require(props.fileName),
       fileType: "pdf",
+      fileName: "pdf",
     }, // Remote file
 
     { uri: require("../../assets/pdf/Sample.pdf") }, // Local file
