@@ -4,11 +4,14 @@
   "private": true,
   "dependencies": {
     "@cyntler/react-doc-viewer": "^1.14.1",
-    "@emotion/react": "^11.11.3",
+    "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.0",
     "@material-tailwind/react": "^2.1.8",
+    "@mui/base": "^5.0.0-beta.37",
     "@mui/icons-material": "^5.15.6",
-    "@mui/material": "^5.15.10",
+    "@mui/joy": "^5.0.0-beta.29",
+    "@mui/material": "^5.15.11",
+    "@mui/material-next": "^6.0.0-alpha.124",
     "@mui/styled-engine": "^5.15.6",
     "@mui/x-data-grid": "^6.19.4",
     "@react-pdf/renderer": "^3.3.8",
@@ -16,6 +19,7 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.6.5",
+    "babel": "^6.23.0",
     "bootstrap": "^5.3.2",
     "browserify-zlib": "^0.2.0",
     "chart.js": "^4.4.1",
@@ -77,6 +81,8 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-syntax-jsx": "^7.23.3",
+    "@babel/preset-react": "^7.23.3",
     "webpack": "^5.90.3",
     "webpack-cli": "^5.1.4"
   }
