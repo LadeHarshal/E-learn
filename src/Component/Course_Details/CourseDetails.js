@@ -16,10 +16,16 @@ function CourseDetails() {
       <Navbar />
       <div className="notnav">
         <div className="selection">
-          <img src={details} alt="courses" />
+          <img
+            src={details}
+            alt="courses"
+          />
         </div>
         <div className="demo">
-          <img src={btn} alt="courses" />
+          <img
+            src={btn}
+            alt="courses"
+          />
         </div>
         {/* Top Bar */}
       </div>
