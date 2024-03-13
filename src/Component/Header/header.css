@@ -1,31 +1,70 @@
 .navigation img {
   width: 100px;
 }
+
 .header {
-  widows: 100%;
-  height: 120px;
+  width: 100%;
+  height: 100px;
   line-height: 50px;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  z-index: 10000;
+  background-color: rgba(255, 255, 255, 0.9);
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 
 .nav__list {
   margin: 0;
   padding: 0;
   list-style: none;
   display: flex;
-  column-gap: 2rem;
+  column-gap: 4rem !important;
 }
+
+.nav__items {
+  margin-right: 30px;
+}
+
 .nav__items a {
   font-weight: 650;
   font-size: 20px;
   color: black;
   text-decoration: none;
   transition: 0.3s;
-  margin-left: 4rem;
-  padding-left: 10px;
+  position: relative;
+  padding: 10px 0; /* Adjusted padding for vertical centering */
 }
+
 .nav__items a:hover {
   color: #17bf9e;
-  text-decoration: none;
+}
+
+.nav__items a::before,
+.nav__items a::after {
+  content: ''; /* Create pseudo-elements */
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 2px; /* Line height */
+  background-color: #17bf9e; /* Line color */
+  transition: transform 0.3s ease; /* Transition line appearance */
+  transform: scaleX(0); /* Initially hidden */
+}
+
+.nav__items a::before {
+  top: 0;
+}
+
+.nav__items a::after {
+  bottom: 0;
+}
+
+.nav__items a:hover::before,
+.nav__items a:hover::after {
+  transform: scaleX(1); /* Show line on hover */
 }
 .button Button {
   font-weight: 650;
@@ -34,7 +73,8 @@
   text-decoration: none;
   transition: 0.3s;
   background-color: #17bf9e;
-  margin-left: 20px;
+  margin-left: 20px; 
+  margin-top: -12px;
 }
 
 .button Button:hover {
@@ -50,6 +90,15 @@
 .header h2 {
   color: black;
 }
+
 .main__heading {
   text-decoration: none;
+}
+
+/* Additional styles for the contact us button */
+.contact-us-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1001; /* Ensure the button stays on top of other content */
 }
