@@ -1,18 +1,32 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import Navbar from "../Navbar/Navbar";
 import profile_img from "../../assets/images/Group 4.png";
 import bell from "../../assets/images/image 25.png";
-import TD_Courses from "../../assets/images/TD_Courses.png";
-import TD_Students from "../../assets/images/TD_Students.png";
-import TD_Sold from "../../assets/images/TD_Sold.png";
-// import CoursePage from "../Management/CoursePage";
-
 import "./TeacherDashboard.css";
-import PdfViewer from "../PDFViewer/PdfViewer";
-// import LineGraph from "../Graphs/LineGraph";
-// import PieChart from "../Graphs/PieChart";
 
 function TeacherDashboard() {
+  // Fetching and setting TeacherData from (line 10-24)
+  const [teacherData, setTeacherData] = useState([]);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/teacher");
+        setTeacherData(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  if (!teacherData) {
+    return <div>Loading...</div>;
+  }
+  console.log(teacherData[0]);
+  let teacherName = teacherData[0]["Teacher Name"];
+  let teacherExp = teacherData[0]["Teaching experience"];
+
   return (
     <div className="TD">
       {/* <CoursePage /> */}
@@ -40,85 +54,39 @@ function TeacherDashboard() {
 
         {/* Middle bar starts */}
 
-        {/* <PieChart /> */}
-        <div className="middle">
-          {/* first element */}
-          <div className="CountBox CourseCount">
-            <div className="head">
-              <img
-                src={TD_Courses}
-                alt="courses"
-              />
-              <p>Courses</p>
-            </div>
-            <hr></hr>
-            <div className="display">
-              <h2>20</h2>{" "}
-              {/* This will be the Count of unique students in the database who have enrolled this teacher's courses   */}
-            </div>
-          </div>
-
-          {/* Second Element */}
-          <div className="CountBox StudentCount">
-            <div className="head">
-              <img
-                src={TD_Students}
-                alt="student"
-              />
-              <p>Students</p>
-            </div>
-            <hr></hr>
-            <div className="display">
-              <h2>20</h2>{" "}
-              {/* This will be the Count of unique students in the database who have enrolled this teacher's courses   */}
-            </div>
-          </div>
-
-          {/* Third Element */}
-          <div className="CountBox SoldCount">
-            <div className="head">
-              <img
-                src={TD_Sold}
-                alt="courses"
-              />
-              <p>Sales</p>
-            </div>
-            <hr></hr>
-            <div className="display">
-              <h2>20</h2>{" "}
-              {/* This will be the Count of unique students in the database who have enrolled this teacher's courses   */}
-            </div>
-          </div>
-        </div>
-
-        {/* Experiemnt PDF Viewer */}
-        <PdfViewer />
-        {/*  */}
-
         {/* Table */}
         <div className="table">
-          <h2 className="TableHead">Course management Table</h2>
+          <h2 className="TableHead">Teacher Table</h2>
           <table class="table table-hover">
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">CourseName</th>
+                <th scope="col"> Teacher Name</th>
                 <th scope="col">Description</th>
                 <th scope="col">Manage</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Python</td>
-                <td>
-                  Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                  Vitae nemo porro itaque laborum, impedit enim dolore repellat,
-                  quasi corporis similique laudantium. Iste nobis quis ea,
-                  corporis consequatur architecto sit mollitia!
-                </td>
-                <td></td>
-              </tr>
+              {/*  */}
+
+              {teacherData ? (
+                <tr>
+                  <th scope="row">1</th>
+                  <td>{teacherData[0]["Teacher Name"]}</td>
+                  <td>{teacherName}</td>
+                  <td>{teacherExp}</td>
+                  <td></td>
+                </tr>
+              ) : (
+                <tr>
+                  <th></th>
+                  <td>loading</td>
+                  <td>loading</td>
+                  <td>loading</td>
+                </tr>
+              )}
+
+              {/*  */}
               <tr>
                 <th scope="row">2</th>
                 <td>CPP</td>
