@@ -30,10 +30,10 @@ function base64toPDF(base64Data, fileName = "document.pdf") {
   return url;
 }
 
-function PdfViewer() {
+function PdfViewer(props) {
+  console.log(props.fileName);
   const [pdfData, setPdfData] = useState(null);
   const [pdfUrl, setPdfUrl] = useState(""); // State to store the PDF URL
-
   useEffect(() => {
     const fetchPdfData = async () => {
       try {
@@ -45,7 +45,7 @@ function PdfViewer() {
 
         // Set the decoded PDF data in state
         // setPdfData(decodedData);
-        console.log(pdfData);
+        // console.log(pdfData);
 
         // Convert Base64 data to PDF and set the temp URL
         const url = base64toPDF(decodedData);
@@ -60,9 +60,9 @@ function PdfViewer() {
 
   const docs = [
     {
-      uri: "https://calibre-ebook.com/downloads/demos/demo.docx",
-      fileType: "docx",
-      fileName: "SamplePDF",
+      uri: require(props.fileName),
+      fileType: "pdf",
+      fileName: "pdf",
     }, // Remote file
 
     { uri: require("../../assets/pdf/Sample.pdf") }, // Local file
@@ -89,7 +89,22 @@ function PdfViewer() {
       <DocViewer
         documents={docs}
         pluginRenderers={DocViewerRenderers}
-        style={{ height: 1000 }}
+        style={{ height: 700 }}
+        theme={{
+          primary: "#5296d8",
+          // secondary: "#ffffff",
+          tertiary: "#5296d899",
+          // textPrimary: "#ffffff",
+          textSecondary: "#5296d8",
+          // textTertiary: "#00009999",
+          disableThemeScrollbar: false,
+        }}
+        config={{
+          pdfZoom: {
+            defaultZoom: 0.6, // 1 as default,
+            zoomJump: 0.2, // 0.1 as default,
+          },
+        }}
       />
     </div>
   );
