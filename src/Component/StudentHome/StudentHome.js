@@ -4,7 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import Navbar from "../Navbar/Navbar";
 import "./StudentHome.css";
-import "../Courses-section/courses.css";
+import "../Our_popular_courses/courses.css";
 import Book from "../../assets/images/Book2.png";
 import Teaching from "../../assets/images/Teaching.png";
 import illustration1 from "../../assets/images/Illustration.png";
@@ -15,7 +15,7 @@ import BrowseCourses_logo from "../../assets/images/Book.png";
 import EditProfile_logo from "../../assets/images/ProfileEdit.png";
 import profile_img from "../../assets/images/Group 4.png";
 import CourseList from "../CourseList/CourseList";
-import CourseCard from "../Courses-section/CourseCard";
+import CourseCard from "../Our_popular_courses/CourseCard";
 import Tutorial from "../Navbar/Tutorials/Tutorial";
 import VillaRoundedIcon from "@mui/icons-material/VillaRounded";
 
