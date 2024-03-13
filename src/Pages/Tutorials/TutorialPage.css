@@ -1,0 +1,37 @@
+/* .viewer-section {
+  width: 70%;
+} */
+.tutorial-viewer {
+  display: flex;
+  max-width: 100%;
+  width: 99vw;
+  height: 100vh;
+}
+.sidebar_Tutorial {
+  width: 25vw;
+}
+
+.sidebar_Tutorial .profile_bar {
+  display: flex;
+}
+.logo {
+  display: flex;
+  margin-block: 5px;
+  padding: 4px;
+  height: 16vh;
+  justify-content: center;
+  align-items: center;
+  width: 98%;
+}
+.logo-img {
+  height: 14vh;
+  width: 7vw;
+  margin-inline: auto;
+}
+.viewer-section {
+  width: 75vw;
+  height: 100vh;
+}
+ul {
+  list-style: none;
+}

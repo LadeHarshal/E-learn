@@ -1,6 +1,6 @@
 
 /* Course card */
-.course-card {
+.course-card1 {
     height: 480px; /* Increase the height of the course card */
     width: 800px !important;
     margin-left: -110px !important;
@@ -39,6 +39,7 @@
   
   /* Button */
   .btn-book {
+     
     font-size: 18px; /* Increase font size of the button */
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Add transition for button hover effect */
   }

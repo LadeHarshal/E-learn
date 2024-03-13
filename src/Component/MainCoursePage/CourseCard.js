@@ -14,7 +14,7 @@ const CourseCard = ({ id, title, image, description, price, reviews }) => {
           <CardText className="custom-course-price">Price: {price}</CardText>
           <CardText className="custom-course-reviews">Rating: {reviews}</CardText>
           <Link to={`/courses/${id}`}>
-            <Button>Enroll Now</Button>
+          <Button className="custom-course-button" style={{ backgroundColor: "#17bf9e" }}>Enroll Now</Button>
           </Link>
         </div>
       </CardBody>

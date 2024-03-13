@@ -28,6 +28,7 @@ import Notes from "../MainCoursePage/contentpage/Notes.js";
 import PracticeSession from "../MainCoursePage/contentpage/PracticeSession.js";
 import Aptitude from "../MainCoursePage/contentpage/Aptitude.js";
 import PdfViewer from "../PDFViewer/PdfViewer.js";
+import TutorialPage from "../../Pages/Tutorials/TutorialPage.js";
 
 const Router = () => {
   return (
@@ -114,7 +115,6 @@ const Router = () => {
         element={
           <>
             <Header /> <Support /> <Footer />
-
           </>
         }
       />
@@ -171,7 +171,6 @@ const Router = () => {
         element={
           <>
             <Header /> <Quiz /> <Footer />
-
           </>
         }
       />
@@ -218,19 +217,31 @@ const Router = () => {
         }
       />
 
-      <Route path="/StudentDashboard" element={<StudentDashboard />} />
+      <Route
+        path="/StudentDashboard"
+        element={<StudentDashboard />}
+      />
 
       {/* Path for student Home */}
 
-      <Route path="/StudentHome" element={<StudentHome />} />
+      <Route
+        path="/StudentHome"
+        element={<StudentHome />}
+      />
 
       {/* Path for Teacher Dashboard */}
 
-      <Route path="/TeacherDashboard" element={<TeacherDashboard />} />
+      <Route
+        path="/TeacherDashboard"
+        element={<TeacherDashboard />}
+      />
 
       {/* Path for Client Dashboard */}
 
-      <Route path="/ClientDashboard" element={<ClientDashboard />} />
+      <Route
+        path="/ClientDashboard"
+        element={<ClientDashboard />}
+      />
       <Route
         path="/ClientDashboard"
         element={<ClientDashboard />}
@@ -239,7 +250,7 @@ const Router = () => {
       {/* Path for PDFViewer (to be changed after completion) */}
       <Route
         path="/tutorials"
-        element={<PdfViewer />}
+        element={<TutorialPage />}
       />
     </Routes>
   );
