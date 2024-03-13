@@ -1,0 +1,40 @@
+/* PracticeSessionPage.css */
+.practice-session-page {
+    padding: 20px;
+  }
+  
+  .practice-session-header {
+    margin-bottom: 20px;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .section-title {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #444;
+  }
+  
+  .mock-test-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .start-test-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .start-test-button:hover {
+    background-color: #0056b3;
+  }

@@ -81,8 +81,6 @@
   transition: transform 0.3s ease; /* Add transition for smooth hover effect */
 }
 
-
-
 .custom-course-body {
   height: 50%; /* Adjust body height */
   display: flex;

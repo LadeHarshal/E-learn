@@ -4,7 +4,7 @@
 /node_modules
 /.pnp
 .pnp.js
-
+/non_public
 # testing
 /coverage
 
@@ -21,3 +21,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+###error files
+package-lock.json
+package.json

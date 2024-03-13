@@ -75,14 +75,15 @@
   background-color: #17bf9e; /* Adjust the background color as needed */
   clip-path: circle(50% at 100% 50%);
 }
-.hero__button Button:hover{
-    color: black;
-    background-color: white;
- }
- .hero__button Button{
+.hero__button Button:hover {
+  color: black;
+  background-color: white;
+}
+.hero__button Button {
   font-weight: 600;
- }
- .hero_img{
-  margin-left:150px;
+  border-radius: 50px;
+}
+.hero_img {
+  margin-left: 50px;
   margin-bottom: 50px;
- }
+}

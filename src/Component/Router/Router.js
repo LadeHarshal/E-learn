@@ -20,6 +20,15 @@ import CourseDetailsPage from "../MainCoursePage/CourseDetailsPage.js"; // Impor
 import ThankYou from "../MainCoursePage/Thankyou.js";
 import PurchaseGuidePage from "../PurchaseGuide/PurchaseGuide.js";
 import Support from "../Support/Support.js";
+import CourseMain from "../MainCoursePage/Coursemainpage.js";
+import VideoPage from "../MainCoursePage/contentpage/Video.js";
+import Progress from "../MainCoursePage/contentpage/Progress.js";
+import Quiz from "../MainCoursePage/contentpage/Quiz.js";
+import Notes from "../MainCoursePage/contentpage/Notes.js";
+import PracticeSession from "../MainCoursePage/contentpage/PracticeSession.js";
+import Aptitude from "../MainCoursePage/contentpage/Aptitude.js";
+import PdfViewer from "../PDFViewer/PdfViewer.js";
+import TutorialPage from "../../Pages/Tutorials/TutorialPage.js";
 
 const Router = () => {
   return (
@@ -110,6 +119,62 @@ const Router = () => {
         }
       />
       <Route
+        path="/coursemain"
+        element={
+          <>
+            <Header /> <CourseMain /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/videos"
+        element={
+          <>
+            <Header /> <VideoPage /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/Progress"
+        element={
+          <>
+            <Header /> <Progress /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/notes"
+        element={
+          <>
+            <Header /> <Notes /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/practice"
+        element={
+          <>
+            <Header /> <PracticeSession /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/aptitude"
+        element={
+          <>
+            <Header /> <Aptitude /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/quizzes"
+        element={
+          <>
+            <Header /> <Quiz /> <Footer />
+          </>
+        }
+      />
+      <Route
         path="/contactus"
         element={
           <>
@@ -152,18 +217,41 @@ const Router = () => {
         }
       />
 
-      <Route path="/StudentDashboard" element={<StudentDashboard />} />
+      <Route
+        path="/StudentDashboard"
+        element={<StudentDashboard />}
+      />
 
       {/* Path for student Home */}
 
-      <Route path="/StudentHome" element={<StudentHome />} />
+      <Route
+        path="/StudentHome"
+        element={<StudentHome />}
+      />
 
       {/* Path for Teacher Dashboard */}
 
-      <Route path="/TeacherDashboard" element={<TeacherDashboard />} />
+      <Route
+        path="/TeacherDashboard"
+        element={<TeacherDashboard />}
+      />
 
       {/* Path for Client Dashboard */}
-      <Route path="/ClientDashboard" element={<ClientDashboard />} />
+
+      <Route
+        path="/ClientDashboard"
+        element={<ClientDashboard />}
+      />
+      <Route
+        path="/ClientDashboard"
+        element={<ClientDashboard />}
+      />
+
+      {/* Path for PDFViewer (to be changed after completion) */}
+      <Route
+        path="/tutorials"
+        element={<TutorialPage />}
+      />
     </Routes>
   );
 };

@@ -3,13 +3,13 @@
   display: flex;
 }
 
-.mid {
+.Course-Details .mid {
   display: flex;
   height: 40%;
   justify-content: space-between;
 }
 
-.selection {
+.Course-Details .selection {
   display: flex;
   flex-direction: column;
   height: 80%;
@@ -19,7 +19,7 @@
   padding: 20px;
 }
 
-.selection img {
+.Course-Details .selection img {
   height: 20rem;
   width: 20rem;
   padding: 5px;
@@ -27,7 +27,7 @@
   border-radius: 25px;
   margin-top: 1.2rem;
 }
-.demo {
+.Course-Details .demo {
   display: flex;
   flex-direction: column;
   height: 3 rem;
@@ -38,7 +38,7 @@
   margin-top: 1 rem;
 }
 
-.demo img {
+.Course-Details .demo img {
   /* height: 3 rem;
   width: 3 rem;
   margin: 10 rem; */

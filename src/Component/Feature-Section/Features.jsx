@@ -11,27 +11,34 @@ const FeatureData = [
 
   {
     title: "All Time Support",
-    desc: "Enjoy all-time support on your learning journey",
+    desc: "Experience unwavering and dedicated all-time support on your learning journey.",
     icon: "ri-discuss-line",
   },
 
   {
     title: "Certification",
-    desc: "Unlock certifications, validate your skills",
+    desc: "Unlock certifications, validate and showcase your skills globally",
     icon: "ri-contacts-book-line",
   },
+  
+  {
+    title: "Interactive Learning",
+    desc: "Engage with interactive lessons to enhance your learning experience",
+    icon: "ri-brush-4-line",
+  }
 ];
 
 const Features = () => {
   return (
     <section>
       <Container>
+        <h1 className="features-heading">Our Best Features</h1>
         <Row>
           {FeatureData.map((item, index) => (
-            <Col lg="4" md="6" key={index}>
+            <Col  key={index}>
               <div className="single__feature text-center px-4">
                 <h2 className="mb-3">
-                  <i class={item.icon}></i>
+                  <i className={item.icon}></i>
                 </h2>
                 <h6>{item.title}</h6>
                 <p className="parag">{item.desc}</p>
