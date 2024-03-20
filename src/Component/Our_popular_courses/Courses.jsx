@@ -42,7 +42,7 @@ const Courses = () => {
     <section>
       <Container>
         <Row>
-          <Col lg="12" className="mb-5">
+          <Col lg="13" className="mb-5">
             <div className="course__top d-flex justify-content-between align-items-center">
               <div className="course__top__left w-50">
                 <h2>Our Popular Courses</h2>
@@ -52,7 +52,7 @@ const Courses = () => {
 
               <div className="w-50 text-end">
                 <Link to= '/courses'>
-                <button className="btn">See All</button>
+                <button className="see__all__btn">See All</button>
                 </Link>
               </div>
             </div>
