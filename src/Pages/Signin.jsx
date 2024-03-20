@@ -1,7 +1,8 @@
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { app } from '../Firebase';
-
+import loginImg from "../assets/images/login.jpg";
+import userIcon from "../assets/images/user.png";
 const auth = getAuth(app);
 
 const SigninPage = () => {
