@@ -57,12 +57,10 @@ function PdfViewer(props) {
 
     fetchPdfData();
   }, []);
-
+  console.log(props.fileName);
   const docs = [
     {
-      uri: require(props.fileName),
-      fileType: "pdf",
-      fileName: "pdf",
+      uri: props.fileName,
     }, // Remote file
 
     { uri: require("../../assets/pdf/Sample.pdf") }, // Local file

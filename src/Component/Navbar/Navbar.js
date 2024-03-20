@@ -4,12 +4,16 @@ import logo from "../../assets/images/Logo_DiamondBkg.png";
 import profile_img from "../../assets/images/Group 4.png";
 import "./Navbar.css";
 import MYCourses_logo from "../../assets/images/Laptop.png";
-import BrowseCourses_logo from "../../assets/images/Book.png";
 import VillaRoundedIcon from "@mui/icons-material/VillaRounded";
 import ModeEditRoundedIcon from "@mui/icons-material/ModeEditRounded";
 import AutoStoriesRoundedIcon from "@mui/icons-material/AutoStoriesRounded";
 import HistoryEduRoundedIcon from "@mui/icons-material/HistoryEduRounded";
-// import classNames from "./classNames";
+import {
+  AddCard,
+  DashboardCustomizeOutlined,
+  HelpOutline,
+} from "@mui/icons-material";
+
 // Define a mapping between icon names and components or elements
 function classNames(...args) {
   return args.filter(Boolean).join(" ");
@@ -45,13 +49,13 @@ function Navbar({ role = "Guest", isSelected = false }) {
     ];
   } else {
     navItems = [
-      { path: "/TeacherHome", label: "Home", icon: <VillaRoundedIcon /> },
+      { label: "Add Course", icon: <AddCard /> },
       {
         path: "/TeacherDashboard",
         label: "Dashboard",
-        icon: "EditProfile_logo",
+        icon: <DashboardCustomizeOutlined />,
       },
-      { path: "/contactus", label: "Help Me", icon: BrowseCourses_logo },
+      { path: "/contactus", label: "Get Help", icon: <HelpOutline /> },
       { path: "/tutorials", label: "Tutorials", icon: MYCourses_logo },
     ];
   }

@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import courseImg1 from "../../assets/images/web-design.png";
 function CourseCard(props) {
-  const { imgUrl, title, lesson, students, rating, id, tags } = props.item;
+  let { imgUrl, title, lesson, students, rating, id, tags } = props.item;
   let tag_list = [];
   let flag1 = false; // Declare flag1 variable outside of the conditional block
 

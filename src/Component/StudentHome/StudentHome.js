@@ -9,48 +9,54 @@ import Book from "../../assets/images/Book2.png";
 import Teaching from "../../assets/images/Teaching.png";
 import illustration1 from "../../assets/images/Illustration.png";
 import search_btn from "../../assets/images/Search.png";
-import Home_logo from "../../assets/images/Home (1).png";
-import MYCourses_logo from "../../assets/images/Laptop.png";
-import BrowseCourses_logo from "../../assets/images/Book.png";
-import EditProfile_logo from "../../assets/images/ProfileEdit.png";
 import profile_img from "../../assets/images/Group 4.png";
 import CourseList from "../CourseList/CourseList";
 import CourseCard from "../Our_popular_courses/CourseCard";
+import Course_Element from "../CourseList/Course_Element/Course_Element";
 import Tutorial from "../Navbar/Tutorials/Tutorial";
 import VillaRoundedIcon from "@mui/icons-material/VillaRounded";
 
 function StudentHome() {
-  // Fetching Data from the Database about courses for the course list
-  const [courses, setCourses] = useState([]);
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const [displayedCourses, setDisplayedCourses] = useState([]);
-  useEffect(() => {
-    // Set initial displayed courses
-    setDisplayedCourses(courses.slice(0, 4));
-  }, [courses]);
-
-  const handleNext = () => {
-    if (currentIndex + 4 < courses.length) {
-      setCurrentIndex(currentIndex + 4);
-      setDisplayedCourses(courses.slice(currentIndex + 4, currentIndex + 8));
-    }
-  };
-
-  const handlePrev = () => {
-    if (currentIndex - 4 >= 0) {
-      setCurrentIndex(currentIndex - 4);
-      setDisplayedCourses(courses.slice(currentIndex - 4, currentIndex));
-    }
-  };
+  /// Fetching Data about pdfs (Tutorial lists , link and image to display)
+  const [Pdfs, setPdfs] = useState([]); //Created state for loading tutorials
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          "http://localhost:8080/api/course_lists"
-        );
-        setCourses(response.data);
-        // console.log(response.data);
+        const response = await axios.get("http://localhost:8080/api/trial");
+        setPdfs(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
+  // Fetching Data from the Database about courses for the course list
+  const [courses, setCourses] = useState([]);
+  const [startIndex, setStartIndex] = useState(0);
+  const coursesPerPage = 3;
+
+  const handleNext = () => {
+    const newIndex = Math.min(startIndex + coursesPerPage, courses.length - 1);
+    setStartIndex(newIndex);
+  };
+
+  const handlePrevious = () => {
+    const newIndex = Math.max(startIndex - coursesPerPage, 0);
+    setStartIndex(newIndex);
+  };
+
+  const displayedCourses = courses.slice(
+    startIndex,
+    startIndex + coursesPerPage
+  );
+
+  const displayedPdfs = Pdfs.slice(startIndex, startIndex + coursesPerPage);
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("http://localhost:8080/api/courses");
+        setCourses(response.data[0].courses);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -80,7 +86,9 @@ function StudentHome() {
 
   return (
     <div className="Student-home">
-      <Navbar role={"Student"} />
+      <div className="Nav-container">
+        <Navbar role={"Student"} />
+      </div>
 
       <div className="notnav">
         {/* Top Bar */}
@@ -146,23 +154,58 @@ function StudentHome() {
         <div className="material">
           {/* Courses */}
 
-          {/* <div className="course-list">
+          <div className="course-list">
             <h3>Courses Enrolled</h3>
             <div className="courses">
-              {courses.map((item) => (
-                <CourseCard
-                  className="card"
-                  key={item._id}
-                  item={item}
+              <button
+                onClick={handlePrevious}
+                disabled={startIndex === 0}
+              >
+                Previous
+              </button>
+              {displayedCourses.map((item, index) => (
+                <Course_Element
+                  key={index}
+                  course={item}
+                  ActionText="View Video"
                 />
               ))}
+              <button
+                onClick={handleNext}
+                disabled={startIndex + coursesPerPage >= courses.length}
+              >
+                Next
+              </button>
             </div>
-          </div> */}
+            {/*  */}
+            {/* <div className="navigation-buttons">
+              <button
+                onClick={handlePrevious}
+                disabled={startIndex === 0}
+              >
+                Previous
+              </button>
+              <button
+                onClick={handleNext}
+                disabled={startIndex + coursesPerPage >= courses.length}
+              >
+                Next
+              </button>
+            </div> */}
+            {/*  */}
+          </div>
 
           {/* Tutorials  */}
           <div className="tutorial-pane">
-            <div className="tutorials-list">
-              <Tutorial />
+            <h3>Tutorials</h3>
+            <div className="tutorials-list courses">
+              {displayedPdfs.map((item, index) => (
+                <Course_Element
+                  key={index}
+                  course={item}
+                  ActionText="View Tutorial"
+                />
+              ))}
             </div>
           </div>
         </div>

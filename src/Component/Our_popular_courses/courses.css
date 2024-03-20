@@ -70,7 +70,7 @@
 }
 .see__all__btn{
   border: 1.5px solid #17bf9e;
-  padding: calc(.375rem - 3px) 60px calc(.375rem - 3px) 12px;
+  padding: calc(.375rem - 2px) 12px calc(.375rem - 2px) 12px;
   background-color: #00000000;
   font-size: 20px;
   font-weight: 600;

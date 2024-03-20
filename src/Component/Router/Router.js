@@ -39,6 +39,10 @@ import PracticeSession from "../MainCoursePage/contentpage/PracticeSession.js";
 import Aptitude from "../MainCoursePage/contentpage/Aptitude.js";
 import PdfViewer from "../PDFViewer/PdfViewer.js";
 import TutorialPage from "../../Pages/Tutorials/TutorialPage.js";
+import VideoPlayer from "../VideoPlayer/VideoPlayer.js";
+
+import SignupPage from "../../Pages/Signup.jsx";
+import SigninPage from "../../Pages/Signin.jsx";
 
 const Router = () => {
   return (
@@ -68,7 +72,7 @@ const Router = () => {
         path="/register"
         element={
           <>
-            <Header /> <Register /> <Footer />
+            <Header /> <SignupPage /> <Footer />
           </>
         }
       />
@@ -78,7 +82,7 @@ const Router = () => {
         path="/login"
         element={
           <>
-            <Header /> <Login /> <Footer />
+            <Header /> <SigninPage/> <Footer />
           </>
         }
       />
@@ -345,6 +349,11 @@ const Router = () => {
       <Route
         path="/tutorials"
         element={<TutorialPage />}
+      />
+
+      <Route
+        path="/VideoPlayer"
+        element={<VideoPlayer />}
       />
     </Routes>
   );
