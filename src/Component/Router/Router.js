@@ -31,6 +31,9 @@ import PdfViewer from "../PDFViewer/PdfViewer.js";
 import TutorialPage from "../../Pages/Tutorials/TutorialPage.js";
 import VideoPlayer from "../VideoPlayer/VideoPlayer.js";
 
+import SignupPage from "../../Pages/Signup.jsx";
+import SigninPage from "../../Pages/Signin.jsx";
+
 const Router = () => {
   return (
     <Routes>
@@ -59,7 +62,7 @@ const Router = () => {
         path="/register"
         element={
           <>
-            <Header /> <Register /> <Footer />
+            <Header /> <SignupPage /> <Footer />
           </>
         }
       />
@@ -69,7 +72,7 @@ const Router = () => {
         path="/login"
         element={
           <>
-            <Header /> <Login /> <Footer />
+            <Header /> <SigninPage/> <Footer />
           </>
         }
       />
