@@ -53,6 +53,7 @@ app.get("/api/Student_data", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
 app.get("/api/files", async (req, res) => {
   try {
     const binary_files = await Files.find().toArray(); // Retrieve all documents from the collection
@@ -136,6 +137,38 @@ app.post("/register/Student_data", async (req, res) => {
   }
 });
 
+// Course Addition Route
+app.post("/register/Courses", async (req, res) => {
+  try {
+    const { title, image, tags, videos, ratings, description } = req.body;
+
+    // Find the document containing the array and update it
+    const result = await Courses.findOneAndUpdate(
+      {},
+      {
+        $push: {
+          courses: {
+            title: title,
+            image: image,
+            tags: tags,
+            videos: videos,
+            description: description,
+            ratings: ratings,
+          },
+        },
+      }
+    );
+
+    if (result) {
+      res.status(201).send("Course created successfully");
+    } else {
+      res.status(404).send("Courses array not found");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
 // Login Route
 app.post("/login", async (req, res) => {
   try {

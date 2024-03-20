@@ -1,0 +1,9 @@
+.video-playlist-ul {
+  display: flex;
+}
+.Player {
+  width: 100%;
+  display: flex;
+  margin-block: 5px;
+  justify-content: center;
+}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactPlayer from "react-player";
 import { useLocation } from "react-router-dom";
 // For the Playlist Card element
@@ -10,30 +10,40 @@ import IconButton from "@mui/joy/IconButton";
 import Typography from "@mui/joy/Typography";
 import BookmarkAdd from "@mui/icons-material/BookmarkAddOutlined";
 //
+import "./VideoPlayer.css";
 function VideoPlayer() {
   const location = useLocation();
   const myProp = location.state && location.state.myProp;
   console.log(myProp);
+  const [videoUrl, setVideoUrl] = useState(myProp.VideoList[0].url);
+  // function to handle Watch now click
+  const handleWatch = (Url) => {
+    // Toggle the value of 'watched' when the button is clicked
+    // setWatched(!watched);
+    setVideoUrl(Url);
+    console.log(videoUrl);
+  };
   return (
     <div>
       <div className="Player">
         <ReactPlayer
-          url="https://www.youtube.com/watch?v=LXb3EKWsInQ"
+          url={videoUrl}
           controls={true}
         />
       </div>
       <div className="playlist">
         <div className="playlist-bar">
-          <ul>
-            {myProp.VideoList.map((video) => (
-              <Card sx={{ width: 320 }}>
+          <h3>Video Playlist</h3>
+          <ul className="video-playlist-ul">
+            {myProp.VideoList.map((video, index) => (
+              <Card sx={{ width: 320, margin: 2 }}>
                 <div>
                   <Typography level="title-lg">{video.title}</Typography>
                   <Typography level="body-sm">
                     April 24 to May 02, 2021
                   </Typography>
                   <IconButton
-                    aria-label="bookmark Bahamas Islands"
+                    aria-label="bookmark video"
                     variant="plain"
                     color="neutral"
                     size="sm"
@@ -51,20 +61,20 @@ function VideoPlayer() {
                   maxHeight="200px"
                 >
                   <img
-                    src="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286"
-                    srcSet="https://images.unsplash.com/photo-1527549993586-dff825b37782?auto=format&fit=crop&w=286&dpr=2 2x"
+                    src={myProp.thumbnail}
+                    srcSet={myProp.thumbnail}
                     loading="lazy"
                     alt=""
                   />
                 </AspectRatio>
                 <CardContent orientation="horizontal">
                   <div>
-                    <Typography level="body-xs">Total price:</Typography>
+                    <Typography level="body-xs">Video : </Typography>
                     <Typography
                       fontSize="lg"
                       fontWeight="lg"
                     >
-                      $2,900
+                      {index + 1}
                     </Typography>
                   </div>
                   <Button
@@ -73,8 +83,9 @@ function VideoPlayer() {
                     color="primary"
                     aria-label="Explore Bahamas Islands"
                     sx={{ ml: "auto", alignSelf: "center", fontWeight: 600 }}
+                    onClick={() => handleWatch(video.url)}
                   >
-                    Explore
+                    Watch
                   </Button>
                 </CardContent>
               </Card>

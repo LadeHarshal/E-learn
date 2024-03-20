@@ -13,8 +13,9 @@ function Course_Element(props) {
   let navigate = useNavigate();
   console.log(props);
   let VideoList = props.course.videos;
+  let thumbnail = props.course.image;
   const handleViewVideo = () => {
-    navigate("/VideoPlayer", { state: { myProp: { VideoList } } });
+    navigate("/VideoPlayer", { state: { myProp: { VideoList, thumbnail } } });
   };
   return (
     <div className="container">
