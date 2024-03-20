@@ -1,8 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../../Pages/Home";
-import Register from "../../Pages/Register";
-import Login from "../../Pages/Login";
 import CoursesPage from "../MainCoursePage/CoursesPage";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";

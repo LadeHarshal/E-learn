@@ -1,6 +1,11 @@
 import React, { useState } from 'react';
 import { getAuth, createUserWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from 'firebase/auth';
 import { app } from '../Firebase';
+import signupImage from "../assets/images/register.jpg"; // Importing the signup image
+import googleLogo from '../assets/images/google-logo.png'; // Importing the Google logo
+import './SignUp.css'; // Importing custom CSS for styling
+import { Link } from 'react-router-dom';
+
 
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
@@ -13,39 +18,55 @@ const SignupPage = () => {
         createUserWithEmailAndPassword(auth, email, password).then(value => alert('success'));
     };
 
-const signupwithGoogle = () => {
-    signInWithPopup(auth, googleProvider);
-}    
+    const signupwithGoogle = () => {
+        signInWithPopup(auth, googleProvider);
+    };
+
     return (
-        <div style={{ maxWidth: '300px', margin: '0 auto', padding: '20px', border: '1px solid #ccc', borderRadius: '5px', backgroundColor: '#f9f9f9' }}>
-            <h2>Sign Up</h2>
-            <label style={{ marginBottom: '8px', display: 'block' }}>Email</label>
-            <input
-                onChange={e => setEmail(e.target.value)}
-                value={email}
-                type="email"
-                required
-                placeholder='Enter your Email'
-                style={{ width: '100%', padding: '10px', marginBottom: '15px', border: '1px solid #ccc', borderRadius: '5px', boxSizing: 'border-box' }}
-            />
-            <label style={{ marginBottom: '8px', display: 'block' }}>Password</label>
-            <input
-                onChange={e => setPassword(e.target.value)}
-                value={password}
-                type="password"
-                required
-                placeholder='Enter your Password'
-                style={{ width: '100%', padding: '10px', marginBottom: '15px', border: '1px solid #ccc', borderRadius: '5px', boxSizing: 'border-box' }}
-            />
-            <button
-                onClick={createUser}
-                style={{ width: '100%', padding: '10px', border: 'none', borderRadius: '5px', backgroundColor: '#007bff', color: '#fff', cursor: 'pointer' }}
-            >
-                Sign Up
-            </button>
-            <br/>
-           <center> <h5>or</h5> </center>
-           <center>  <button onClick={signupwithGoogle}>Sign In With Google</button> </center>
+        <div className="signup-container">
+            <div className="signup-content">
+                <div className="signup-header">
+                    <h2>Sign Up</h2>
+                </div>
+                <div className="signup-form">
+                    <div className="signup-image">
+                        <img src={signupImage} alt="Signup" />
+                    </div>
+                    <div className="signup-inputs">
+                        <label>Email</label>
+                        <input
+                            onChange={e => setEmail(e.target.value)}
+                            value={email}
+                            type="email"
+                            required
+                            placeholder='Enter your Email'
+                        />
+                        <label>Password</label>
+                        <input
+                            onChange={e => setPassword(e.target.value)}
+                            value={password}
+                            type="password"
+                            required
+                            placeholder='Enter your Password'
+                        />
+                        <button className="signup-button" onClick={createUser}>
+                            Sign Up
+                        </button>
+                        <div className="or-divider">
+                            <hr />
+                            <span>or</span>
+                            <hr />
+                        </div>
+                        <button className="google-signup-button" onClick={signupwithGoogle}>
+                            <img src={googleLogo} alt="Google Logo" />
+                            Sign Up With Google
+                        </button>
+                    </div>
+                </div>
+                <div className="login-link">
+    <p>Already have an account? <Link to="/login">Login</Link></p>
+</div>
+            </div>
         </div>
     );
 };
