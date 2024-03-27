@@ -46,13 +46,6 @@
   margin-left: 15px;
   font-size: 1.5rem;
 }
-.CountBox {
-  height: 13rem;
-  width: 17rem;
-  border-radius: 20px;
-  padding: 5px;
-  margin: 5px;
-}
 
 .display {
   display: flex;
@@ -60,36 +53,3 @@
   align-items: center;
   margin-top: 2rem;
 }
-
-.CourseCount {
-  background-color: crimson;
-}
-.StudentCount {
-  background-color: olivedrab;
-}
-.SoldCount {
-  background-color: darkslateblue;
-}
-
-.TableHead {
-  text-align: center;
-  background-color: #17bf9e;
-  padding: 5px;
-  font-size: 1.5rem;
-}
-
-.table {
-  margin: 5px;
-  padding: 10px;
-  max-width: 98%;
-  justify-content: center;
-  align-items: center;
-}
-
-.table th {
-  text-align: center;
-}
-
-/* .graph {
-  height: 40%;
-} */

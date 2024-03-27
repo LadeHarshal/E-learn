@@ -1,8 +1,6 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import Home from "../../Pages/Home";
-import Register from "../../Pages/Register";
-import Login from "../../Pages/Login";
 import CoursesPage from "../MainCoursePage/CoursesPage";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
@@ -21,7 +19,17 @@ import ThankYou from "../MainCoursePage/Thankyou.js";
 import PurchaseGuidePage from "../PurchaseGuide/PurchaseGuide.js";
 import Support from "../Support/Support.js";
 import CourseMain from "../MainCoursePage/Coursemainpage.js";
-import VideoPage from "../MainCoursePage/contentpage/Video.js";
+import FullStack from "../MainCoursePage/contentpage/CourseVideo/Fullstack.js";
+import Figma from "../MainCoursePage/contentpage/CourseVideo/Figma.js"
+import JavaProgramming from "../MainCoursePage/contentpage/CourseVideo/JavaProgramming.js"
+import Python from "../MainCoursePage/contentpage/CourseVideo/Python.js"
+import TradingCourse from "../MainCoursePage/contentpage/CourseVideo/TradingCourse.js"
+import CyberSecurity from "../MainCoursePage/contentpage/CourseVideo/CyberSecurity.js"
+import DataAnalytics from "../MainCoursePage/contentpage/CourseVideo/DataAnalytics.js"
+import CryptographyCourse from "../MainCoursePage/contentpage/CourseVideo/CryptographyCourse.js"
+import DigitalMarketing from "../MainCoursePage/contentpage/CourseVideo/DigitalMarketing.js"
+import BigDataTraining from "../MainCoursePage/contentpage/CourseVideo/BigDataTraining.js"
+import DevopsProject from "../MainCoursePage/contentpage/CourseVideo/DevopsProject"
 import Progress from "../MainCoursePage/contentpage/Progress.js";
 import Quiz from "../MainCoursePage/contentpage/Quiz.js";
 import Notes from "../MainCoursePage/contentpage/Notes.js";
@@ -29,6 +37,10 @@ import PracticeSession from "../MainCoursePage/contentpage/PracticeSession.js";
 import Aptitude from "../MainCoursePage/contentpage/Aptitude.js";
 import PdfViewer from "../PDFViewer/PdfViewer.js";
 import TutorialPage from "../../Pages/Tutorials/TutorialPage.js";
+import VideoPlayer from "../VideoPlayer/VideoPlayer.js";
+
+import SignupPage from "../../Pages/Signup.jsx";
+import SigninPage from "../../Pages/Signin.jsx";
 
 const Router = () => {
   return (
@@ -58,7 +70,7 @@ const Router = () => {
         path="/register"
         element={
           <>
-            <Header /> <Register /> <Footer />
+            <Header /> <SignupPage /> <Footer />
           </>
         }
       />
@@ -68,7 +80,7 @@ const Router = () => {
         path="/login"
         element={
           <>
-            <Header /> <Login /> <Footer />
+            <Header /> <SigninPage/> <Footer />
           </>
         }
       />
@@ -127,13 +139,97 @@ const Router = () => {
         }
       />
       <Route
-        path="/course/videos"
+        path="/course/FullStack"
         element={
           <>
-            <Header /> <VideoPage /> <Footer />
+            <Header /> <FullStack /> <Footer />
           </>
         }
       />
+      {/* --------- */}
+      <Route
+        path="/course/Figma"
+        element={
+          <>
+            <Header /> <Figma /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/JavaProgramming"
+        element={
+          <>
+            <Header /> <JavaProgramming /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/Python"
+        element={
+          <>
+            <Header /> <Python /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/TradingCourse"
+        element={
+          <>
+            <Header /> <TradingCourse /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/CyberSecurity"
+        element={
+          <>
+            <Header /> <CyberSecurity /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/DataAnalytics"
+        element={
+          <>
+            <Header /> <DataAnalytics /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/CryptographyCourse"
+        element={
+          <>
+            <Header /> <CryptographyCourse /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/DigitalMarketing"
+        element={
+          <>
+            <Header /> <DigitalMarketing /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/BigDataTraining"
+        element={
+          <>
+            <Header /> <BigDataTraining /> <Footer />
+          </>
+        }
+      />
+      <Route
+        path="/course/DevopsProject"
+        element={
+          <>
+            <Header /> <DevopsProject /> <Footer />
+          </>
+        }
+      />
+
+      {/* ================== */}
+       
       <Route
         path="/course/Progress"
         element={
@@ -141,7 +237,7 @@ const Router = () => {
             <Header /> <Progress /> <Footer />
           </>
         }
-      />
+      />  
       <Route
         path="/course/notes"
         element={
@@ -251,6 +347,11 @@ const Router = () => {
       <Route
         path="/tutorials"
         element={<TutorialPage />}
+      />
+
+      <Route
+        path="/VideoPlayer"
+        element={<VideoPlayer />}
       />
     </Routes>
   );

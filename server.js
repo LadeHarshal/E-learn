@@ -3,6 +3,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const morgan = require("morgan");
 const path = require("path");
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const app = express();
 const cors = require("cors");
 
@@ -25,15 +27,15 @@ mongoose.connection.on("connected", () => {
 // const Schema = mongoose.Schema;
 
 const Course_List = mongoose.connection.collection("course_lists");
-const student_data = mongoose.connection.collection("Student_data");
 const Trial = mongoose.connection.collection("trials");
+const student_data = mongoose.connection.collection("Student_data");
 const Teacher = mongoose.connection.collection("teacher");
 const Files = mongoose.connection.collection("files");
 const Courses = mongoose.connection.collection("Courses");
 //Routes inside our Server
 /* eslint-disable */
 /* prettier-ignore */
-app.get("/api/course_lists", async (req, res) => {
+app.get("/api/course_lists", async (req, res) => { 
   try {
     const courses = await Course_List.find().toArray(); // Retrieve all documents from the collection
     res.json(courses);
@@ -51,6 +53,7 @@ app.get("/api/Student_data", async (req, res) => {
     res.status(500).json({ message: "Server error" });
   }
 });
+
 app.get("/api/files", async (req, res) => {
   try {
     const binary_files = await Files.find().toArray(); // Retrieve all documents from the collection
@@ -90,6 +93,99 @@ app.get("/api/Courses", async (req, res) => {
   } catch (error) {
     console.error(error);
     res.status(500).json({ message: "Server error" });
+  }
+});
+// Middlewares
+app.use(express.json());
+
+// Adding temporary Login and registration pathway
+// Teacher Registration Route
+app.post("/register/teacher", async (req, res) => {
+  try {
+    const { username, useremail, courses, password } = req.body;
+
+    // Insert the new teacher data into the 'teacher' collection
+    await Teacher.insertOne({
+      "Teacher Name": username,
+      "Email ID": useremail,
+      "Teaching experience": "",
+      key: password,
+      courses: [],
+    });
+
+    res.status(201).send("Teacher registered successfully");
+  } catch (error) {
+    console.error("Error registering teacher:", error);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// Student Registration Route
+app.post("/register/Student_data", async (req, res) => {
+  try {
+    const { username, useremail, userrole, password } = req.body;
+    // Insert a new document into the student collection at /api/student endpoint
+    await student_data.insertOne({
+      name: username,
+      key: password,
+      email: useremail,
+    });
+    res.status(201).send("Student registered successfully");
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+
+// Course Addition Route
+app.post("/register/Courses", async (req, res) => {
+  try {
+    const { title, image, tags, videos, ratings, description } = req.body;
+
+    // Find the document containing the array and update it
+    const result = await Courses.findOneAndUpdate(
+      {},
+      {
+        $push: {
+          courses: {
+            title: title,
+            image: image,
+            tags: tags,
+            videos: videos,
+            description: description,
+            ratings: ratings,
+          },
+        },
+      }
+    );
+
+    if (result) {
+      res.status(201).send("Course created successfully");
+    } else {
+      res.status(404).send("Courses array not found");
+    }
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
+  }
+});
+// Login Route
+app.post("/login", async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const user = await User.findOne({ email });
+    if (!user) {
+      return res.status(401).send("Invalid email or password");
+    }
+    const validPassword = await bcrypt.compare(password, user.password);
+    if (!validPassword) {
+      return res.status(401).send("Invalid email or password");
+    }
+    const token = jwt.sign({ userId: user._id }, "secret_key");
+    res.send({ token });
+  } catch (err) {
+    console.error(err);
+    res.status(500).send("Internal Server Error");
   }
 });
 

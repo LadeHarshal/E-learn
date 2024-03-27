@@ -1,70 +1,72 @@
 import React, { useState } from 'react';
 import './ContactUs.css';
-import{Button} from 'reactstrap';
 
 const ContactUs = () => {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [submitted, setSubmitted] = useState(false);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value
+    });
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you can handle form submission logic, like sending data to a backend server
-    // For simplicity, let's just log the form data
-    console.log({ name, email, message });
-    // Reset form fields
-    setName('');
-    setEmail('');
-    setMessage('');
-    // Set submitted to true to show a success message or redirect to a thank you page
-    setSubmitted(true);
+    console.log(formData);
+    setFormData({
+      name: '',
+      email: '',
+      message: ''
+    });
   };
 
   return (
-    <div className="container mt-5">
-      <h2 className="text-center mb-4">Contact Us</h2>
-      {submitted ? (
-        <div className="alert alert-success" role="alert">
-          Thank you for your message! We'll get back to you soon.
-        </div>
-      ) : (
+    <div className="contact-us-container">
+      <div className="right-side-image"></div>
+      <div className="form-container">
+        <h2 className='heading'>Contact Us</h2>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
-            <label htmlFor="name" className="form-label">Name:</label>
-            <input
+          <div className="form-group">
+            <label   htmlFor="name">Name</label>
+            <input 
               type="text"
-              className="form-control"
               id="name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
+              name="name"
+              value={formData.name}
+              onChange={handleChange}
               required
             />
           </div>
-          <div className="mb-3">
-            <label htmlFor="email" className="form-label">Email:</label>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
             <input
               type="email"
-              className="form-control"
               id="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
               required
             />
           </div>
-          <div className="mb-3">
-            <label htmlFor="message" className="form-label">Message:</label>
-            <textarea
-              className="form-control"
+          <div className="form-group">
+            <label htmlFor="message">Message</label>
+            <textarea className="message"
               id="message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
               required
-            />
+            ></textarea>
           </div>
-          <Button>Submit</Button>
+          <button  className="button1" type="submit">Submit</button>
         </form>
-      )}
+      </div>
     </div>
   );
 };
