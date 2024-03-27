@@ -17,6 +17,10 @@ const navLinks = [
     display: "About Us",
     url: "/aboutus",
   },
+  {
+    display: "Contact",
+    url: "/contactus",
+  }
 ];
 
 const Header = () => {
@@ -47,7 +51,7 @@ const Header = () => {
             </div>
 
             <div className="button d-flex align-items-center gap-5">
-             <Link to="/contactus"> <Button> Contact Us</Button></Link>
+             <Link to="/register"> <Button>SIGN UP</Button></Link>
             </div>
           </div>
         </div>
