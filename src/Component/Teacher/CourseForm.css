@@ -1,0 +1,20 @@
+.notnav {
+  width: 95%;
+}
+.top {
+  padding: 8px;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  border-bottom: 2px solid gray;
+}
+
+.top h4 {
+  text-align: center;
+  margin: auto;
+  color: gray;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}

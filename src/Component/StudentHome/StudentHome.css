@@ -159,10 +159,11 @@
   height: 40%;
   display: flex;
   flex-direction: column;
-  width: 98%;
+  width: 100%;
 }
 .courses {
   display: flex;
+  max-width: 95%;
 }
 
 /* .tutorials {
