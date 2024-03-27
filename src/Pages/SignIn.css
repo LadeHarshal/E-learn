@@ -1,53 +1,46 @@
-.signup-container {
+.signin-container{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 600px;
     background-color: #f9f9f9;
 }
-
-.signup-content {
-    max-width: 800px;
+.signin-content{
+    max-width: 750px;
     width: 100%;
     padding: 20px;
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
 }
-.signup-inputs label{
+.signin-inputs-label{
     margin-left: -0.1px;
     font-weight: 700;
     font-size: 17px;
 }
-
-.signup-header h2 {
+.signin-header h2{
     text-align: center;
     font-weight: 600;
     font-size: 40px;
    
 }
-
-.signup-form {
+.signin-form{
     display: flex;
 }
-
-.signup-image img {
+.signin-image img{
     max-width: 100%;
     height: auto;
     margin-right: 20px;
 }
-
-.signup-inputs {
+.signin-inputs{
     flex: 1;
-    margin-top: 30px;
+    margin-top: 80px;
 }
-
-.signup-inputs label {
+.signin-inputs-label{
     display: block;
     margin-bottom: 8px;
 }
-
-.signup-inputs input {
+.signin-inputs input{
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
@@ -57,81 +50,35 @@
     width: 300px;
     margin-left: -1px;
 }
-
-.signup-button, .google-signup-button {
+.signin-button{
     width: 100%;
     padding: 10px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-}
-
-.signup-button {
     background-color: #007bff;
     color: #fff;
 }
-
-.google-signup-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #fff;
-    color: #333;
-    border: 1px solid #ccc;
-}
-
-.google-signup-button img {
-    width: 30px;
-    margin-right: 4px;
-}
-
-.or-divider {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.or-divider hr {
-    flex: 1;
-    border: none;
-    height: 1px;
-    background-color: #ccc;
-}
-
-.or-divider span {
-    padding: 0 10px;
-    color: #999;
-    font-weight: bold;
-    text-transform: uppercase;
-}
-/* Input and button styling */
-.signup-inputs input {
+.signin-inputs input{
     transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition */
     background-color: #f5f5f5; /* Light background color */
     border: 1px solid #ddd; /* Light border color */
 }
-
-.signup-inputs input:focus {
+.signin-inputs input:focus {
     border-color: #007bff; /* Border color change on focus */
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Box shadow on focus */
 }
-
-.signup-button, .google-signup-button {
+.signin-button{
     transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; /* Transition */
     background-color: #007bff; /* Button background color */
     color: #fff; /* Button text color */
 }
-
-.signup-button:hover,
-.google-signup-button:hover {
+.signin-button:hover{
     background-color: #0056b3; /* Background color change on hover */
     box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Box shadow on hover */
 }
-
-/* Container animation */
-.signup-content {
+.signin-content {
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition */
     background-color: #fff; /* Light background color */
     border: 1px solid #ddd; /* Light border color */
@@ -139,28 +86,24 @@
     overflow: hidden; /* Hide overflow */
 }
 
-.signup-content:hover {
+.signin-content:hover {
     transform: translateY(-5px); /* Move container up on hover */
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Box shadow on hover */
 }
-/* CSS for login link */
 .login-link {
     text-align: center; /* Center align the login link */
-    margin-top: 40px; /* Add some top margin for spacing */
-
+    margin-top: 1px; /* Add some top margin for spacing */
 }
 
 .login-link p {
     margin: 0; /* Remove default margin */
     font-size: 16px; /* Adjust font size */
-    
 }
 
 .login-link a {
     color: #007bff; /* Link color */
     text-decoration: none; /* Remove underline */
     transition: color 0.3s ease; /* Smooth color transition on hover */
-    
 }
 
 .login-link a:hover {
