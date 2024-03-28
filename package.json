@@ -84,6 +84,9 @@
     ]
   },
   "devDependencies": {
+
+    "nodemon": "^3.0.3",
+
     "@babel/plugin-syntax-jsx": "^7.23.3",
     "@babel/preset-react": "^7.23.3",
     "webpack": "^5.90.3",
