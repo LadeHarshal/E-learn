@@ -1,0 +1,80 @@
+.student-master-div {
+  min-width: 90vw;
+  display: flex;
+  max-width: 100vw;
+  /* justify-content: space-between; */
+}
+.not-navbar {
+  margin-inline: 5px;
+  width: 100%;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 99%;
+}
+.top .search-bar button {
+  position: absolute;
+  right: 0;
+  border: none;
+  background-image: url("../../assets/images/Search.png");
+  border-radius: 50%;
+  /* padding: 5px; */
+  background: white;
+  margin-top: 2px;
+  margin-right: 2px;
+}
+
+.top h4 {
+  margin-left: 0;
+  /* display: flex; */
+  font-size: 1.2rem;
+  width: 20%;
+}
+
+.top .search-bar {
+  justify-content: center;
+  width: 50%;
+  position: relative;
+  display: flex;
+  margin-right: 5rem;
+}
+.top .search-bar input {
+  border-style: groove;
+  border-radius: 3rem;
+  width: 100%;
+  font-size: 13px;
+  padding: 5px;
+  padding-left: 15px;
+}
+
+.top .search-bar button img {
+  height: 16px;
+  width: 16px;
+}
+
+.logout_option {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout_option p {
+  margin-block: auto;
+  padding: 2px;
+  margin: 1px;
+  margin-right: 1.5rem;
+}
+.logout_option img {
+  height: 3rem;
+  width: 3rem;
+}
+/* Student-navbar */
+.student-navbar {
+  position: sticky;
+  height: 100vh;
+  top: 0;
+  z-index: 100;
+}

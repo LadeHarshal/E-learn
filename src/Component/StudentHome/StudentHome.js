@@ -13,10 +13,36 @@ import profile_img from "../../assets/images/Group 4.png";
 import CourseList from "../CourseList/CourseList";
 import CourseCard from "../Our_popular_courses/CourseCard";
 import Course_Element from "../CourseList/Course_Element/Course_Element";
-import Tutorial from "../Navbar/Tutorials/Tutorial";
-import VillaRoundedIcon from "@mui/icons-material/VillaRounded";
+import Button from "@mui/joy/Button";
 
-function StudentHome() {
+// import Logout from "@mui/icons-material/Logout";
+
+import { useLocation } from "react-router-dom";
+
+// For signout
+import { useNavigate } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { Logout } from "@mui/icons-material";
+import { IconButton } from "@mui/joy";
+function StudentHome(props) {
+  let navigate = useNavigate();
+  const location = useLocation();
+  const LoginData = location.state;
+  // console.log("here is the location prop", LoginData);
+  // console.log("here is the parameter prop", props);
+  // Signout Handler
+  const handleSignOut = () => {
+    // Sign out the user
+    signOut(props.auth)
+      .then(() => {
+        console.log("User signed out successfully");
+      })
+      .catch((error) => {
+        console.error("Error signing out:", error.message);
+      });
+    // Redirect to SignUp page
+    navigate("/register", {});
+  };
   /// Fetching Data about pdfs (Tutorial lists , link and image to display)
   const [Pdfs, setPdfs] = useState([]); //Created state for loading tutorials
   useEffect(() => {
@@ -36,13 +62,18 @@ function StudentHome() {
   const [startIndex, setStartIndex] = useState(0);
   const coursesPerPage = 3;
 
-  const handleNext = () => {
-    const newIndex = Math.min(startIndex + coursesPerPage, courses.length - 1);
+  const handlePrevious = () => {
+    const newIndex = Math.max(startIndex - coursesPerPage, 0);
     setStartIndex(newIndex);
   };
 
-  const handlePrevious = () => {
-    const newIndex = Math.max(startIndex - coursesPerPage, 0);
+  const handleNext = () => {
+    const lastIndex = courses.length - 1;
+    let newIndex = startIndex + coursesPerPage;
+    if (newIndex > lastIndex) {
+      // If newIndex exceeds the last index, loop back to the beginning
+      newIndex = 0;
+    }
     setStartIndex(newIndex);
   };
 
@@ -86,35 +117,7 @@ function StudentHome() {
 
   return (
     <div className="Student-home">
-      <div className="Nav-container">
-        <Navbar role={"Student"} />
-      </div>
-
       <div className="notnav">
-        {/* Top Bar */}
-        <div className="top">
-          <h4>HOME</h4>
-          {/* Top bar content */}
-          <div className="search-bar">
-            <input
-              type="text"
-              placeholder="Search Courses and tutorials"
-            />
-            <button>
-              <img
-                src={search_btn}
-                alt="search"
-              />
-            </button>
-          </div>
-          <div className="logout_option">
-            <p>LOGOUT</p>
-            <img
-              src={profile_img}
-              alt="profile"
-            />
-          </div>
-        </div>
         {/* Middle Bar */}
         <div className="mid">
           <div className="selection">
@@ -170,6 +173,7 @@ function StudentHome() {
                   ActionText="View Video"
                 />
               ))}
+
               <button
                 onClick={handleNext}
                 disabled={startIndex + coursesPerPage >= courses.length}

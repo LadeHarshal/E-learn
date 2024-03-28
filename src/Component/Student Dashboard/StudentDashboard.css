@@ -3,14 +3,13 @@
 .master_container {
   display: flex;
   /* min-width: 100vw; */
-  max-width: 100vw;
+  /* min-width: 100vw;
+   */
+  max-width: 95vw;
+  width: 100%;
   min-height: 100vh;
 }
 
-.not_Navbar {
-  width: 72%;
-  margin-left: 28.5%;
-}
 .top {
   padding: 8px;
   display: flex;

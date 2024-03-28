@@ -2,10 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import "./StudentDashboard.css";
 import stud1 from "../../assets/images/Student1.png";
-import profile_img from "../../assets/images/Group 4.png";
-import bell from "../../assets/images/image 25.png";
-import Navbar from "../Navbar/Navbar";
-import CourseList from "../CourseList/CourseList";
+
 // import PieChart from "../Graphs/ChartsPage";
 import ChartsPage from "../Graphs/ChartsPage";
 // import Sidebar from "../Navbar/Sidebar";
@@ -13,8 +10,9 @@ import Home_logo from "../../assets/images/Home (1).png";
 import MYCourses_logo from "../../assets/images/Laptop.png";
 import BrowseCourses_logo from "../../assets/images/Book.png";
 import EditProfile_logo from "../../assets/images/ProfileEdit.png";
+import { useLocation } from "react-router-dom";
 
-function StudentDashboard() {
+function StudentDashboard(props) {
   const navItems = [
     { path: "/StudentHome", label: "Home", icon: Home_logo },
     { path: "/StudentDashboard", label: "Dashboard", icon: EditProfile_logo },
@@ -35,34 +33,15 @@ function StudentDashboard() {
     fetchData();
   }, []);
 
-  console.log(trial);
+  // console.log(trial);
 
   return (
     <div className="master_container">
-      {/* Navbar */}
-      <Navbar
-        navItems={navItems}
-        role="Student"
-      />
-
       {/* Top Pane */}
 
       <div className="not_Navbar">
-        <div className="top">
-          <img
-            src={bell}
-            alt="notif"
-            className="notif_icon"
-          />
-          <h4> DASHBOARD</h4>
-          <div className="logout_option">
-            <p>LOGOUT</p>
-            <img
-              src={profile_img}
-              alt="profile"
-            />
-          </div>
-        </div>
+        {/* Top Bar */}
+        {/* <div className="top"></div> */}
 
         {/* Welcome Pane */}
 

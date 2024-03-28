@@ -11,7 +11,7 @@ import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import { useNavigate } from "react-router-dom";
 function Course_Element(props) {
   let navigate = useNavigate();
-  console.log(props);
+  // console.log(props);
   let VideoList = props.course.videos;
   let thumbnail = props.course.image;
   const handleViewVideo = () => {
