@@ -45,9 +45,7 @@ if(user == null){
   return (
     <div className="App">
       <Layout>
-      <Routes>
-        <Route path="/xyz" element={<CourseDetails/>}/>
-      </Routes>
+
       </Layout>
 
     </div>
