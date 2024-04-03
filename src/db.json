@@ -1,0 +1,125 @@
+{
+  "_id": { "$oid": "65c4726d33ba055b940b85eb" },
+  "courses": [
+    {
+      "title": "Python Programming",
+      "image": "python_image.jpg",
+      "tags": ["Python", "Programming", "Development"],
+      "videos": [
+        {
+          "title": "Introduction to Python",
+          "url": "https://example.com/python_intro_video",
+          "duration": "30:00"
+        },
+        {
+          "title": "Advanced Python Concepts",
+          "url": "https://example.com/python_advanced_video",
+          "duration": "45:00"
+        }
+      ],
+      "description": "Learn Python programming from scratch to advanced concepts.",
+      "ratings": { "$numberDouble": "4.5" },
+      "CID": { "$oid": "65e874273958c6e1f147328b" }
+    },
+    {
+      "title": "JavaScript Fundamentals",
+      "image": "javascript_image.jpg",
+      "tags": ["JavaScript", "Web Development"],
+      "videos": [
+        {
+          "title": "JavaScript Basics",
+          "url": "https://example.com/js_basics_video",
+          "duration": "40:00"
+        },
+        {
+          "title": "DOM Manipulation",
+          "url": "https://example.com/dom_manipulation_video",
+          "duration": "35:00"
+        }
+      ],
+      "description": "Master JavaScript fundamentals and DOM manipulation.",
+      "ratings": { "$numberDouble": "4.3" },
+      "CID": { "$oid": "65e8745e3958c6e1f147328c" }
+    },
+    {
+      "title": "Java Programming",
+      "image": "java_image.jpg",
+      "tags": ["Java", "Programming", "Development"],
+      "videos": [
+        {
+          "title": "Java Basics",
+          "url": "https://example.com/java_basics_video",
+          "duration": "50:00"
+        },
+        {
+          "title": "Advanced Java Concepts",
+          "url": "https://example.com/java_advanced_video",
+          "duration": "55:00"
+        }
+      ],
+      "description": "Learn Java programming language from basics to advanced concepts.",
+      "ratings": { "$numberDouble": "4.7" },
+      "CID": { "$oid": "65e874653958c6e1f147328d" }
+    },
+    {
+      "title": "C++ Programming",
+      "image": "cpp_image.jpg",
+      "tags": ["C++", "Programming", "Development"],
+      "videos": [
+        {
+          "title": "C++ Basics",
+          "url": "https://example.com/cpp_basics_video",
+          "duration": "45:00"
+        },
+        {
+          "title": "Advanced C++ Concepts",
+          "url": "https://example.com/cpp_advanced_video",
+          "duration": "60:00"
+        }
+      ],
+      "description": "Master C++ programming language from basics to advanced concepts.",
+      "ratings": { "$numberDouble": "4.6" },
+      "CID": { "$oid": "65e8746d3958c6e1f147328e" }
+    },
+    {
+      "title": "C Programming",
+      "image": "c_image.jpg",
+      "tags": ["C", "Programming", "Development"],
+      "videos": [
+        {
+          "title": "C Basics",
+          "url": "https://example.com/c_basics_video",
+          "duration": "35:00"
+        },
+        {
+          "title": "Advanced C Concepts",
+          "url": "https://example.com/c_advanced_video",
+          "duration": "50:00"
+        }
+      ],
+      "description": "Learn C programming language from basics to advanced concepts.",
+      "ratings": { "$numberDouble": "4.4" },
+      "CID": { "$oid": "65e874733958c6e1f147328f" }
+    },
+    {
+      "title": "React JS Fundamentals",
+      "image": "react_image.jpg",
+      "tags": ["React", "JavaScript", "Frontend Development"],
+      "videos": [
+        {
+          "title": "React Basics",
+          "url": "https://example.com/react_basics_video",
+          "duration": "40:00"
+        },
+        {
+          "title": "State Management in React",
+          "url": "https://example.com/react_state_management_video",
+          "duration": "45:00"
+        }
+      ],
+      "description": "Master React JS fundamentals and state management.",
+      "ratings": { "$numberDouble": "4.8" },
+      "CID": { "$oid": "65e8747e3958c6e1f1473290" }
+    }
+  ]
+}

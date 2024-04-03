@@ -20,16 +20,16 @@ import PurchaseGuidePage from "../PurchaseGuide/PurchaseGuide.js";
 import Support from "../Support/Support.js";
 import CourseMain from "../MainCoursePage/Coursemainpage.js";
 import FullStack from "../MainCoursePage/contentpage/CourseVideo/Fullstack.js";
-import Figma from "../MainCoursePage/contentpage/CourseVideo/Figma.js"
-import JavaProgramming from "../MainCoursePage/contentpage/CourseVideo/JavaProgramming.js"
-import Python from "../MainCoursePage/contentpage/CourseVideo/Python.js"
-import TradingCourse from "../MainCoursePage/contentpage/CourseVideo/TradingCourse.js"
-import CyberSecurity from "../MainCoursePage/contentpage/CourseVideo/CyberSecurity.js"
-import DataAnalytics from "../MainCoursePage/contentpage/CourseVideo/DataAnalytics.js"
-import CryptographyCourse from "../MainCoursePage/contentpage/CourseVideo/CryptographyCourse.js"
-import DigitalMarketing from "../MainCoursePage/contentpage/CourseVideo/DigitalMarketing.js"
-import BigDataTraining from "../MainCoursePage/contentpage/CourseVideo/BigDataTraining.js"
-import DevopsProject from "../MainCoursePage/contentpage/CourseVideo/DevopsProject"
+import Figma from "../MainCoursePage/contentpage/CourseVideo/Figma.js";
+import JavaProgramming from "../MainCoursePage/contentpage/CourseVideo/JavaProgramming.js";
+import Python from "../MainCoursePage/contentpage/CourseVideo/Python.js";
+import TradingCourse from "../MainCoursePage/contentpage/CourseVideo/TradingCourse.js";
+import CyberSecurity from "../MainCoursePage/contentpage/CourseVideo/CyberSecurity.js";
+import DataAnalytics from "../MainCoursePage/contentpage/CourseVideo/DataAnalytics.js";
+import CryptographyCourse from "../MainCoursePage/contentpage/CourseVideo/CryptographyCourse.js";
+import DigitalMarketing from "../MainCoursePage/contentpage/CourseVideo/DigitalMarketing.js";
+import BigDataTraining from "../MainCoursePage/contentpage/CourseVideo/BigDataTraining.js";
+import DevopsProject from "../MainCoursePage/contentpage/CourseVideo/DevopsProject";
 import Progress from "../MainCoursePage/contentpage/Progress.js";
 import Quiz from "../MainCoursePage/contentpage/Quiz.js";
 import Notes from "../MainCoursePage/contentpage/Notes.js";
@@ -41,6 +41,7 @@ import VideoPlayer from "../VideoPlayer/VideoPlayer.js";
 
 import SignupPage from "../../Pages/Signup.jsx";
 import SigninPage from "../../Pages/Signin.jsx";
+// import Student from "../../Pages/Student/Student.js";
 
 const Router = () => {
   return (
@@ -54,7 +55,6 @@ const Router = () => {
           </>
         }
       />
-
       {/* Path for home page */}
       <Route
         path="/home"
@@ -64,7 +64,6 @@ const Router = () => {
           </>
         }
       />
-
       {/* Path for Registration page */}
       <Route
         path="/register"
@@ -74,17 +73,16 @@ const Router = () => {
           </>
         }
       />
-
       {/* Path for Login page */}
       <Route
         path="/login"
         element={
           <>
-            <Header /> <SigninPage/> <Footer />
+            <Header /> <SigninPage /> <Footer />
+            <Header /> <SigninPage /> <Footer />
           </>
         }
       />
-
       {/* Path for about us page */}
       <Route
         path="/aboutus"
@@ -94,7 +92,6 @@ const Router = () => {
           </>
         }
       />
-
       {/* Path for Courses Page */}
       <Route
         path="/courses"
@@ -228,8 +225,6 @@ const Router = () => {
         }
       />
 
-      {/* ================== */}
-       
       <Route
         path="/course/Progress"
         element={
@@ -237,7 +232,8 @@ const Router = () => {
             <Header /> <Progress /> <Footer />
           </>
         }
-      />  
+      />
+
       <Route
         path="/course/notes"
         element={
@@ -286,7 +282,6 @@ const Router = () => {
           </>
         }
       />
-
       <Route
         path="/privacypolicy"
         element={
@@ -295,7 +290,6 @@ const Router = () => {
           </>
         }
       />
-
       <Route
         path="/Termsofservice"
         element={
@@ -312,28 +306,21 @@ const Router = () => {
           </>
         }
       />
-
       <Route
         path="/StudentDashboard"
         element={<StudentDashboard />}
       />
-
       {/* Path for student Home */}
-
       <Route
         path="/StudentHome"
         element={<StudentHome />}
       />
-
       {/* Path for Teacher Dashboard */}
-
       <Route
         path="/TeacherDashboard"
         element={<TeacherDashboard />}
       />
-
       {/* Path for Client Dashboard */}
-
       <Route
         path="/ClientDashboard"
         element={<ClientDashboard />}
@@ -342,17 +329,19 @@ const Router = () => {
         path="/ClientDashboard"
         element={<ClientDashboard />}
       />
-
       {/* Path for PDFViewer (to be changed after completion) */}
       <Route
         path="/tutorials"
         element={<TutorialPage />}
       />
-
       <Route
         path="/VideoPlayer"
         element={<VideoPlayer />}
       />
+      {/* <Route
+        path="/Student"
+        element={<Student />}
+      /> */}
     </Routes>
   );
 };

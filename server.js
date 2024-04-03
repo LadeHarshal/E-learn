@@ -123,12 +123,13 @@ app.post("/register/teacher", async (req, res) => {
 // Student Registration Route
 app.post("/register/Student_data", async (req, res) => {
   try {
-    const { username, useremail, userrole, password } = req.body;
+    const { name, email, courses_enrolled, key } = req.body;
     // Insert a new document into the student collection at /api/student endpoint
     await student_data.insertOne({
-      name: username,
-      key: password,
-      email: useremail,
+      name: name,
+      courses_enrolled: courses_enrolled,
+      key: key,
+      email: email,
     });
     res.status(201).send("Student registered successfully");
   } catch (err) {
