@@ -29,7 +29,11 @@ const SigninPage = () => {
         console.log("Signin Success");
         if (user && user.email) {
           // Redirect to the new page and pass user email
-          navigate("/Student", { state: { email: user.email } });
+          if (user.email.split("@")[1].split(".")[0] === "org") {
+            navigate("/TeacherDashboard", { state: { email: user.email } });
+          } else {
+            navigate("/Student", { state: { email: user.email } });
+          }
         } else {
           console.log("User data is null or missing email");
         }

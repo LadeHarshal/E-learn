@@ -75,7 +75,18 @@ function App() {
     <div className="App">
       {/* <button onClick={() => handleSignOut(auth)}>Logout</button> */}
       <Routes>
-        {user ? (
+        {console.log("This is user ", user.email.split("@")[1].split(".")[0])}
+        {user.email.split("@")[1].split(".")[0] === "org" ? (
+          <Route
+            path="/TeacherDashboard"
+            element={
+              <TeacherDashboard
+                handleSignOut={handleSignOut}
+                auth={auth}
+              />
+            }
+          />
+        ) : (
           <Route
             path="/Student"
             element={
@@ -85,8 +96,6 @@ function App() {
               />
             }
           />
-        ) : (
-          <Navigate to="/login" />
         )}
         <Route
           path="/StudentDashboard"
@@ -98,10 +107,10 @@ function App() {
           element={<StudentHome />}
         />
         {/* Path for Teacher Dashboard */}
-        <Route
+        {/* <Route
           path="/TeacherDashboard"
           element={<TeacherDashboard />}
-        />
+        /> */}
         {/* Path for Client Dashboard */}
         <Route
           path="/ClientDashboard"

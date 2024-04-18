@@ -14,6 +14,7 @@ import CourseList from "../CourseList/CourseList";
 import CourseCard from "../Our_popular_courses/CourseCard";
 import Course_Element from "../CourseList/Course_Element/Course_Element";
 import Button from "@mui/joy/Button";
+import { motion } from "framer-motion";
 
 // import Logout from "@mui/icons-material/Logout";
 
@@ -95,9 +96,10 @@ function StudentHome(props) {
 
     fetchData();
   }, []);
+  // Framer motion
+  const [isOpen, setIsOpen] = useState(false);
 
   // Fetching Data about the student from the student dataabse
-
   const [student, setStudent] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
@@ -133,10 +135,22 @@ function StudentHome(props) {
           <div className="mid-center">
             {/* Middle bar content EyeCatcher*/}
             <div className="illustration">
-              <img
-                src={illustration1}
-                alt="Study1"
-              />
+              <motion.div
+                layout
+                data-isOpen={isOpen}
+                initial={{ borderRadius: 50 }}
+                className="parent"
+                onClick={() => setIsOpen(!isOpen)}
+              >
+                {/* <motion.div
+                  layout
+                  className="child"
+                /> */}
+                <img
+                  src={illustration1}
+                  alt="Study1"
+                />
+              </motion.div>
             </div>
             <div className="text">
               <h5>Choose Your Learning Method</h5>
