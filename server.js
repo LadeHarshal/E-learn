@@ -100,23 +100,71 @@ app.use(express.json());
 
 // Adding temporary Login and registration pathway
 // Teacher Registration Route
+
 app.post("/register/teacher", async (req, res) => {
   try {
     const { username, useremail, courses, password } = req.body;
 
-    // Insert the new teacher data into the 'teacher' collection
-    await Teacher.insertOne({
-      "Teacher Name": username,
-      "Email ID": useremail,
-      "Teaching experience": "",
-      key: password,
-      courses: [],
+    // Check if the teacher already exists
+    const existingTeacher = await Teacher.findOne({
+      "Email ID": { $elemMatch: { $eq: useremail } },
     });
 
-    res.status(201).send("Teacher registered successfully");
+    console.log("Existing Teacher:", existingTeacher, "email", useremail);
+    if (existingTeacher) {
+      // If the teacher already exists, update their courses
+      existingTeacher.Course.push(...courses); // Use push to add new courses
+      console.log(existingTeacher);
+      await existingTeacher.save();
+      res.status(200).send("Courses added to existing teacher successfully");
+    } else {
+      // If the teacher doesn't exist, create a new teacher with the provided data
+      await Teacher.insertOne({
+        "Teacher Name": username,
+        "Email ID": useremail,
+        "Teaching experience": "",
+        key: password,
+        Course: [],
+      });
+      res.status(201).send("Teacher registered successfully with courses");
+    }
   } catch (error) {
-    console.error("Error registering teacher:", error);
+    console.error("Error registering/adding courses to teacher:", error);
     res.status(500).send("Internal Server Error");
+  }
+});
+
+// Route to update teacher's course
+app.post("/register/teacher/:email", async (req, res) => {
+  const useremail = req.params.email;
+  const courses = req.body.course;
+
+  try {
+    // Check if the teacher already exists
+    const existingTeacher = await Teacher.findOne({
+      "Email ID": useremail,
+    });
+
+    console.log(
+      "Existing Teacher:",
+      existingTeacher,
+      "email",
+      useremail,
+      "req",
+      req.body,
+      "param",
+      req.params
+    );
+    if (existingTeacher) {
+      // If the teacher already exists, update their courses
+      existingTeacher.Course.push(...courses); // Use push to add new courses
+      console.log(existingTeacher);
+      await existingTeacher.save();
+      res.status(200).send("Courses added to existing teacher successfully");
+    }
+  } catch (error) {
+    console.error(error);
+    return res.status(500).json({ error: "Internal Server Error" });
   }
 });
 
@@ -141,7 +189,7 @@ app.post("/register/Student_data", async (req, res) => {
 // Course Addition Route
 app.post("/register/Courses", async (req, res) => {
   try {
-    const { title, image, tags, videos, ratings, description } = req.body;
+    const { title, image, tags, videos, ratings, description, CID } = req.body;
 
     // Find the document containing the array and update it
     const result = await Courses.findOneAndUpdate(
@@ -155,6 +203,7 @@ app.post("/register/Courses", async (req, res) => {
             videos: videos,
             description: description,
             ratings: ratings,
+            CID: CID,
           },
         },
       }

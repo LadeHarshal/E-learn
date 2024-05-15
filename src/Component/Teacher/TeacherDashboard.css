@@ -60,3 +60,21 @@
   align-items: center;
   height: 100vh;
 }
+.title1-teacherDashboard {
+  display: flex;
+  margin: 5px;
+  /* justify-content: center; */
+  align-items: center;
+}
+.title1-teacherDashboard h2 {
+  margin: 4px;
+  margin-left: 7px;
+}
+.course-display-teacherDashboard {
+  display: flex;
+  flex-direction: row;
+  padding: 5px;
+}
+.course-display-element-teacherDashboard {
+  margin: 10px;
+}
