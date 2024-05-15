@@ -10,7 +10,7 @@ import { Logout } from "@mui/icons-material";
 // For signout
 import { useNavigate, useLocation } from "react-router-dom";
 import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
-
+// For animations
 function Student({ handleSignOut, auth }) {
   const handleLogout = () => {
     handleSignOut(); // Call the handleSignOut function passed as a prop
@@ -18,10 +18,9 @@ function Student({ handleSignOut, auth }) {
   const role = "Student";
   let navigate = useNavigate();
   const location = useLocation();
-  console.log("Passed props ", auth);
+  // console.log("Passed props ", auth);
 
   const [display, setDisplay] = useState("0");
-
   const handleListItemClick = useCallback((index) => {
     // Set the display state based on the clicked index
     if (index === 0) {
@@ -30,9 +29,6 @@ function Student({ handleSignOut, auth }) {
       setDisplay("1"); // Set display to "1" for StudentDashboard
     }
   }, []);
-
-  // Define a default onListItemClick function
-  const defaultOnClick = () => {};
 
   return (
     <div className="student-master-div">
@@ -80,6 +76,7 @@ function Student({ handleSignOut, auth }) {
             />
           </div>
         </div>
+
         {display === "0" && <StudentHome />}
         {display === "1" && <StudentDashboard />}
       </div>

@@ -38,8 +38,31 @@ const Navbar = React.memo(({ role = "Guest", onListItemClick, name }) => {
       icon: <HistoryEduRoundedIcon />,
     },
   ];
+  navItems = [
+    {
+      // path: "/StudentHome",
+      label: "Home",
+      icon: <VillaRoundedIcon />,
+    },
+    {
+      // path: "/StudentDashboard",
+      label: "Dashboard",
+      icon: <ModeEditRoundedIcon />,
+    },
+    {
+      path: "/contactus",
+      label: "Help Me",
+      icon: <AutoStoriesRoundedIcon />,
+    },
+    {
+      path: "/tutorials",
+      label: "Tutorials",
+      icon: <HistoryEduRoundedIcon />,
+    },
+  ];
   return (
     <div className="Container">
+      {/* {console.log(typeof onListItemClick)} */}
       {/* {console.log(typeof onListItemClick)} */}
       <div className="icon">
         <img
