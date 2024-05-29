@@ -13,7 +13,7 @@ import {
   HelpOutline,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-
+import DrawTwoToneIcon from "@mui/icons-material/DrawTwoTone";
 // For Teacher Bio Card
 // import Avatar from "@mui/joy/Avatar";
 import DefaultTeacherImage from "../../assets/images/TeacherDefault.jpg";
@@ -27,18 +27,17 @@ import Sheet from "@mui/joy/Sheet";
 import Skeleton from "@mui/joy/Skeleton";
 import { Logout } from "@mui/icons-material";
 
-// import CourseForm from "./CourseForm";
+// For Course Display Card in Teacher dashboard
+import CardOverflow from "@mui/joy/CardOverflow";
+import Divider from "@mui/joy/Divider";
+import CardCover from "@mui/joy/CardCover";
+// import Link from '@mui/joy/Link';
 
 // For the input for new courses
-import FormControl from "@mui/joy/FormControl";
-import FormLabel from "@mui/joy/FormLabel";
-import Input from "@mui/joy/Input";
 import Modal from "@mui/joy/Modal";
 import ModalDialog from "@mui/joy/ModalDialog";
 import DialogTitle from "@mui/joy/DialogTitle";
 import DialogContent from "@mui/joy/DialogContent";
-import Stack from "@mui/joy/Stack";
-import Add from "@mui/icons-material/Add";
 import CourseForm from "./CourseForm";
 import { Triangle } from "react-loader-spinner";
 function TeacherDashboard({ handleSignOut, auth }) {
@@ -63,6 +62,7 @@ function TeacherDashboard({ handleSignOut, auth }) {
   const [open, setOpen] = React.useState(false);
   const [loading, setLoading] = useState(true);
 
+  // Getting data of all the teachers
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -82,6 +82,7 @@ function TeacherDashboard({ handleSignOut, auth }) {
     fetchData();
   }, []);
 
+  // Loading Animation
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false); // Set loading to false after 4 seconds
@@ -90,6 +91,11 @@ function TeacherDashboard({ handleSignOut, auth }) {
     // Clean up the timer
     return () => clearTimeout(timer);
   }, []);
+
+  // Function to finda coressponding TeacherData
+  function findArrayByEmail(emailToFind) {
+    return teacherData.find((data) => data["Email ID"] === emailToFind);
+  }
 
   // Render loading indicator after 4 seconds
   if (loading) {
@@ -108,9 +114,19 @@ function TeacherDashboard({ handleSignOut, auth }) {
     );
   } else {
     if (auth) {
+      // MAtched Data is saved
+      const matchingData = findArrayByEmail(auth.currentUser.email);
+
+      if (matchingData) {
+        // console.log("Matching data:", matchingData);
+      } else {
+        console.log(
+          "No matching data found for email:",
+          auth.currentUser.email
+        );
+      }
       return (
         <div className="TD">
-          {console.log("this is auth from teacherdashboard", auth)}
           <div className="TeacherNavbar">
             <div className="Container">
               <div className="icon">
@@ -125,7 +141,11 @@ function TeacherDashboard({ handleSignOut, auth }) {
                   alt="img"
                 />
                 <div className="username">
-                  <h3>Username</h3>
+                  <h3>
+                    {auth.displayName
+                      ? auth.displayName
+                      : auth.currentUser.email.split("@")[0]}
+                  </h3>
                   <h4>{role}</h4>
                 </div>
               </div>
@@ -153,7 +173,7 @@ function TeacherDashboard({ handleSignOut, auth }) {
                             <DialogContent>
                               Fill in the information of the Course to be added.
                             </DialogContent>
-                            <CourseForm />
+                            <CourseForm email={auth.currentUser.email} />
                           </ModalDialog>
                         </Modal>
                         <Link to={item.path}>
@@ -203,7 +223,7 @@ function TeacherDashboard({ handleSignOut, auth }) {
             <div className="TeacherBio">
               {/*  */}
 
-              {teacherData.length > 0 && teacherData[3]["Teacher Name"] ? (
+              {matchingData ? (
                 <>
                   <Box
                     sx={{
@@ -227,27 +247,74 @@ function TeacherDashboard({ handleSignOut, auth }) {
                         resize: "horizontal",
                       }}
                     >
-                      <AspectRatio
-                        flex
-                        ratio="1"
-                        maxHeight={182}
-                        sx={{ minWidth: 182 }}
+                      <Card
+                        variant="plain"
+                        sx={{
+                          width: 300,
+                          bgcolor: "initial",
+                          p: 0,
+                        }}
                       >
-                        <img
-                          src={DefaultTeacherImage}
-                          srcSet={DefaultTeacherImage}
-                          loading="lazy"
-                          alt={teacherData[3]["Teacher Name"]}
-                        />
-                      </AspectRatio>
+                        <Box sx={{ position: "relative" }}>
+                          <AspectRatio ratio="5/4">
+                            <figure>
+                              <img
+                                src={DefaultTeacherImage}
+                                srcSet={DefaultTeacherImage}
+                                loading="lazy"
+                                alt="Teacher Profile"
+                              />
+                            </figure>
+                          </AspectRatio>
+                          <CardCover
+                            className="gradient-cover"
+                            sx={{
+                              "&:hover, &:focus-within": {
+                                opacity: 1,
+                              },
+                              opacity: 0,
+                              transition: "0.1s ease-in",
+                              font: "white",
+                              color: "white",
+                              background:
+                                "linear-gradient(180deg, transparent 62%, rgba(0,0,0,0.00345888) 63.94%, rgba(0,0,0,0.014204) 65.89%, rgba(0,0,0,0.0326639) 67.83%, rgba(0,0,0,0.0589645) 69.78%, rgba(0,0,0,0.0927099) 71.72%, rgba(0,0,0,0.132754) 73.67%, rgba(0,0,0,0.177076) 75.61%, rgba(0,0,0,0.222924) 77.56%, rgba(0,0,0,0.267246) 79.5%, rgba(0,0,0,0.30729) 81.44%, rgba(0,0,0,0.341035) 83.39%, rgba(0,0,0,0.367336) 85.33%, rgba(0,0,0,0.385796) 87.28%, rgba(0,0,0,0.396541) 89.22%, rgba(0,0,0,0.4) 91.17%)",
+                            }}
+                          >
+                            {/* The first box acts as a container that inherits style from the CardCover */}
+                            <div>
+                              <Box
+                                sx={{
+                                  p: 2,
+                                  display: "flex",
+                                  alignItems: "center",
+
+                                  gap: 1.5,
+                                  flexGrow: 1,
+                                  alignSelf: "flex-end",
+                                }}
+                              >
+                                <Typography
+                                  level="h2"
+                                  noWrap
+                                  sx={{ color: "white", fontSize: "lg" }}
+                                >
+                                  {matchingData["Teacher Name"]
+                                    ? matchingData["Teacher Name"]
+                                    : auth.currentUser.email.split("@")[0]}
+                                </Typography>
+                              </Box>
+                            </div>
+                          </CardCover>
+                        </Box>
+                      </Card>
                       <CardContent>
                         <Typography
                           fontSize="xl"
                           fontWeight="lg"
                         >
-                          {/* {teacherData[3]["Teacher Name"]} */}
-                          {/* {auth.currentUser.email.split("@")[0]} */}
-                          {console.log("This is auth from APP.js - ", auth)}
+                          {matchingData["Teacher Name"]
+                            ? matchingData["Teacher Name"]
+                            : auth.currentUser.email.split("@")[0]}
                         </Typography>
                         <Typography
                           level="body-sm"
@@ -276,7 +343,9 @@ function TeacherDashboard({ handleSignOut, auth }) {
                               Experience
                             </Typography>
                             <Typography fontWeight="lg">
-                              {teacherData[3]["Teaching experience"]}
+                              {matchingData["Teaching experience"]
+                                ? matchingData["Teaching experience"]
+                                : "Invlaid MONGO_URI"}
                             </Typography>
                           </div>
                           <div>
@@ -287,7 +356,10 @@ function TeacherDashboard({ handleSignOut, auth }) {
                               Courses Published
                             </Typography>
                             <Typography fontWeight="lg">
-                              {teacherData[3].Course.length}
+                              {/* {teacherData[3].Course.length} */}
+                              {matchingData["Course"]
+                                ? matchingData["Course"].length
+                                : "Invlaid MONGO_URI"}
                             </Typography>
                           </div>
                         </Sheet>
@@ -307,6 +379,7 @@ function TeacherDashboard({ handleSignOut, auth }) {
                           <Button
                             variant="solid"
                             color="primary"
+                            onClick={() => setOpen(true)}
                           >
                             Add Course
                           </Button>
@@ -314,6 +387,7 @@ function TeacherDashboard({ handleSignOut, auth }) {
                       </CardContent>
                     </Card>
                   </Box>
+                  {/* Alernate Card For Teacher */}
 
                   {/* Include other columns as needed */}
                 </>
@@ -338,19 +412,69 @@ function TeacherDashboard({ handleSignOut, auth }) {
                   </Typography>
                 </Card>
               )}
-              {/* Course List of Teacher */}
-              {/* <CourseForm /> */}
 
-              <div className="TeacherCourseData">
-                asfd
+              {/* Course List of Teacher */}
+              <div className="title1-teacherDashboard">
+                <DrawTwoToneIcon fontSize="large" />
+                <h2>Your Courses</h2>
+              </div>
+              <div className="course-display-teacherDashboard">
+                {console.log(courseData)}
                 {courseData.map(
                   (course) =>
-                    teacherData[3].Course.includes(course.CID) && (
-                      <div key={course.CID}>
-                        <h3>{course.title}</h3>
-                        <p>{course.description}</p>
-                        {/* {console.log(course)} */}
-                        {/* Add more course details as needed */}
+                    matchingData.Course.includes(course.CID) && (
+                      <div
+                        key={course.CID}
+                        className="course-display-element-teacherDashboard"
+                      >
+                        <Card
+                          variant="outlined"
+                          sx={{ width: 320 }}
+                        >
+                          <CardOverflow>
+                            <AspectRatio ratio="2">
+                              <img
+                                src={course.image}
+                                srcSet={course.image}
+                                loading="lazy"
+                                alt=""
+                              />
+                            </AspectRatio>
+                          </CardOverflow>
+                          <CardContent>
+                            <Typography level="title-md">
+                              {/* Yosemite National Park */}
+                              {course.title}
+                            </Typography>
+                            <Typography level="body-sm">
+                              {/*  */}
+                              {course.description}
+                            </Typography>
+                          </CardContent>
+                          <CardOverflow
+                            variant="soft"
+                            sx={{ bgcolor: "background.level1" }}
+                          >
+                            <Divider inset="context" />
+                            <CardContent orientation="horizontal">
+                              <Typography
+                                level="body-xs"
+                                fontWeight="md"
+                                textColor="text.secondary"
+                              >
+                                2 views
+                              </Typography>
+                              <Divider orientation="vertical" />
+                              <Typography
+                                level="body-xs"
+                                fontWeight="md"
+                                textColor="text.secondary"
+                              >
+                                ....
+                              </Typography>
+                            </CardContent>
+                          </CardOverflow>
+                        </Card>
                       </div>
                     )
                 )}

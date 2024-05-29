@@ -15,21 +15,6 @@ import DialogContent from "@mui/joy/DialogContent";
 import Typography from "@mui/joy/Typography";
 
 import Warning from "@mui/icons-material/Warning";
-import { app } from "../Firebase";
-import { useNavigate } from "react-router-dom";
-
-// For failed login
-import Alert from "@mui/joy/Alert";
-import Box from "@mui/joy/Box";
-import Button from "@mui/joy/Button";
-import Modal from "@mui/joy/Modal";
-import CircularProgress from "@mui/joy/CircularProgress";
-import ModalDialog from "@mui/joy/ModalDialog";
-import DialogTitle from "@mui/joy/DialogTitle";
-import DialogContent from "@mui/joy/DialogContent";
-import Typography from "@mui/joy/Typography";
-
-import Warning from "@mui/icons-material/Warning";
 const auth = getAuth(app);
 
 const SigninPage = () => {

@@ -30,16 +30,6 @@ import CryptographyCourse from "../MainCoursePage/contentpage/CourseVideo/Crypto
 import DigitalMarketing from "../MainCoursePage/contentpage/CourseVideo/DigitalMarketing.js";
 import BigDataTraining from "../MainCoursePage/contentpage/CourseVideo/BigDataTraining.js";
 import DevopsProject from "../MainCoursePage/contentpage/CourseVideo/DevopsProject";
-import Figma from "../MainCoursePage/contentpage/CourseVideo/Figma.js";
-import JavaProgramming from "../MainCoursePage/contentpage/CourseVideo/JavaProgramming.js";
-import Python from "../MainCoursePage/contentpage/CourseVideo/Python.js";
-import TradingCourse from "../MainCoursePage/contentpage/CourseVideo/TradingCourse.js";
-import CyberSecurity from "../MainCoursePage/contentpage/CourseVideo/CyberSecurity.js";
-import DataAnalytics from "../MainCoursePage/contentpage/CourseVideo/DataAnalytics.js";
-import CryptographyCourse from "../MainCoursePage/contentpage/CourseVideo/CryptographyCourse.js";
-import DigitalMarketing from "../MainCoursePage/contentpage/CourseVideo/DigitalMarketing.js";
-import BigDataTraining from "../MainCoursePage/contentpage/CourseVideo/BigDataTraining.js";
-import DevopsProject from "../MainCoursePage/contentpage/CourseVideo/DevopsProject";
 import Progress from "../MainCoursePage/contentpage/Progress.js";
 import Quiz from "../MainCoursePage/contentpage/Quiz.js";
 import Notes from "../MainCoursePage/contentpage/Notes.js";

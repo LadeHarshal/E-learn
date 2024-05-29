@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./CourseForm.css";
-function CourseForm() {
+function CourseForm(props) {
+  // Generating Random ID
+  function generateObjectId() {
+    return Math.random().toString(36).substring(2, 10);
+  }
   // Handling Form Data
   const [formData, setFormData] = useState({
     title: "",
@@ -10,12 +14,16 @@ function CourseForm() {
     videos: [],
     description: "",
     ratings: "",
+    CID: "",
   });
   const handleSubmit = async (e) => {
     e.preventDefault();
     let apiUrl = "http://localhost:8080/register/Courses";
-
     try {
+      // Generate an object ID (CID)
+
+      formData.CID = generateObjectId();
+      console.log(formData.CID);
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
@@ -28,14 +36,28 @@ function CourseForm() {
           videos: formData.videos,
           description: formData.description,
           ratings: formData.ratings,
+          CID: formData.CID,
         }),
       });
+      let useremail = props.email;
+      let courseID = formData.CID;
+      // Function to update teacher's data
+      const updateTeacher = async (useremail, courseID) => {
+        const apiUrlTeacher = `http://localhost:8080/register/teacher/${useremail}`;
+        try {
+          // Send POST request to update teacher's course
+          await axios.post(apiUrlTeacher, { course: courseID });
+          console.log("Teacher data updated successfully");
+        } catch (error) {
+          console.error("Error updating teacher data:", error);
+        }
+      };
 
       if (response.ok) {
-        console.log("Course created successfully");
-        // Optionally, you can redirect to another page or show a success message to the user
+        console.log("Course added successfully");
+        await updateTeacher(useremail, courseID);
       } else {
-        console.error("Failed to create user");
+        console.error("Failed to create Entry");
         // Optionally, handle the error case
       }
     } catch (error) {
