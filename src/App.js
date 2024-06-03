@@ -161,7 +161,7 @@ function App() {
           element={
             <>
               <Header /> <SigninPage /> <Footer />
-              <Header /> <SigninPage /> <Footer />
+              {/* <Header /> <SigninPage /> <Footer /> */}
             </>
           }
         />
