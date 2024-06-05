@@ -48,18 +48,24 @@ function Course_Element(props) {
             sx={{ mt: 1, fontWeight: "xl" }}
             endDecorator={
               <>
-                {props.course.tags.map((chip, index) => (
-                  <Chip
-                    key={index}
-                    component="span"
-                    size="sm"
-                    variant="soft"
-                    color="success"
-                    sx={{ mr: 1 }} // Add margin between chips if needed
-                  >
-                    {chip}
-                  </Chip>
-                ))}
+                {console.log(props.course)}
+                {props.course ? (
+                  props.course.tags.map((chip, index) => (
+                    <Chip
+                      key={index}
+                      component="span"
+                      size="sm"
+                      variant="soft"
+                      color="success"
+                      sx={{ mr: 1 }} // Add margin between chips if needed
+                    >
+                      {chip}
+                    </Chip>
+                  ))
+                ) : (
+                  // Optional: Render something if props.course.tags is not available
+                  <p>Check Your MongoDb Credentials</p>
+                )}
               </>
             }
           ></Typography>

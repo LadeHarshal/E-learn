@@ -61,6 +61,7 @@ function StudentHome(props) {
   // Fetching Data from the Database about courses for the course list
   const [courses, setCourses] = useState([]);
   const [startIndex, setStartIndex] = useState(0);
+  const [startIndexPdf, setStartIndexPdf] = useState(0);
   const coursesPerPage = 3;
 
   const handlePrevious = () => {
@@ -71,19 +72,36 @@ function StudentHome(props) {
   const handleNext = () => {
     const lastIndex = courses.length - 1;
     let newIndex = startIndex + coursesPerPage;
-    if (newIndex > lastIndex) {
+    if (newIndex >= lastIndex) {
       // If newIndex exceeds the last index, loop back to the beginning
       newIndex = 0;
     }
     setStartIndex(newIndex);
   };
 
+  const handlePreviousPdf = () => {
+    const newIndexPdf = Math.max(startIndexPdf - coursesPerPage, 0);
+    setStartIndex(newIndexPdf);
+  };
+
+  const handleNextPdf = () => {
+    const lastIndexPdf = Pdfs.length - 1;
+    let newIndexPdf = startIndexPdf + coursesPerPage;
+    if (newIndexPdf >= lastIndexPdf) {
+      // If newIndex exceeds the last index, loop back to the beginning
+      newIndexPdf = 0;
+    }
+    setStartIndex(newIndexPdf);
+  };
   const displayedCourses = courses.slice(
     startIndex,
     startIndex + coursesPerPage
   );
 
-  const displayedPdfs = Pdfs.slice(startIndex, startIndex + coursesPerPage);
+  const displayedPdfs = Pdfs.slice(
+    startIndexPdf,
+    startIndexPdf + coursesPerPage
+  );
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -131,7 +149,6 @@ function StudentHome(props) {
               <h5>View Courses</h5>
             </Link>
           </div>
-
           <div className="mid-center">
             {/* Middle bar content EyeCatcher*/}
             <div className="illustration">
@@ -166,6 +183,7 @@ function StudentHome(props) {
             </Link>
           </div>
         </div>
+
         {/* Course List and Tutorials */}
         {/* Your existing course list and tutorials content */}
         <div className="material">
@@ -217,6 +235,12 @@ function StudentHome(props) {
           <div className="tutorial-pane">
             <h3>Tutorials</h3>
             <div className="tutorials-list courses">
+              <button
+                onClick={handlePreviousPdf}
+                disabled={startIndexPdf === 0}
+              >
+                Previous
+              </button>
               {displayedPdfs.map((item, index) => (
                 <Course_Element
                   key={index}
@@ -224,6 +248,12 @@ function StudentHome(props) {
                   ActionText="View Tutorial"
                 />
               ))}
+              <button
+                onClick={handleNextPdf}
+                disabled={startIndexPdf + coursesPerPage >= Pdfs.length}
+              >
+                Next
+              </button>
             </div>
           </div>
         </div>

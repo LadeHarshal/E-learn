@@ -122,12 +122,12 @@
   z-index: 0;
   background: #17bf9e;
   position: absolute;
-  bottom: 0;
-  right: 2.6em;
+  bottom: 10px;
+  left: 12.5rem;
   display: flex;
   border-radius: 3rem;
   align-items: center;
-  height: 25%;
+  height: 21%;
 }
 
 .text h5 {

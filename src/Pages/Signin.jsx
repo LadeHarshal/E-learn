@@ -2,8 +2,6 @@ import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import React, { useState } from "react";
 import { app } from "../Firebase";
 import { useNavigate } from "react-router-dom";
-
-// For failed login
 import Alert from "@mui/joy/Alert";
 import Box from "@mui/joy/Box";
 import Button from "@mui/joy/Button";
@@ -13,8 +11,8 @@ import ModalDialog from "@mui/joy/ModalDialog";
 import DialogTitle from "@mui/joy/DialogTitle";
 import DialogContent from "@mui/joy/DialogContent";
 import Typography from "@mui/joy/Typography";
-
 import Warning from "@mui/icons-material/Warning";
+
 const auth = getAuth(app);
 
 const SigninPage = () => {
@@ -22,13 +20,13 @@ const SigninPage = () => {
   const [password, setPassword] = useState("");
   const [showAlert, setShowAlert] = useState(false);
   const navigate = useNavigate();
+
   const signinUser = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
         console.log("Signin Success");
         if (user && user.email) {
-          // Redirect to the new page and pass user email
           if (user.email.split("@")[1].split(".")[0] === "org") {
             navigate("/TeacherDashboard", { state: { email: user.email } });
           } else {
@@ -43,13 +41,85 @@ const SigninPage = () => {
         setShowAlert(true);
       });
   };
-  const [open, setOpen] = React.useState(false);
 
   return (
     <div
-      className="Signin-page"
-      style={styles.container}
+      className="signin-container"
+      style={styles.signinContainer}
     >
+      <div
+        className="signin-content"
+        style={styles.signinContent}
+      >
+        <h2
+          className="signin-header"
+          style={styles.signinHeader}
+        >
+          Sign In
+        </h2>
+        <div
+          className="signin-form"
+          style={styles.signinForm}
+        >
+          <div
+            className="signin-image"
+            style={styles.signinImage}
+          >
+            <img
+              src=""
+              alt="Signin"
+            />
+          </div>
+          <div
+            className="signin-inputs"
+            style={styles.signinInputs}
+          >
+            <label
+              className="signin-inputs-label"
+              style={styles.signinInputLabel}
+            >
+              Enter Your Email
+            </label>
+            <input
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
+              type="email"
+              className="signin-input"
+              style={styles.signinInput}
+              placeholder="Enter Your Email Here"
+            />
+            <label
+              className="signin-inputs-label"
+              style={styles.signinInputLabel}
+            >
+              Enter Your Password
+            </label>
+            <input
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
+              type="password"
+              className="signin-input"
+              style={styles.signinInput}
+              placeholder="Enter Your Password Here"
+            />
+            <button
+              onClick={signinUser}
+              className="signin-button"
+              style={styles.signinButton}
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+        <div
+          className="login-link"
+          style={styles.loginLink}
+        >
+          <p>
+            Don't have an account? <a href="#">Sign Up</a>
+          </p>
+        </div>
+      </div>
       <Modal
         open={showAlert}
         onClose={() => setShowAlert(false)}
@@ -104,113 +174,6 @@ const SigninPage = () => {
           </Alert>
         </ModalDialog>
       </Modal>
-      <h2>Sign In</h2>
-      <label style={styles.label}>Enter Your Email</label>
-      <input
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-        type="email"
-        style={styles.input}
-        placeholder="Enter Your Email Here"
-      />
-      <label style={styles.label}>Enter Your Password</label>
-      <input
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-        type="password"
-        style={styles.input}
-        placeholder="Enter Your Password Here"
-      />
-      <button
-        onClick={signinUser}
-        style={styles.button}
-      >
-        Sign In
-      </button>
-    </div>
-  );
-  return (
-    <div
-      className="Signin-page"
-      style={styles.container}
-    >
-      <Modal
-        open={showAlert}
-        onClose={() => setShowAlert(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <Box sx={{ ...styles.modalContainer, ...styles.modal }}></Box>
-      </Modal>
-      <Modal
-        open={showAlert}
-        onClose={() => setShowAlert(false)}
-        aria-labelledby="alert-dialog-title"
-        aria-describedby="alert-dialog-description"
-      >
-        <ModalDialog layout="center">
-          <Alert
-            variant="soft"
-            color="danger"
-            invertedColors
-            startDecorator={
-              <CircularProgress
-                size="lg"
-                color="danger"
-              >
-                <Warning />
-              </CircularProgress>
-            }
-            sx={{ alignItems: "flex-start", gap: "1rem" }}
-          >
-            <Box sx={{ flex: 1 }}>
-              <Typography level="title-md">Invalid Credentials</Typography>
-              <Typography level="body-md">
-                Please verify your credentials and try again.
-              </Typography>
-              <Box
-                sx={{
-                  mt: 2,
-                  display: "flex",
-                  justifyContent: "flex-end",
-                  gap: 1,
-                }}
-              >
-                <Button
-                  variant="solid"
-                  size="sm"
-                  onClick={() => setShowAlert(false)} // Close the alert on button click
-                >
-                  Try again
-                </Button>
-              </Box>
-            </Box>
-          </Alert>
-        </ModalDialog>
-      </Modal>
-      <h2>Sign In</h2>
-      <label style={styles.label}>Enter Your Email</label>
-      <input
-        onChange={(e) => setEmail(e.target.value)}
-        value={email}
-        type="email"
-        style={styles.input}
-        placeholder="Enter Your Email Here"
-      />
-      <label style={styles.label}>Enter Your Password</label>
-      <input
-        onChange={(e) => setPassword(e.target.value)}
-        value={password}
-        type="password"
-        style={styles.input}
-        placeholder="Enter Your Password Here"
-      />
-      <button
-        onClick={signinUser}
-        style={styles.button}
-      >
-        Sign In
-      </button>
     </div>
   );
 };
@@ -218,64 +181,65 @@ const SigninPage = () => {
 export default SigninPage;
 
 const styles = {
-  container: {
+  signinContainer: {
     display: "flex",
-    flexDirection: "column",
+    justifyContent: "center",
     alignItems: "center",
+    height: "600px",
+    backgroundColor: "#f9f9f9",
+  },
+  signinContent: {
+    maxWidth: "750px",
+    width: "100%",
     padding: "20px",
     border: "1px solid #ccc",
     borderRadius: "5px",
-    maxWidth: "300px",
-    margin: "0 auto",
+    backgroundColor: "#fff",
   },
-  label: {
-    marginBottom: "5px",
-    color: "#333",
+  signinInputLabel: {
+    marginLeft: "-0.1px",
+    fontWeight: "700",
+    fontSize: "17px",
   },
-  input: {
+  signinHeader: {
+    textAlign: "center",
+    fontWeight: "600",
+    fontSize: "40px",
+  },
+  signinForm: {
+    display: "flex",
+  },
+  signinImage: {
+    maxWidth: "100%",
+    height: "auto",
+    marginRight: "20px",
+  },
+  signinInputs: {
+    flex: 1,
+    marginTop: "80px",
+  },
+  signinInput: {
     width: "100%",
     padding: "10px",
     marginBottom: "15px",
-    borderRadius: "3px",
-    border: "1px solid #ccc",
-    boxSizing: "border-box",
-  },
-  button: {
-    backgroundColor: "#4CAF50",
-    color: "white",
-    padding: "10px 20px",
-    border: "none",
-    borderRadius: "3px",
-    cursor: "pointer",
-  },
-  container: {
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    padding: "20px",
     border: "1px solid #ccc",
     borderRadius: "5px",
-    maxWidth: "300px",
-    margin: "0 auto",
+    boxSizing: "border-box",
+    width: "300px",
+    marginLeft: "-1px",
   },
-  label: {
-    marginBottom: "5px",
-    color: "#333",
-  },
-  input: {
+  signinButton: {
     width: "100%",
     padding: "10px",
-    marginBottom: "15px",
-    borderRadius: "3px",
-    border: "1px solid #ccc",
-    boxSizing: "border-box",
-  },
-  button: {
-    backgroundColor: "#4CAF50",
-    color: "white",
-    padding: "10px 20px",
     border: "none",
-    borderRadius: "3px",
+    borderRadius: "5px",
     cursor: "pointer",
+    fontSize: "16px",
+    backgroundColor: "#007bff",
+    color: "#fff",
+  },
+  loginLink: {
+    textAlign: "center",
+    marginTop: "1px",
   },
 };

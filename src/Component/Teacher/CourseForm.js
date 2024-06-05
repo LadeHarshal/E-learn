@@ -10,7 +10,7 @@ function CourseForm(props) {
   const [formData, setFormData] = useState({
     title: "",
     image: "",
-    tags: [""],
+    tags: [],
     videos: [],
     description: "",
     ratings: "",
@@ -65,7 +65,18 @@ function CourseForm(props) {
     }
   };
 
+  // Function to handle tag changes
+  const handleTagsChange = (event) => {
+    if (event && event.target) {
+      const newTags = event.target.value.split(",").map((tag) => tag.trim());
+      setFormData((prevData) => ({
+        ...prevData,
+        tags: newTags,
+      }));
+    }
+  };
   const handleChange = (e) => {
+    console.log(e);
     const { name, value } = e.target;
     setFormData((prevData) => ({
       ...prevData,
@@ -146,8 +157,8 @@ function CourseForm(props) {
         type="text"
         id="tags"
         name="tags"
-        value={formData.tags}
-        onChange={handleChange}
+        value={formData.tags?.join(", ") || ""} // Display comma-separated string
+        onChange={handleTagsChange}
       />
 
       <label htmlFor="videos">Videos:</label>
