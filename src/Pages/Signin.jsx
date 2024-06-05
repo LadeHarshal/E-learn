@@ -12,7 +12,8 @@ import DialogTitle from "@mui/joy/DialogTitle";
 import DialogContent from "@mui/joy/DialogContent";
 import Typography from "@mui/joy/Typography";
 import Warning from "@mui/icons-material/Warning";
-
+import "./SignIn.css";
+import sign_img from "../assets/images/register.jpg";
 const auth = getAuth(app);
 
 const SigninPage = () => {
@@ -43,78 +44,42 @@ const SigninPage = () => {
   };
 
   return (
-    <div
-      className="signin-container"
-      style={styles.signinContainer}
-    >
-      <div
-        className="signin-content"
-        style={styles.signinContent}
-      >
-        <h2
-          className="signin-header"
-          style={styles.signinHeader}
-        >
-          Sign In
-        </h2>
-        <div
-          className="signin-form"
-          style={styles.signinForm}
-        >
-          <div
-            className="signin-image"
-            style={styles.signinImage}
-          >
+    <div className="signin-container">
+      <div className="signin-content">
+        <h2 className="signin-header">Sign In</h2>
+        <div className="signin-form">
+          <div className="signin-image">
             <img
-              src=""
+              src={sign_img}
               alt="Signin"
             />
           </div>
-          <div
-            className="signin-inputs"
-            style={styles.signinInputs}
-          >
-            <label
-              className="signin-inputs-label"
-              style={styles.signinInputLabel}
-            >
-              Enter Your Email
-            </label>
+          <div className="signin-inputs">
+            <label className="signin-inputs-label">Enter Your Email</label>
             <input
               onChange={(e) => setEmail(e.target.value)}
               value={email}
               type="email"
               className="signin-input"
-              style={styles.signinInput}
               placeholder="Enter Your Email Here"
             />
-            <label
-              className="signin-inputs-label"
-              style={styles.signinInputLabel}
-            >
-              Enter Your Password
-            </label>
+            <label className="signin-inputs-label">Enter Your Password</label>
             <input
               onChange={(e) => setPassword(e.target.value)}
               value={password}
               type="password"
               className="signin-input"
-              style={styles.signinInput}
               placeholder="Enter Your Password Here"
             />
             <button
               onClick={signinUser}
               className="signin-button"
-              style={styles.signinButton}
             >
               Sign In
             </button>
           </div>
         </div>
-        <div
-          className="login-link"
-          style={styles.loginLink}
-        >
+        <div className="login-link">
           <p>
             Don't have an account? <a href="#">Sign Up</a>
           </p>
@@ -126,7 +91,7 @@ const SigninPage = () => {
         aria-labelledby="alert-dialog-title"
         aria-describedby="alert-dialog-description"
       >
-        <Box sx={{ ...styles.modalContainer, ...styles.modal }}></Box>
+        {/* <Box sx={{ ...styles.modalContainer, ...styles.modal }}></Box> */}
       </Modal>
       <Modal
         open={showAlert}
@@ -180,66 +145,66 @@ const SigninPage = () => {
 
 export default SigninPage;
 
-const styles = {
-  signinContainer: {
-    display: "flex",
-    justifyContent: "center",
-    alignItems: "center",
-    height: "600px",
-    backgroundColor: "#f9f9f9",
-  },
-  signinContent: {
-    maxWidth: "750px",
-    width: "100%",
-    padding: "20px",
-    border: "1px solid #ccc",
-    borderRadius: "5px",
-    backgroundColor: "#fff",
-  },
-  signinInputLabel: {
-    marginLeft: "-0.1px",
-    fontWeight: "700",
-    fontSize: "17px",
-  },
-  signinHeader: {
-    textAlign: "center",
-    fontWeight: "600",
-    fontSize: "40px",
-  },
-  signinForm: {
-    display: "flex",
-  },
-  signinImage: {
-    maxWidth: "100%",
-    height: "auto",
-    marginRight: "20px",
-  },
-  signinInputs: {
-    flex: 1,
-    marginTop: "80px",
-  },
-  signinInput: {
-    width: "100%",
-    padding: "10px",
-    marginBottom: "15px",
-    border: "1px solid #ccc",
-    borderRadius: "5px",
-    boxSizing: "border-box",
-    width: "300px",
-    marginLeft: "-1px",
-  },
-  signinButton: {
-    width: "100%",
-    padding: "10px",
-    border: "none",
-    borderRadius: "5px",
-    cursor: "pointer",
-    fontSize: "16px",
-    backgroundColor: "#007bff",
-    color: "#fff",
-  },
-  loginLink: {
-    textAlign: "center",
-    marginTop: "1px",
-  },
-};
+// const styles = {
+//   signinContainer: {
+//     display: "flex",
+//     justifyContent: "center",
+//     alignItems: "center",
+//     height: "600px",
+//     backgroundColor: "#f9f9f9",
+//   },
+//   signinContent: {
+//     maxWidth: "750px",
+//     width: "100%",
+//     padding: "20px",
+//     border: "1px solid #ccc",
+//     borderRadius: "5px",
+//     backgroundColor: "#fff",
+//   },
+//   signinInputLabel: {
+//     marginLeft: "-0.1px",
+//     fontWeight: "700",
+//     fontSize: "17px",
+//   },
+//   signinHeader: {
+//     textAlign: "center",
+//     fontWeight: "600",
+//     fontSize: "40px",
+//   },
+//   signinForm: {
+//     display: "flex",
+//   },
+//   signinImage: {
+//     maxWidth: "100%",
+//     height: "auto",
+//     marginRight: "20px",
+//   },
+//   signinInputs: {
+//     flex: 1,
+//     marginTop: "80px",
+//   },
+//   signinInput: {
+//     width: "100%",
+//     padding: "10px",
+//     marginBottom: "15px",
+//     border: "1px solid #ccc",
+//     borderRadius: "5px",
+//     boxSizing: "border-box",
+//     width: "300px",
+//     marginLeft: "-1px",
+//   },
+//   signinButton: {
+//     width: "100%",
+//     padding: "10px",
+//     border: "none",
+//     borderRadius: "5px",
+//     cursor: "pointer",
+//     fontSize: "16px",
+//     backgroundColor: "#007bff",
+//     color: "#fff",
+//   },
+//   loginLink: {
+//     textAlign: "center",
+//     marginTop: "1px",
+//   },
+// };
